@@ -1,0 +1,107 @@
+{
+  "personal": {
+    "name": "البواري خالد",
+    "title": "طالب ماجستير في جودة البرمجيات",
+    "phone": "+212 624 44 78 61",
+    "email": "khalid.fati7i.hb@gmail.com",
+    "address": "شارع سبتة، حي الكفاح، سلا",
+    "portfolio": "https://khalidelbouari.github.io/portoflio/"
+  },
+  "summary": "طالب ماجستير في جودة البرمجيات لديه خبرة عملية في Java وSpring Boot وMicroservices. يركز على بناء أنظمة قابلة للتوسع وسهلة الصيانة مع الاهتمام بالأداء وجودة الكود.",
+  "experience": [
+    {
+      "position": "متدرب تطوير البرمجيات",
+      "company": "LaboControl، فاس",
+      "period": "01/04/2024 - 24/06/2024",
+      "duration": "3 أشهر",
+      "description": "قمت بتطوير تطبيق ويب لتسويق الخدمات والمنتجات بشكل متكامل، مما أدى إلى تحسين عمليات العمل وتعزيز تجربة المستخدم.",
+      "technologies": ["Spring Boot", "Angular", "TypeScript", "HTML/CSS", "MySQL"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+    },
+    {
+      "position": "متدرب مهندس Full Stack",
+      "company": "Valhko، عن بُعد",
+      "period": "07/07/2025 - حتى الآن",
+      "description": "قمت بتوحيد عملية المصادقة عبر Microservices باستخدام API Gateway ونسقت مراجعات الكود لتسريع عملية النشر.",
+      "technologies": ["Java", "Spring Boot", "microservices architecture", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+    },
+    {
+      "position": "متدرب مطور VB.NET",
+      "company": "Copref، القنيطرة",
+      "period": "15/05/2023 - 15/06/2023",
+      "duration": "شهر واحد",
+      "description": "حللت وأصلحت الأخطاء في تطبيق سطح المكتب القائم المطور بـVB.NET، مما أدى إلى تحسين الاستقرار والأداء.",
+      "technologies": ["VB.NET", "SQL Server"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "ماجستير في جودة البرمجيات (MQL)",
+      "institution": "FSDM - جامعة سيدي محمد بن عبد الله، فاس",
+      "period": "2024-2026",
+      "status": "قيد الدراسة"
+    },
+    {
+      "degree": "بكالوريوس في هندسة الحاسوب والحكامة الرقمية",
+      "institution": "المعهد العالي للتكنولوجيا (EST)، القنيطرة",
+      "period": "2023-2024",
+      "grade": "15.37/20"
+    },
+    {
+      "degree": "دبلوم التقني العالي في تطوير نظم المعلومات",
+      "institution": "BTS ابن سينا، القنيطرة",
+      "period": "2021-2023",
+      "grade": "16.01/20"
+    }
+  ],
+  "projects": [
+    {
+      "title": "أداة تحليل كود Java",
+      "period": "06/12/2024 - 23/12/2024",
+      "duration": "شهر واحد",
+      "description": "قمت بتطوير أداة لتحليل كود Java لاستخراج هيكل المشروع وإنشاء مخططات UML، مما ساهم في تحسين توثيق المشروع وفهم التصميم.",
+      "technologies": ["Java", "Reflection", "Swing", "XML", "XMI"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+    },
+    {
+      "title": "منصة إدارة مؤسسات BTS",
+      "period": "20/12/2022 - 15/06/2023",
+      "duration": "6 أشهر",
+      "description": "صممت ونفذت منصة ويب لإدارة مؤسسات BTS وسجلاتها، مما قلل من التتبع اليدوي وحسن دقة البيانات.",
+      "technologies": ["Java", "JSP/Servlets (JEE)", "HTML/CSS", "JavaScript", "MySQL", "Visual Paradigm"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "مطور Java SE 17",
+      "issuer": "جامعة أوراكل",
+      "year": "2025",
+      "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
+      "image": "/images/certificates/java-se-17.png"
+
+    },
+    {
+      "name": "مؤسسيات الذكاء الاصطناعي Associate",
+      "issuer": "جامعة أوراكل",
+      "year": "2025",
+      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
+      "image": "/images/certificates/ai-foundations.png"
+
+    }
+  ],
+  "skills": {
+    "backend": ["Java", "Spring Boot", "JPA", "Hibernate", "Microservices"],
+    "frontend": ["HTML/CSS", "JavaScript", "TypeScript", "Angular", "React"],
+    "devops": ["Maven", "Git", "GitHub", "GitLab", "Docker", "Docker Compose"],
+    "databases": ["MySQL", "SQL Server", "Oracle DB"],
+    "other": ["XML", "XSLT", "XPath", "JUnit", "Trello"]
+  },
+  "languages": [
+    { "name": "العربية", "level": "اللغة الأم" },
+    { "name": "الفرنسية", "level": "إجادة مهنية" },
+    { "name": "الإنجليزية", "level": "إجادة مهنية" }
+  ]
+}

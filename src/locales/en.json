@@ -1,0 +1,102 @@
+{
+  "locale": {
+    "code": "en",
+    "label": "EN"
+  },
+  "hero": {
+    "emoji": "\ud83d\udc4b",
+    "greeting": "HEY THERE, I'M KHALID ELBOUARI",
+    "title": {
+      "line1": "Crafting",
+      "line2": "Digital Excellence"
+    },
+    "subtitle": {
+      "before": "Master's student specializing in ",
+      "highlight": "Software Quality",
+      "after": " with hands-on experience in full-stack development, microservices architecture, and building scalable applications that make a difference."
+    },
+    "focusLabel": "CURRENTLY FOCUSED ON:",
+    "ctaPrimary": "View My Work",
+    "ctaSecondary": "Let's talk",
+    "connectLabel": "CONNECT WITH ME:",
+    "badgeTitle": "MQL",
+    "badgeSubtitle": "Master's in Software Quality",
+    "skills": {
+      "fullStack": {
+        "title": "Full Stack Development",
+        "description": "Building end-to-end web applications"
+      },
+      "microservices": {
+        "title": "Spring Boot & Microservices",
+        "description": "Scalable backend architecture"
+      },
+      "quality": {
+        "title": "Software Quality & Testing",
+        "description": "Quality assurance & optimization"
+      },
+      "performance": {
+        "title": "Performance Optimization",
+        "description": "Efficient & fast applications"
+      }
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "header": {
+    "menu": {
+      "about": "About",
+      "projects": "Projects",
+      "experience": "Experience",
+      "contact": "Contact"
+    }
+  },
+  "chat": {
+    "cta": "Let’s Talk",
+    "subtitle": "Typically replies in minutes",
+    "placeholder": "Type a message…",
+    "greeting": "Hi, I’m Khalid. How can I help?",
+    "error": "❌ Something went wrong. Please try again later.",
+    "fallback": "Thanks! I’ll get back to you shortly.",
+    "quick": {
+      "skills": "Tell me about your skills",
+      "projects": "Show me your projects",
+      "experience": "Summarize your experience",
+      "contact": "How can I contact you?",
+      "skillsLabel": "Skills",
+      "projectsLabel": "Projects",
+      "experienceLabel": "Experience",
+      "contactLabel": "Contact"
+    }
+  },
+  "portfolio": {
+    "projects": {
+      "title": "Featured Projects",
+      "subtitle": "Innovative solutions built with cutting-edge technologies",
+      "toggle": "Projects"
+    },
+    "experience": {
+      "title": "Professional Experience",
+      "subtitle": "Building scalable solutions with modern technologies",
+      "toggle": "Experience"
+    },
+    "resume": {
+      "title": "Background & Skills",
+      "subtitle": "Education, certifications, skills, and languages",
+      "education": "Education",
+      "certifications": "Certifications",
+      "skills": "Skills",
+      "languages": "Languages",
+      "grade": "Grade",
+      "categories": {
+        "backend": "Backend",
+        "frontend": "Frontend",
+        "devops": "DevOps",
+        "databases": "Databases",
+        "other": "Other"
+      }
+    }
+  }
+}

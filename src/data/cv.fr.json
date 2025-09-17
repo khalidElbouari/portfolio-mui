@@ -1,0 +1,105 @@
+{
+  "personal": {
+    "name": "Elbouari Khalid",
+    "title": "Etudiant en master de qualite logicielle",
+    "phone": "+212 624 44 78 61",
+    "email": "khalid.fati7i.hb@gmail.com",
+    "address": "Rue Sebta, Hay Kifah, Sale",
+    "portfolio": "https://khalidelbouari.github.io/portoflio/"
+  },
+  "summary": "Etudiant en master de qualite logicielle avec une experience pratique en Java, Spring Boot et microservices. Oriente vers la creation de solutions evolutives et maintenables avec une attention particuliere aux performances et a la qualite du code.",
+  "experience": [
+    {
+      "position": "Stagiaire developpement logiciel",
+      "company": "LaboControl, Fes",
+      "period": "01/04/2024 - 24/06/2024",
+      "duration": "3 mois",
+      "description": "Creation d'une application web pour la gestion integree des services et produits, optimisant les processus metier et l'experience utilisateur.",
+      "technologies": ["Spring Boot", "Angular", "TypeScript", "HTML/CSS", "MySQL"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+    },
+    {
+      "position": "Stagiaire ingenieur full stack",
+      "company": "Valhko, Remote",
+      "period": "07/07/2025 - Present",
+      "description": "Unification de l'authentification sur les microservices via l'API Gateway et coordination des revues de code pour accelerer les livraisons.",
+      "technologies": ["Java", "Spring Boot", "microservices architecture", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+    },
+    {
+      "position": "Stagiaire developpeur VB.NET",
+      "company": "Copref, Kenitra",
+      "period": "15/05/2023 - 15/06/2023",
+      "duration": "1 mois",
+      "description": "Analyse et correction d'anomalies sur une application de bureau VB.NET existante afin d'ameliorer la stabilite et les performances.",
+      "technologies": ["VB.NET", "SQL Server"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master qualite logicielle (MQL)",
+      "institution": "FSDM - Universite Sidi Mohamed Ben Abdellah, Fes",
+      "period": "2024-2026",
+      "status": "En cours"
+    },
+    {
+      "degree": "Licence genie informatique et gouvernance numerique",
+      "institution": "Ecole superieure de technologie (EST), Kenitra",
+      "period": "2023-2024",
+      "grade": "15.37/20"
+    },
+    {
+      "degree": "Diplome de technicien specialise en developpement des SI",
+      "institution": "BTS Ibn Sina, Kenitra",
+      "period": "2021-2023",
+      "grade": "16.01/20"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Outil d'analyse de code Java",
+      "period": "06/12/2024 - 23/12/2024",
+      "duration": "1 mois",
+      "description": "Conception d'un outil d'analyse de code Java pour extraire la structure d'un projet et generer des diagrammes UML, facilitant la documentation et la comprehension du design.",
+      "technologies": ["Java", "Reflection", "Swing", "XML", "XMI"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+    },
+    {
+      "title": "Plateforme de gestion des etablissements BTS",
+      "period": "20/12/2022 - 15/06/2023",
+      "duration": "6 mois",
+      "description": "Realisation d'une plateforme web pour gerer les etablissements BTS et les cahiers de texte afin de reduire le suivi manuel et d'ameliorer la fiabilite des donnees.",
+      "technologies": ["Java", "JSP/Servlets (JEE)", "HTML/CSS", "JavaScript", "MySQL", "Visual Paradigm"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+    }
+  ],
+  "certifications": [
+   {
+    "name": "Java SE 17 Developer",
+    "issuer": "Oracle University",
+    "year": "2025",
+    "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
+    "image": "/images/certificates/java-se-17.png"
+  },
+  {
+    "name": "AI Foundations Associate",
+    "issuer": "Oracle University",
+    "year": "2025",
+    "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
+    "image": "/images/certificates/ai-foundations.png"
+  }
+  ],
+  "skills": {
+    "backend": ["Java", "Spring Boot", "JPA", "Hibernate", "Microservices"],
+    "frontend": ["HTML/CSS", "JavaScript", "TypeScript", "Angular", "React"],
+    "devops": ["Maven", "Git", "GitHub", "GitLab", "Docker", "Docker Compose"],
+    "databases": ["MySQL", "SQL Server", "Oracle DB"],
+    "other": ["XML", "XSLT", "XPath", "JUnit", "Trello"]
+  },
+  "languages": [
+    { "name": "Arabe", "level": "Langue maternelle" },
+    { "name": "Francais", "level": "Maitrise professionnelle" },
+    { "name": "Anglais", "level": "Maitrise professionnelle" }
+  ]
+}
