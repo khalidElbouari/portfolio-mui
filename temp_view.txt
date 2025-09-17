@@ -1,0 +1,11 @@
+import { SectionHeader } from "./SectionHeader";
+import { useThemeContext } from "../context/ThemeContext";
+import { useTranslation } from "../context/LocaleContext";
+import { WorkspacePremium, Translate } from "@mui/icons-material";
+import { containerVariants, sectionVariants, techChipVariants } from "../utils/animations";
+import { getTechColor, getTechIcon } from "../utils/techConfig";
+
+export default function SkillsAndCerts() {
+  const { darkMode } = useThemeContext();
+  const { cv, t } = useTranslation();
+
