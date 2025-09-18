@@ -19,6 +19,12 @@ export interface ChatMessage {
   timestamp: number;
 }
 
+interface ChatApiResponse {
+  reply?: string;
+  error?: string;
+  details?: string;
+}
+
 interface ChatContextValue {
   isOpen: boolean;
   typing: boolean;
@@ -35,7 +41,8 @@ const ChatContext = createContext<ChatContextValue | null>(null);
 
 const STORAGE_KEY = "portfolio.chat.messages";
 const OPEN_KEY = "portfolio.chat.open";
-const API_URL = "https://khalid-bot-api.vercel.app/api/chat";
+const DEFAULT_API_URL = "https://khalid-bot-api-ke22.vercel.app/api/chat";
+const API_URL = (typeof import.meta !== "undefined" && import.meta.env?.VITE_CHAT_API_URL) || DEFAULT_API_URL;
 
 function uid() {
   return Math.random().toString(36).slice(2) + Date.now().toString(36);
@@ -117,16 +124,33 @@ export function ChatProvider({ children }: { children: ReactNode }) {
         signal: controller.signal
       });
 
-      const data = await res.json().catch(() => ({}));
-      const reply: string = data?.reply ?? t("chat.fallback", "Thanks! I’ll get back to you shortly.");
-      await delay(200 + Math.random() * 400);
+      const data = await res.json().catch(() => null);
 
+      if (!res.ok) {
+        const backendError = typeof data === "object" && data !== null
+          ? (data as ChatApiResponse).error ?? (data as ChatApiResponse).details
+          : null;
+        const message = typeof backendError === "string"
+          ? backendError
+          : t("chat.error", "Oops! Something went wrong. Please try again later.");
+        throw new Error(message);
+      }
+
+      const reply = typeof data === "object" && data && typeof (data as ChatApiResponse).reply === "string"
+        ? (data as ChatApiResponse).reply as string
+        : t("chat.fallback", "Thanks! I'll get back to you shortly.");
+
+      await delay(200 + Math.random() * 400);
       append({ id: uid(), role: "bot", text: reply, timestamp: Date.now() });
-    } catch (e) {
+    } catch (error) {
+      const message = error instanceof Error && error.message
+        ? error.message
+        : t("chat.error", "Oops! Something went wrong. Please try again later.");
+
       append({
         id: uid(),
         role: "bot",
-        text: t("chat.error", "❌ Something went wrong. Please try again later."),
+        text: message,
         timestamp: Date.now()
       });
     } finally {
