@@ -19,19 +19,53 @@ import { useState } from "react";
 import { useThemeContext } from "../context/ThemeContext";
 import { useTranslation } from "../context/LocaleContext";
 
-// Nav items are localized via translation keys
-const navKeys = [
-  "header.menu.about",
-  "header.menu.projects",
-  "header.menu.experience",
-  "header.menu.contact"
-] as const;
+const SCROLL_OFFSET = 80;
+const NAVIGATION_EVENT = "portfolio:navigate";
+
+type NavView = "projects" | "experience";
+
+type NavItem = {
+  translationKey: `header.menu.${string}`;
+  targetId: string;
+  view?: NavView;
+};
+
+const navItems: NavItem[] = [
+  { translationKey: "header.menu.about", targetId: "hero" },
+  { translationKey: "header.menu.projects", targetId: "projects", view: "projects" },
+  { translationKey: "header.menu.experience", targetId: "projects", view: "experience" },
+  { translationKey: "header.menu.skills", targetId: "skills" }
+];
+
+const socialLinks = [
+  { icon: <GitHub fontSize="small" />, href: "https://github.com/khalidElbouari", label: "GitHub", external: true },
+  { icon: <LinkedIn fontSize="small" />, href: "https://www.linkedin.com/in/khalid-elbouari-228237236/", label: "LinkedIn", external: true },
+  { icon: <Email fontSize="small" />, href: "mailto:khalid.fati7i.hb@gmail.com", label: "Email" }
+];
 
 export default function Header() {
   const { darkMode, toggleDarkMode } = useThemeContext();
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const { t } = useTranslation();
-  
+
+  const handleNavClick = (item: NavItem) => () => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    setMobileMenuOpen(false);
+
+    const element = document.getElementById(item.targetId);
+    if (element) {
+      const yPosition = element.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET;
+      window.scrollTo({ top: Math.max(0, yPosition), behavior: "smooth" });
+    }
+
+    if (item.view) {
+      window.dispatchEvent(new CustomEvent(NAVIGATION_EVENT, { detail: { view: item.view } }));
+    }
+  };
+
   // Detect scroll for dynamic header styling
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -104,15 +138,16 @@ export default function Header() {
 
             {/* Enhanced Desktop Navigation */}
             <Box sx={{ display: { xs: "none", md: "flex" }, gap: 0.5 }}>
-              {navKeys.map((key, index) => (
+              {navItems.map((item, index) => (
                 <motion.div
-                  key={key}
+                  key={item.translationKey}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
                   whileHover={{ y: -2 }}
                 >
                   <Button
+                    onClick={handleNavClick(item)}
                     sx={{
                       color: "text.primary",
                       fontWeight: 500,
@@ -147,7 +182,7 @@ export default function Header() {
                       transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
                     }}
                   >
-                    {t(key)}
+                    {t(item.translationKey)}
                   </Button>
                 </motion.div>
               ))}
@@ -158,18 +193,17 @@ export default function Header() {
               {/* Social Links - Hidden on mobile */}
               {/* Hide social icons on md to avoid duplication with info panel; show on lg+ */}
               <Box sx={{ display: { xs: "none", lg: "flex" }, gap: 0.5, mr: 1 }}>
-                {[
-                  { icon: <GitHub fontSize="small" />, href: "#", label: "GitHub" },
-                  { icon: <LinkedIn fontSize="small" />, href: "#", label: "LinkedIn" },
-                  { icon: <Email fontSize="small" />, href: "mailto:khalid.fati7i.hb@gmail.com", label: "Email" }
-                ].map((social) => (
+                {socialLinks.map((social) => (
                   <motion.div
                     key={social.label}
                     whileHover={{ scale: 1.1, y: -1 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     <IconButton
+                      component="a"
                       href={social.href}
+                      target={social.external ? "_blank" : undefined}
+                      rel={social.external ? "noopener noreferrer" : undefined}
                       size="small"
                       sx={{
                         width: 36,
@@ -279,14 +313,15 @@ export default function Header() {
                   }}
                 >
                   {/* Mobile Navigation Items */}
-                  {navKeys.map((key, index) => (
+                  {navItems.map((item, index) => (
                     <motion.div
-                      key={key}
+                      key={item.translationKey}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1, duration: 0.3 }}
                     >
                       <Button
+                        onClick={handleNavClick(item)}
                         fullWidth
                         sx={{ 
                           justifyContent: "flex-start",
@@ -307,20 +342,16 @@ export default function Header() {
                           transition: "all 0.2s ease"
                         }}
                       >
-                        {t(key)}
+                        {t(item.translationKey)}
                       </Button>
                     </motion.div>
                   ))}
                   
                   {/* Mobile Social Links */}
                   <Box sx={{ display: "flex", gap: 1, mt: 2, justifyContent: "center" }}>
-                    {[
-                      { icon: <GitHub fontSize="small" />, href: "#" },
-                      { icon: <LinkedIn fontSize="small" />, href: "#" },
-                      { icon: <Email fontSize="small" />, href: "mailto:khalid.fati7i.hb@gmail.com" }
-                    ].map((social, index) => (
+                    {socialLinks.map((social, index) => (
                       <motion.div
-                        key={index}
+                        key={social.label}
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.3 + index * 0.1 }}
@@ -328,7 +359,10 @@ export default function Header() {
                         whileTap={{ scale: 0.9 }}
                       >
                         <IconButton
+                          component="a"
                           href={social.href}
+                          target={social.external ? "_blank" : undefined}
+                          rel={social.external ? "noopener noreferrer" : undefined}
                           size="small"
                           sx={{
                             bgcolor: darkMode ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.05)",
