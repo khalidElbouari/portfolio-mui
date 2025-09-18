@@ -42,7 +42,7 @@ export default function SkillsAndCerts() {
     : "linear-gradient(135deg, rgba(244,247,255,0.95) 0%, rgba(255,255,255,0.98) 100%)";
 
   return (
-    <Container maxWidth="xl" sx={{ py: 8 }}>
+    <Container id="skills" maxWidth="xl" sx={{ py: 8 }}>
       <motion.div
         initial="hidden"
         whileInView="visible"
