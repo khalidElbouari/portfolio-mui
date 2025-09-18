@@ -169,6 +169,7 @@ const itemVariants = {
 
   return (
     <Box
+      id="hero"
       component={motion.div}
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
