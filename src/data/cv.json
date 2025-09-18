@@ -34,6 +34,14 @@
       "description": "Analyzed and fixed bugs in an existing desktop application developed in VB.NET, resulting in improved stability and performance.",
       "technologies": ["VB.NET", "SQL Server"],
       "images": ["/images/project1-1.png", "/images/project1-2.png"]
+    },
+    {
+      "position": "Web Developer Intern",
+      "company": "Ibn Tofail University - Kenitra",
+      "period": "2022",
+      "duration": "1 month",
+      "description": "Developed a web application for the digital management of correspondence between the Doctoral Studies Center (CED) and the DECANAT's office.",
+      "technologies": ["PHP", "MySQL", "HTML/CSS", "JavaScript"]
     }
   ],
   "education": [
@@ -72,7 +80,30 @@
       "description": "Designed and implemented a web platform to manage BTS institutions and logbooks, reducing manual tracking and improving data accuracy.",
       "technologies": ["Java", "JSP/Servlets (JEE)", "HTML/CSS", "JavaScript", "MySQL", "Visual Paradigm"],
       "images": ["/images/project1-1.png", "/images/project1-2.png"]
+    },
+      {
+        "title": "SmartFind Web Platform",
+        "period": "03/2025 - 06/2025",
+        "duration": "4 months",
+        "description": "As part of the SmartFind project (Injaz Al Maghrib program), developed the promotional website for the mobile solution. Built a modern, responsive, and user-friendly interface showcasing key features: intelligent search (image, keywords, dynamic filters), immersive virtual tour, and support for local merchants. Contributed to the design and integration of sections (presentation, vision, leadership team, contact form).",
+        "technologies": ["Node.js", "HTML", "CSS", "JavaScript"],
+        "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      },
+    {
+      "title": "CV Management Application",
+      "period": "2025",
+      "duration": "1 month",
+      "description": "Designed and developed a web application for creating, editing, and managing CVs with an intuitive and responsive interface.",
+      "technologies": ["HTML", "CSS", "JavaScript", "LocalStorage"]
+   },
+   {
+        "title": "Google Chrome Extension",
+        "period": "2025",
+        "duration": "1 month",
+        "description": "Developed a Chrome extension integrating an embedded AI model (without reliance on cloud solutions like Gemini Nano) to assist users in filling out long and complex forms.",
+        "technologies": ["HTML", "CSS", "JavaScript"]
     }
+
   ],
 "certifications": [
   {
@@ -101,5 +132,11 @@
     { "name": "Arabic", "level": "Native" },
     { "name": "French", "level": "Professional Proficiency" },
     { "name": "English", "level": "Professional Proficiency" }
-  ]
+  ],
+  "softSkills": [
+  "Teamwork",
+  "Autonomy",
+  "Adaptability"
+]
+  
 }

@@ -23,6 +23,7 @@ import { containerVariants, sectionVariants } from "../utils/animations";
 type ViewType = "projects" | "experience";
 
 const MotionBox = motion(Box);
+const NAVIGATION_EVENT = "portfolio:navigate";
 
 export default function Projects() {
   const { darkMode } = useThemeContext();
@@ -67,6 +68,25 @@ export default function Projects() {
       return prev < cvData.experience.length ? prev : cvData.experience.length - 1;
     });
   }, [cvData.experience.length]);
+
+  useEffect(() => {
+    const handleNavigation = (event: Event) => {
+      const detail = (event as CustomEvent<{ view?: ViewType }>).detail;
+      const view = detail?.view;
+
+      if (view === "projects" || view === "experience") {
+        setActiveView(view);
+        if (view === "projects") {
+          setActiveProject(0);
+        } else {
+          setActiveExperience(0);
+        }
+      }
+    };
+
+    window.addEventListener(NAVIGATION_EVENT, handleNavigation as EventListener);
+    return () => window.removeEventListener(NAVIGATION_EVENT, handleNavigation as EventListener);
+  }, []);
 
   const handleViewChange = (
     _: ReactMouseEvent<HTMLElement>,
@@ -167,7 +187,7 @@ export default function Projects() {
   };
 
   return (
-    <Container maxWidth="xl" sx={{ py: 8, direction: isRtl ? "rtl" : "ltr" }}>
+    <Container id="projects" maxWidth="xl" sx={{ py: 8, direction: isRtl ? "rtl" : "ltr" }}>
       <motion.div
         ref={containerRef}
         initial="hidden"

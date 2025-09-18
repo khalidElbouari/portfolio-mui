@@ -8,6 +8,26 @@
     "portfolio": "https://khalidelbouari.github.io/portoflio/"
   },
   "summary": "Etudiant en master de qualite logicielle avec une experience pratique en Java, Spring Boot et microservices. Oriente vers la creation de solutions evolutives et maintenables avec une attention particuliere aux performances et a la qualite du code.",
+ "education": [
+    {
+      "degree": "Master qualite logicielle (MQL)",
+      "institution": "FSDM - Universite Sidi Mohamed Ben Abdellah, Fes",
+      "period": "2024-2026",
+      "status": "En cours"
+    },
+    {
+      "degree": "Licence genie informatique et gouvernance numerique",
+      "institution": "Ecole superieure de technologie (EST), Kenitra",
+      "period": "2023-2024",
+      "grade": "15.37/20"
+    },
+    {
+      "degree": "Diplome de technicien specialise en developpement des SI",
+      "institution": "BTS Ibn Sina, Kenitra",
+      "period": "2021-2023",
+      "grade": "16.01/20"
+    }
+  ],
   "experience": [
     {
       "position": "Stagiaire developpement logiciel",
@@ -34,28 +54,19 @@
       "description": "Analyse et correction d'anomalies sur une application de bureau VB.NET existante afin d'ameliorer la stabilite et les performances.",
       "technologies": ["VB.NET", "SQL Server"],
       "images": ["/images/project1-1.png", "/images/project1-2.png"]
-    }
-  ],
-  "education": [
-    {
-      "degree": "Master qualite logicielle (MQL)",
-      "institution": "FSDM - Universite Sidi Mohamed Ben Abdellah, Fes",
-      "period": "2024-2026",
-      "status": "En cours"
     },
     {
-      "degree": "Licence genie informatique et gouvernance numerique",
-      "institution": "Ecole superieure de technologie (EST), Kenitra",
-      "period": "2023-2024",
-      "grade": "15.37/20"
-    },
-    {
-      "degree": "Diplome de technicien specialise en developpement des SI",
-      "institution": "BTS Ibn Sina, Kenitra",
-      "period": "2021-2023",
-      "grade": "16.01/20"
+      "position": "Stagiaire Développeur Web",
+      "company": "Université Ibn Tofail - Kénitra",
+      "period": "2022",
+      "duration": "1 mois",
+      "description": "Développement d'une application web pour la gestion numérique du courrier entre le Centre des Études Doctorales (CED) et le Décanat.",
+      "technologies": ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+
     }
   ],
+  
   "projects": [
     {
       "title": "Outil d'analyse de code Java",
@@ -72,7 +83,34 @@
       "description": "Realisation d'une plateforme web pour gerer les etablissements BTS et les cahiers de texte afin de reduire le suivi manuel et d'ameliorer la fiabilite des donnees.",
       "technologies": ["Java", "JSP/Servlets (JEE)", "HTML/CSS", "JavaScript", "MySQL", "Visual Paradigm"],
       "images": ["/images/project1-1.png", "/images/project1-2.png"]
-    }
+    },
+    {
+      "title": "Plateforme Web SmartFind",
+      "period": "03/2025 - 06/2025",
+      "duration": "4 mois",
+      "description": "Dans le cadre du projet SmartFind (programme Injaz Al Maghrib), développement du site web de promotion de la solution mobile. Création d’une interface moderne, responsive et ergonomique, présentant les fonctionnalités clés : recherche intelligente (image, mots-clés, filtres dynamiques), balade virtuelle immersive, accompagnement des commerçants locaux. Contribution à la mise en forme et à l’intégration des sections (présentation, vision, équipe dirigeante, formulaire de contact).",
+      "technologies": ["Node.js", "HTML", "CSS", "JavaScript"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+    },
+      {
+        "title": "Application de Gestion de CVs",
+        "period": "2025",
+        "duration": "1 mois",
+        "description": "Conception et développement d'une application web permettant de créer, modifier et gérer des CV, avec une interface intuitive et responsive.",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "images": ["/images/project1-1.png", "/images/project1-2.png"]
+
+      },
+      {
+        "title": "Extension Google Chrome",
+        "period": "2025",
+        "duration": "1 mois",
+        "description": "Développement d'une extension Chrome intégrant un modèle d’IA embarqué (sans dépendance aux solutions cloud comme Gemini Nano), pour assister les utilisateurs dans le remplissage de longs formulaires complexes.",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "images": ["/images/project1-1.png", "/images/project1-2.png"]
+
+      }
+
   ],
   "certifications": [
    {
@@ -101,5 +139,11 @@
     { "name": "Arabe", "level": "Langue maternelle" },
     { "name": "Francais", "level": "Maitrise professionnelle" },
     { "name": "Anglais", "level": "Maitrise professionnelle" }
-  ]
+  ],
+  "softSkills": [
+  "Esprit d'équipe",
+  "Autonomie",
+  "Adaptabilité"
+]
+
 }
