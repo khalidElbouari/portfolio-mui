@@ -8,41 +8,165 @@ import {
   DialogTitle,
   Paper,
   Stack,
-  Tooltip,
   Typography,
-  useTheme
+  Chip,
+  IconButton,
+  useTheme,
+  useMediaQuery
 } from "@mui/material";
 import { alpha } from "@mui/material/styles";
 import { motion } from "framer-motion";
-import type { Transition } from "framer-motion";
-import { Launch } from "@mui/icons-material";
-import { useMemo, useState } from "react";
+import { Launch, ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
+import { useEffect, useMemo, useState } from "react";
 import { SectionHeader } from "./SectionHeader";
 import { useThemeContext } from "../context/ThemeContext";
 import { useTranslation } from "../context/LocaleContext";
 import { containerVariants, sectionVariants } from "../utils/animations";
 import { getTechColor, getTechIcon } from "../utils/techConfig";
 
-const bubbleTransition: Transition = { type: "spring", stiffness: 260, damping: 18 };
+// Fallback functions in case the utils are not working
+const fallbackGetTechColor = (tech: string): string => {
+  const colors: { [key: string]: string } = {
+    Java: "#f89820",
+    "Spring Boot": "#6db33f",
+    React: "#61dafb",
+    Angular: "#dd0031",
+    TypeScript: "#3178c6",
+    JavaScript: "#f7df1e",
+    HTML: "#e34f26",
+    CSS: "#1572b6",
+    MySQL: "#4479a1",
+    Docker: "#2496ed",
+    Git: "#f05032"
+  };
+  return colors[tech] || "#6366f1";
+};
+
+const fallbackGetTechIcon = (tech: string): React.ReactNode => {
+  const icons: { [key: string]: string } = {
+    Java: "☕",
+    "Spring Boot": "🍃",
+    React: "⚛️",
+    Angular: "🅰️",
+    TypeScript: "📘",
+    JavaScript: "📜",
+    HTML: "📄",
+    CSS: "🎨",
+    MySQL: "🗄️",
+    Docker: "🐳",
+    Git: "📝"
+  };
+  return icons[tech] || "🔧";
+};
 
 export default function SkillsAndCerts() {
   const { darkMode } = useThemeContext();
   const { cv, t } = useTranslation();
   const theme = useTheme();
+  const isXs = useMediaQuery(theme.breakpoints.only('xs'));
+  const isSm = useMediaQuery(theme.breakpoints.only('sm'));
+  const certsPerPage = isXs ? 1 : isSm ? 2 : 3;
+  const [certPage, setCertPage] = useState(0);
+ 
+  // Safely get certifications with fallback
+  const certifications = cv?.certifications ?? [];
+ 
+  const totalCertPages = Math.max(1, Math.ceil(certifications.length / certsPerPage));
+  useEffect(() => {
+    if (certPage >= totalCertPages) {
+      setCertPage(totalCertPages - 1);
+    }
+  }, [certPage, totalCertPages]);
+ 
+  const startIdx = certPage * certsPerPage;
+  const endIdx = Math.min(startIdx + certsPerPage, certifications.length);
+  const visibleCerts = certifications.slice(startIdx, endIdx);
+  const showCertNav = certifications.length > certsPerPage;
+  const handlePrevCerts = () => setCertPage((p) => (p - 1 + totalCertPages) % totalCertPages);
+  const handleNextCerts = () => setCertPage((p) => (p + 1) % totalCertPages);
 
-  const certifications = cv.certifications ?? [];
-  const skillEntries = useMemo(() => Object.entries(cv.skills ?? {}), [cv.skills]);
+  // Safely get skills with fallback
+  const skillEntries = useMemo(
+    () => {
+      if (!cv?.skills || typeof cv.skills !== 'object') {
+        return [];
+      }
+      return Object.entries(cv.skills) as Array<[string, string[]]>;
+    },
+    [cv?.skills]
+  );
+
+  const categorySummary = useMemo(
+    () =>
+      skillEntries.map(([category, list]) => ({
+        key: category,
+        label: t(`portfolio.resume.categories.${category}`, category),
+        items: Array.isArray(list) ? list : []
+      })),
+    [skillEntries, t]
+  );
+
+  const [activeCategory, setActiveCategory] = useState<string | null>(
+    categorySummary.length > 0 ? categorySummary[0].key : null
+  );
+
+  useEffect(() => {
+    if (!categorySummary.length) {
+      setActiveCategory(null);
+      return;
+    }
+    setActiveCategory((prev) => {
+      if (prev && categorySummary.some((item) => item.key === prev)) {
+        return prev;
+      }
+      return categorySummary[0].key;
+    });
+  }, [categorySummary]);
+
+  const activeCategoryData = useMemo(() => {
+    if (!activeCategory) {
+      return { key: null, label: '', items: [] as string[] };
+    }
+    return (
+      categorySummary.find((entry) => entry.key === activeCategory) ?? {
+        key: activeCategory,
+        label: activeCategory,
+        items: [] as string[]
+      }
+    );
+  }, [activeCategory, categorySummary]);
+
+
+  const skillIntroTitle = t(
+    'portfolio.resume.skillsMinimal.title',
+    'Tech stack, streamlined'
+  );
 
   const [activeCertIndex, setActiveCertIndex] = useState<number | null>(null);
 
-  const activeCert = activeCertIndex != null ? certifications[activeCertIndex] : null;
+  const activeCert = activeCertIndex !== null ? certifications[activeCertIndex] : null;
 
-  const certCardBg = darkMode
-    ? "linear-gradient(135deg, rgba(15,23,42,0.92) 0%, rgba(10,16,28,0.75) 100%)"
-    : "linear-gradient(135deg, rgba(244,247,255,0.95) 0%, rgba(255,255,255,0.98) 100%)";
+  const certCardBg = theme.palette.background.paper;
+
+  // Safe tech color and icon functions with fallback
+  const safeGetTechColor = (tech: string): string => {
+    try {
+      return getTechColor(tech);
+    } catch {
+      return fallbackGetTechColor(tech);
+    }
+  };
+
+  const safeGetTechIcon = (tech: string): React.ReactNode => {
+    try {
+      return getTechIcon(tech);
+    } catch {
+      return fallbackGetTechIcon(tech);
+    }
+  };
 
   return (
-    <Container id="skills" maxWidth="xl" sx={{ py: 8 }}>
+    <Container id="skills" maxWidth="xl" sx={{ py: { xs: 6, sm: 8, md: 10 } }}>
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -55,194 +179,384 @@ export default function SkillsAndCerts() {
             subtitle={t("portfolio.resume.skillsSubtitle", "Curated skills and verified certifications")}
             darkMode={darkMode}
             icon="code"
+            sx={{
+              mb: 5,
+              '& .MuiTypography-h2': {
+                fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.5rem' },
+                fontWeight: 800
+              }
+            }}
           />
 
           <Box sx={{ display: "grid", gap: 3.5 }}>
             {/* Certifications */}
-            <Paper
-              elevation={0}
-              sx={{
-                borderRadius: 4,
-                px: { xs: 2.5, md: 4 },
-                py: { xs: 3, md: 4 },
-                background: darkMode
-                  ? "linear-gradient(135deg, rgba(10,15,28,0.95) 0%, rgba(10,15,28,0.78) 100%)"
-                  : "linear-gradient(135deg, rgba(250,252,255,0.96) 0%, rgba(241,244,255,0.94) 100%)",
-                border: "1px solid",
-                borderColor: darkMode ? "rgba(255,255,255,0.06)" : "rgba(15,23,42,0.06)",
-                backdropFilter: "blur(10px)"
-              }}
-            >
-              <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 3 }}>
-                {t("portfolio.resume.certifications", "Certifications")}
-              </Typography>
-
-              <Box
+            {certifications.length > 0 && (
+              <Paper
+                elevation={0}
                 sx={{
-                  display: "grid",
-                  gap: { xs: 2.5, md: 3 },
-                  gridTemplateColumns: {
-                    xs: "repeat(auto-fit, minmax(220px, 1fr))",
-                    md: "repeat(auto-fit, minmax(240px, 1fr))"
-                  }
+                  borderRadius: 0,
+                  px: { xs: 2.5, md: 4 },
+                  py: { xs: 3, md: 4 },
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  boxShadow: 'none'
                 }}
               >
-                {certifications.map((cert, idx) => (
-                  <motion.div
-                    key={`${cert.name}-${idx}`}
-                    whileHover={{ translateY: -6, scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                  >
-                    <Paper
-                      elevation={0}
-                      sx={{
-                        height: "100%",
-                        p: 2.25,
-                        borderRadius: 3,
-                        background: certCardBg,
-                        border: "1px solid",
-                        borderColor: darkMode ? "rgba(255,255,255,0.08)" : "rgba(15,23,42,0.08)",
-                        position: "relative",
-                        overflow: "hidden"
-                      }}
-                    >
-                      <Box
+                <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 3 }}>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 800, fontSize: '1.5rem' }}>
+                    {t("portfolio.resume.certifications", "Certifications")} ({certifications.length})
+                  </Typography>
+                  {showCertNav && (
+                    <Stack direction="row" spacing={1}>
+                      <IconButton
+                        size="small"
+                        onClick={handlePrevCerts}
+                        aria-label="Previous certifications"
                         sx={{
-                          position: "relative",
-                          borderRadius: 2,
-                          overflow: "hidden",
-                          mb: 2,
-                          height: 120,
-                          bgcolor: alpha(theme.palette.text.primary, 0.05)
+                          bgcolor: 'transparent',
+                          '&:hover': { bgcolor: 'action.hover' }
                         }}
                       >
-                        <Box
-                          component="img"
-                          src={cert.image}
-                          alt={`${cert.name} badge`}
-                          sx={{ width: "100%", height: "100%", objectFit: "cover" }}
-                        />
-                      </Box>
+                        <ArrowBackIosNew fontSize="small" />
+                      </IconButton>
+                      <IconButton
+                        size="small"
+                        onClick={handleNextCerts}
+                        aria-label="Next certifications"
+                        sx={{
+                          bgcolor: 'transparent',
+                          '&:hover': { bgcolor: 'action.hover' }
+                        }}
+                      >
+                        <ArrowForwardIos fontSize="small" />
+                      </IconButton>
+                    </Stack>
+                  )}
+                </Stack>
 
-                      <Stack spacing={1.2} sx={{ pb: 1 }}>
-                        <Box>
-                          <Typography variant="subtitle1" sx={{ fontWeight: 700, lineHeight: 1.2 }}>
-                            {cert.name}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {cert.issuer}
-                          </Typography>
-                        </Box>
-                        <Typography variant="caption" color="text.secondary">
-                          {cert.year}
-                        </Typography>
-                      </Stack>
-
-                      <Stack direction="row" spacing={1.5} alignItems="center">
-                        <Button
-                          variant="text"
-                          size="small"
-                          endIcon={<Launch fontSize="small" />}
-                          href={cert.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          sx={{ textTransform: "none", fontWeight: 600 }}
+                <Box
+                  sx={{
+                    display: "grid",
+                    gap: { xs: 2, md: 2.5 },
+                    gridTemplateColumns: {
+                      xs: "1fr",
+                      sm: "repeat(2, 1fr)",
+                      md: "repeat(3, 1fr)"
+                    }
+                  }}
+                >
+                  {visibleCerts.map((cert, idx) => {
+                    const absoluteIdx = startIdx + idx;
+                    return (
+                      <motion.div
+                        key={`${cert.name}-${absoluteIdx}`}
+                        whileHover={{ translateY: -4, scale: 1.02 }}
+                        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                      >
+                        <Paper
+                          elevation={0}
+                          sx={{
+                            height: "100%",
+                            p: 1,
+                            borderRadius: 3,
+                            backgroundColor: certCardBg,
+                            position: "relative",
+                            overflow: "hidden",
+                            boxShadow: "none",
+                            transition: 'transform 0.2s ease',
+                            '&:hover': {
+                              transform: 'translateY(-4px) scale(1.01)',
+                              boxShadow: theme.shadows[4]
+                            }
+                          }}
                         >
-                          {t("portfolio.resume.certificationVerify", "Verify")}
-                        </Button>
-                        <Button
-                          variant="outlined"
-                          size="small"
-                          onClick={() => setActiveCertIndex(idx)}
-                          sx={{ textTransform: "none", borderRadius: 999 }}
-                        >
-                          {t("portfolio.resume.certificationMore", "Details")}
-                        </Button>
-                      </Stack>
-                    </Paper>
-                  </motion.div>
-                ))}
-              </Box>
-            </Paper>
-
-            {/* Skills */}
-            <Paper
-              elevation={0}
-              sx={{
-                borderRadius: 4,
-                px: { xs: 2.5, md: 4 },
-                py: { xs: 3, md: 4 },
-                background: darkMode
-                  ? "linear-gradient(135deg, rgba(10,15,28,0.92) 0%, rgba(14,20,35,0.78) 100%)"
-                  : "linear-gradient(135deg, rgba(250,252,255,0.96) 0%, rgba(242,246,255,0.94) 100%)",
-                border: "1px solid",
-                borderColor: darkMode ? "rgba(255,255,255,0.06)" : "rgba(15,23,42,0.06)",
-                backdropFilter: "blur(10px)"
-              }}
-            >
-              <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 2.5 }}>
-                {t("portfolio.resume.skills", "Skills")}
-              </Typography>
-
-              <Box
-                sx={{
-                  display: "grid",
-                  gap: { xs: 2.5, md: 3 },
-                  gridTemplateColumns: {
-                    xs: "1fr",
-                    md: "repeat(2, minmax(0, 1fr))",
-                    lg: "repeat(3, minmax(0, 1fr))"
-                  }
-                }}
-              >
-                {skillEntries.map(([category, list]) => (
-                  <Box key={category} sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
-                    <Typography variant="overline" color="text.secondary" sx={{ letterSpacing: 2 }}>
-                      {t(`portfolio.resume.categories.${category}`, category)}
-                    </Typography>
-                    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.2 }}>
-                      {(list as string[]).map((tech) => {
-                        const color = getTechColor(tech);
-                        const icon = getTechIcon(tech);
-                        return (
-                          <motion.div
-                            key={`${category}-${tech}`}
-                            whileHover={{ translateY: -4, scale: 1.05 }}
-                            transition={bubbleTransition}
+                          <Box
+                            sx={{
+                              position: "relative",
+                              borderRadius: 2,
+                              overflow: "hidden",
+                              mb: 1.5,
+                              aspectRatio: '4 / 3',
+                              maxHeight: { xs: 120, sm: 140, md: 160 },
+                              bgcolor: alpha(theme.palette.text.primary, 0.05),
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center'
+                            }}
                           >
-                            <Tooltip title={tech} arrow>
-                              <Box
+                            <Box
+                              component="img"
+                              src={cert.image}
+                              alt={`${cert.name} badge`}
+                              sx={{
+                                maxWidth: "100%",
+                                maxHeight: "100%",
+                                width: "auto",
+                                height: "auto",
+                                objectFit: "contain",
+                                display: "block",
+                                transition: 'transform 0.3s ease',
+                                '&:hover': {
+                                  transform: 'scale(1.05)'
+                                }
+                              }}
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                              }}
+                            />
+                          </Box>
+ 
+                          <Stack spacing={0.8} sx={{ pb: 1 }}>
+                            <Box>
+                              <Typography
+                                variant="subtitle2"
                                 sx={{
-                                  display: "flex",
-                                  alignItems: "center",
-                                  gap: 1,
-                                  px: 1.75,
-                                  py: 1,
-                                  borderRadius: 999,
-                                  bgcolor: alpha(color, 0.15),
-                                  border: `1px solid ${alpha(color, 0.3)}`,
-                                  color,
-                                  boxShadow: `0 10px 24px ${alpha(color, 0.28)}`,
-                                  transition: "all 0.3s ease",
-                                  flex: "0 0 auto"
+                                  fontWeight: 800,
+                                  lineHeight: 1.2,
+                                  fontSize: '0.95rem'
                                 }}
                               >
-                                <Box sx={{ display: "flex", alignItems: "center", fontSize: 18 }}>
-                                  {icon}
-                                </Box>
-                                <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                                  {tech}
-                                </Typography>
-                              </Box>
-                            </Tooltip>
-                          </motion.div>
-                        );
-                      })}
-                    </Box>
+                                {cert.name}
+                              </Typography>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                sx={{
+                                  fontWeight: 600,
+                                  fontSize: '0.85rem'
+                                }}
+                              >
+                                {cert.issuer}
+                              </Typography>
+                            </Box>
+                            <Typography
+                              variant="caption"
+                              color="text.secondary"
+                              sx={{
+                                fontWeight: 500,
+                                fontSize: '0.75rem'
+                              }}
+                            >
+                              {cert.year}
+                            </Typography>
+                          </Stack>
+ 
+                          <Stack direction="row" spacing={1} alignItems="center">
+                            <Button
+                              variant="text"
+                              size="small"
+                              endIcon={<Launch fontSize="small" />}
+                              href={cert.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              sx={{
+                                textTransform: "none",
+                                fontWeight: 700,
+                                fontSize: '0.85rem',
+                                color: theme.palette.primary.main,
+                                '&:hover': {
+                                  backgroundColor: alpha(theme.palette.primary.main, 0.1)
+                                }
+                              }}
+                            >
+                              {t("portfolio.resume.certificationVerify", "Verify")}
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              size="small"
+                              onClick={() => setActiveCertIndex(absoluteIdx)}
+                              sx={{
+                                textTransform: "none",
+                                borderRadius: 999,
+                                fontWeight: 600,
+                                fontSize: '0.85rem',
+                                borderColor: alpha(theme.palette.text.primary, 0.3),
+                                '&:hover': {
+                                  borderColor: theme.palette.primary.main,
+                                  backgroundColor: alpha(theme.palette.primary.main, 0.1)
+                                }
+                              }}
+                            >
+                              {t("portfolio.resume.certificationMore", "Details")}
+                            </Button>
+                          </Stack>
+                        </Paper>
+                      </motion.div>
+                    );
+                  })}
+                </Box>
+              </Paper>
+            )}
+
+            {/* Skills */}
+            {categorySummary.length > 0 && (
+              <Paper
+                elevation={0}
+                sx={{
+                  borderRadius: 0,
+                  px: { xs: 2.5, md: 4 },
+                  py: { xs: 3, md: 4 },
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  boxShadow: 'none'
+                }}
+              >
+                <Stack spacing={{ xs: 3, md: 4 }}>
+                  <Box>
+                    <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
+                      {skillIntroTitle}
+                    </Typography>
                   </Box>
-                ))}
-              </Box>
-            </Paper>
+
+                  {/* Category Buttons - Simplified */}
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      gap: 1,
+                      justifyContent: 'center'
+                    }}
+                  >
+                    {categorySummary.map((category) => {
+                      const isActive = category.key === activeCategory;
+                      return (
+                        <Box
+                          key={category.key}
+                          component={motion.button}
+                          type="button"
+                          onClick={() => setActiveCategory(category.key)}
+                          whileTap={{ scale: 0.95 }}
+                          whileHover={{ scale: 1.05 }}
+                          sx={{
+                            borderRadius: 25,
+                            px: 3,
+                            py: 1.2,
+                            background: isActive
+                              ? `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.primary.dark})`
+                              : alpha(theme.palette.background.paper, darkMode ? 0.3 : 0.7),
+                            color: isActive ? theme.palette.primary.contrastText : theme.palette.text.primary,
+                            border: '1px solid',
+                            borderColor: isActive
+                              ? theme.palette.primary.main
+                              : alpha(theme.palette.divider, 0.5),
+                            fontSize: { xs: 13, sm: 14, md: 16 },
+                            fontWeight: isActive ? 700 : 600,
+                            textTransform: 'capitalize',
+                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                            cursor: 'pointer',
+                            boxShadow: isActive
+                              ? `0 4px 20px ${alpha(theme.palette.primary.main, 0.4)}`
+                              : `0 2px 10px ${alpha(theme.palette.divider, 0.1)}`,
+                            backdropFilter: 'blur(10px)',
+                            position: 'relative',
+                            overflow: 'hidden',
+                            '&::before': {
+                              content: '""',
+                              position: 'absolute',
+                              top: 0,
+                              left: 0,
+                              right: 0,
+                              bottom: 0,
+                              background: `linear-gradient(90deg,
+                                ${alpha(theme.palette.primary.main, 0.1)},
+                                transparent)`,
+                              opacity: isActive ? 1 : 0,
+                              transition: 'opacity 0.3s ease'
+                            }
+                          }}
+                        >
+                          {category.label}
+                        </Box>
+                      );
+                    })}
+                  </Box>
+
+                  {/* Compact Technologies Grid */}
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      gap: { xs: 1, sm: 1.2, md: 1.5 },
+                      justifyContent: 'center',
+                      alignItems: 'flex-start',
+                      py: 1
+                    }}
+                  >
+                    {activeCategoryData.items.map((tech, index) => {
+                      const color = safeGetTechColor(tech);
+                      const icon = safeGetTechIcon(tech);
+                      return (
+                        <Box
+                          key={`${activeCategoryData.key}-${tech}`}
+                          component={motion.div}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{
+                            duration: 0.3,
+                            delay: index * 0.03,
+                            type: "spring",
+                            stiffness: 300
+                          }}
+                          whileHover={{
+                            scale: 1.15,
+                            translateY: -6,
+                            transition: { duration: 0.25 }
+                          }}
+                          whileTap={{ scale: 1.05 }}
+                          sx={{
+                            textAlign: 'center',
+                            position: 'relative',
+                            width: { xs: 72, sm: 80, md: 92 },
+                            cursor: 'pointer'
+                          }}
+                        >
+                          {/* Icon Container */}
+                          <Box
+                            sx={{
+                              mx: 'auto',
+                              width: { xs: 52, sm: 58, md: 64 },
+                              height: { xs: 52, sm: 58, md: 64 },
+                              borderRadius: 2.5,
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              color: color,
+                              border: `1px solid ${alpha(color, 0.25)}`,
+                              backgroundColor: `${alpha(color, 0.06)}`,
+                              fontSize: { xs: 22, sm: 26, md: 30 },
+                              transition: 'transform 0.2s ease',
+                              cursor: 'pointer',
+                              boxShadow: 'none'
+                            }}
+                          >
+                            {icon}
+                          </Box>
+                          
+                          {/* Technology Name */}
+                          <Typography
+                            variant="caption"
+                            sx={{
+                              mt: 0.8,
+                              fontWeight: 700,
+                              fontSize: { xs: '0.7rem', sm: '0.8rem', md: '0.9rem' },
+                              display: 'block',
+                              lineHeight: 1.1,
+                              color: theme.palette.text.primary,
+                              transition: 'all 0.2s ease',
+                              textShadow: darkMode ? `0 0 8px ${alpha(color, 0.4)}` : 'none'
+                            }}
+                          >
+                            {tech}
+                          </Typography>
+                        </Box>
+                      );
+                    })}
+                  </Box>
+
+                </Stack>
+              </Paper>
+            )}
           </Box>
         </Box>
       </motion.div>
@@ -257,6 +571,10 @@ export default function SkillsAndCerts() {
                 src={activeCert.image}
                 alt={`${activeCert.name} badge`}
                 sx={{ width: "100%", borderRadius: 2, objectFit: "cover" }}
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                }}
               />
               <Typography variant="body2" color="text.secondary">
                 {t("portfolio.resume.certificationIssued", "Issued by")}: {activeCert.issuer}
@@ -264,6 +582,28 @@ export default function SkillsAndCerts() {
               <Typography variant="body2" color="text.secondary">
                 {t("portfolio.resume.certificationYear", "Year")}: {activeCert.year}
               </Typography>
+              {Array.isArray(activeCert.skillsAcquired) && activeCert.skillsAcquired.length > 0 && (
+                <Box sx={{ mt: 0.5 }}>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
+                    {t("portfolio.resume.skillsAcquired", "Skills acquired")}
+                  </Typography>
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                    {activeCert.skillsAcquired.map((skill: string, i: number) => (
+                      <Chip
+                        key={`${activeCert.name}-skill-${i}`}
+                        label={skill}
+                        size="small"
+                        variant="outlined"
+                        sx={{
+                          fontWeight: 700,
+                          borderColor: alpha(theme.palette.text.primary, 0.2),
+                          backgroundColor: alpha(theme.palette.text.primary, 0.04)
+                        }}
+                      />
+                    ))}
+                  </Box>
+                </Box>
+              )}
             </Stack>
           </DialogContent>
           <DialogActions sx={{ px: 3, pb: 3 }}>
