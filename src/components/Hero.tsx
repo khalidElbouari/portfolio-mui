@@ -109,7 +109,6 @@ export default function Hero() {
   const primaryCta = t("hero.ctaPrimary");
   const secondaryCta = t("hero.ctaSecondary");
   const connectLabel = t("hero.connectLabel");
-  const badgeTitle = t("hero.badgeTitle");
   const badgeSubtitle = t("hero.badgeSubtitle");
   const textAlign = isRtl ? 'right' : 'left';
   const headingLetterSpacing = isRtl ? '0' : '-0.02em';
@@ -207,7 +206,7 @@ const itemVariants = {
           }}
         >
           {/* Enhanced Left Content */}
-          <Box sx={{ flex: 1, maxWidth: { xs: "100%", lg: "55%" }, pr: isRtl ? 0 : { lg: 4 }, pl: isRtl ? { lg: 4 } : 0, textAlign: textAlign, display: "flex", flexDirection: "column", alignItems: isRtl ? "flex-end" : "flex-start" }}>
+          <Box sx={{ flex: 1, maxWidth: { xs: "100%", lg: "55%" }, pr: isRtl ? 0 : { lg: 4 }, pl: isRtl ? { lg: 4 } : 0, textAlign: textAlign, display: "flex", flexDirection: "column", alignItems: isRtl ? "flex-end" : "flex-start", order: { xs: 2, lg: 0 }, mt: { xs: 3, lg: 0 } }}>
             {/* Greeting */}
             <motion.div variants={itemVariants}>
               <Box sx={{ mb: 3 }}>
@@ -232,7 +231,7 @@ const itemVariants = {
                     color: "primary.main",
                     fontWeight: 700,
                     letterSpacing: greetingLetterSpacing,
-                    fontSize: { xs: "0.9rem", md: "1.1rem" },
+                    fontSize: { xs: "0.85rem", md: "1rem" },
                     textAlign: textAlign,
                   }}
                 >
@@ -245,7 +244,7 @@ const itemVariants = {
               <Typography
                 variant="h1"
                 sx={{
-                  fontSize: { xs: "2.5rem", sm: "3.5rem", md: "4rem", lg: "4.5rem" },
+                  fontSize: { xs: "2.2rem", sm: "3.1rem", md: "3.5rem", lg: "3.8rem" },
                   fontWeight: 900,
                   lineHeight: { xs: 1.1, md: 1.05 },
                   mb: 3,
@@ -261,8 +260,8 @@ const itemVariants = {
                   sx={{ 
                     textAlign,
                     background: darkMode
-                      ? "linear-gradient(135deg, #00d4ff 0%, #ff6b9d 50%, #00d4ff 100%)"
-                      : "linear-gradient(135deg, #1976d2 0%, #9c27b0 50%, #1976d2 100%)",
+                      ? "linear-gradient(135deg, #0ea5e9 0%, #2563eb 50%, #0ea5e9 100%)"
+                      : "linear-gradient(135deg, #2563eb 0%, #0ea5e9 50%, #2563eb 100%)",
                     backgroundSize: "200% 200%",
                     animation: "gradientShift 4s ease infinite",
                     backgroundClip: "text",
@@ -285,7 +284,7 @@ const itemVariants = {
                   mb: 4,
                   lineHeight: 1.7,
                   maxWidth: 600,
-                  fontSize: { xs: "1.1rem", md: "1.25rem" },
+                  fontSize: { xs: "1rem", md: "1.15rem" },
                   fontWeight: 400,
                   letterSpacing: bodyLetterSpacing,
                   textAlign: textAlign,
@@ -508,14 +507,16 @@ const itemVariants = {
           </Box>
 
           {/* Enhanced Right Side - Interactive 3D Element */}
-          <Box 
-            sx={{ 
-              flex: 1, 
-              display: "flex", 
+          <Box
+            sx={{
+              flex: 1,
+              display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              mt: { xs: 6, lg: 0 },
-              position: "relative"
+              order: { xs: 1, lg: 0 },
+              mt: { xs: 0, lg: 0 },
+              position: "relative",
+              transform: { lg: "translateY(-24px)" }
             }}
           >
             <motion.div
@@ -549,16 +550,16 @@ const itemVariants = {
                     height: "100%",
                     borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%",
                     background: darkMode
-                      ? `conic-gradient(from 0deg, 
-                          rgba(0, 212, 255, 0.4) 0deg, 
-                          rgba(255, 107, 157, 0.3) 120deg, 
-                          rgba(0, 212, 255, 0.2) 240deg, 
-                          rgba(255, 107, 157, 0.4) 360deg)`
-                      : `conic-gradient(from 0deg, 
-                          rgba(25, 118, 210, 0.3) 0deg, 
-                          rgba(156, 39, 176, 0.2) 120deg, 
-                          rgba(25, 118, 210, 0.1) 240deg, 
-                          rgba(156, 39, 176, 0.3) 360deg)`,
+                      ? `conic-gradient(from 0deg,
+                          rgba(14, 165, 233, 0.45) 0deg,
+                          rgba(37, 99, 235, 0.35) 120deg,
+                          rgba(14, 116, 144, 0.3) 240deg,
+                          rgba(37, 99, 235, 0.45) 360deg)`
+                      : `conic-gradient(from 0deg,
+                          rgba(59, 130, 246, 0.28) 0deg,
+                          rgba(14, 165, 233, 0.22) 120deg,
+                          rgba(59, 130, 246, 0.16) 240deg,
+                          rgba(14, 165, 233, 0.3) 360deg)`,
                     backdropFilter: "blur(30px)",
                     border: `2px solid ${darkMode ? "rgba(255, 255, 255, 0.1)" : "rgba(255, 255, 255, 0.3)"}`,
                     display: "flex",
@@ -567,8 +568,8 @@ const itemVariants = {
                     position: "relative",
                     overflow: "hidden",
                     boxShadow: darkMode
-                      ? "0 20px 60px rgba(0, 212, 255, 0.2)"
-                      : "0 20px 60px rgba(25, 118, 210, 0.15)",
+                      ? "0 24px 60px rgba(14, 165, 233, 0.2)"
+                      : "0 24px 60px rgba(37, 99, 235, 0.18)",
                     "&::before": {
                       content: '""',
                       position: "absolute",
@@ -577,35 +578,40 @@ const itemVariants = {
                       right: 0,
                       bottom: 0,
                       background: darkMode
-                        ? "radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.3) 0%, transparent 50%)"
-                        : "radial-gradient(circle at 30% 30%, rgba(25, 118, 210, 0.2) 0%, transparent 50%)",
+                        ? "radial-gradient(circle at 30% 30%, rgba(14, 165, 233, 0.35) 0%, transparent 55%)"
+                        : "radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.22) 0%, transparent 55%)",
                       animation: "pulse 4s ease-in-out infinite alternate"
                     }
                   }}
                 >
                   {/* Center Content */}
-                  <Box sx={{ textAlign: "center", position: "relative", zIndex: 2 }}>
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    >
-                      <Typography
-                        variant="h3"
-                        sx={{
-                          fontWeight: 900,
-                          background: darkMode
-                            ? "linear-gradient(45deg, #00d4ff, #ff6b9d)"
-                            : "linear-gradient(45deg, #1976d2, #9c27b0)",
-                          backgroundClip: "text",
-                          WebkitBackgroundClip: "text",
-                          color: "transparent",
-                          mb: 1,
-                          letterSpacing: headingLetterSpacing
-                        }}
-                      >
-                        {badgeTitle}
-                      </Typography>
-                    </motion.div>
+                  <Box
+                    sx={{
+                      textAlign: "center",
+                      position: "relative",
+                      zIndex: 2,
+                      transform: "translateY(-16px)"
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src="/images/khalid-profile-1.JPG"
+                      alt="Portrait of Khalid"
+                      sx={{
+                        width: { xs: 320, sm: 320 },
+                        height: { xs: 320, sm: 320 },
+                        borderRadius: "50%",
+                        objectFit: "cover",
+                        mx: "auto",
+                        border: darkMode
+                          ? "4px solid rgba(37, 197, 213, 0.45)"
+                          : "4px solid rgba(37, 99, 235, 0.4)",
+                        boxShadow: darkMode
+                          ? "0 20px 36px rgba(14, 165, 233, 0.28)"
+                          : "0 20px 36px rgba(37, 99, 235, 0.22)",
+                        mb: 1
+                      }}
+                    />
                     <Typography
                       variant="body1"
                       sx={{
