@@ -1,149 +1,175 @@
 {
   "personal": {
     "name": "Elbouari Khalid",
-    "title": "Etudiant en master de qualite logicielle",
+    "title": "Étudiant en Master Qualité Logicielle",
     "phone": "+212 624 44 78 61",
     "email": "khalid.fati7i.hb@gmail.com",
-    "address": "Rue Sebta, Hay Kifah, Sale",
-    "portfolio": "https://khalidelbouari.github.io/portoflio/"
+    "address": "Rue Sebta, Hay Kifah, Salé, Maroc",
+    "portfolio": "https://khalidelbouari.github.io/portoflio/",
+    "linkedin": "https://www.linkedin.com/in/khalidelbouari",
+    "github": "https://github.com/khalidelbouari",
+    "profilePicture": "/images/profile/khalid.png"
   },
-  "summary": "Etudiant en master de qualite logicielle avec une experience pratique en Java, Spring Boot et microservices. Oriente vers la creation de solutions evolutives et maintenables avec une attention particuliere aux performances et a la qualite du code.",
- "education": [
+  "summary": "Étudiant en Master Qualité Logicielle avec une expérience pratique en Java, Spring Boot et microservices. Axé sur la construction de systèmes évolutifs et maintenables, avec une attention particulière aux performances et à la qualité du code.",
+  "education": [
     {
-      "degree": "Master qualite logicielle (MQL)",
-      "institution": "FSDM - Universite Sidi Mohamed Ben Abdellah, Fes",
+      "degree": "Master Qualité Logicielle (MQL)",
+      "institution": "FSDM - Université Sidi Mohamed Ben Abdellah, Fès",
+      "institutionLogo": "/images/logos/fsdm.png",
+      "website": "https://fsdm.usmba.ac.ma",
       "period": "2024-2026",
-      "status": "En cours"
+      "status": "En cours",
+      "location": "Fès, Maroc",
+      "projects": ["Java Code Analysis Tool", "SmartFind Web Platform"]
     },
     {
-      "degree": "Licence genie informatique et gouvernance numerique",
-      "institution": "Ecole superieure de technologie (EST), Kenitra",
+      "degree": "Licence en Génie Informatique et Gouvernance Digitale",
+      "institution": "École Supérieure de Technologie (EST), Kénitra",
+      "institutionLogo": "/images/logos/est.png",
       "period": "2023-2024",
-      "grade": "15.37/20"
+      "grade": "15,37/20",
+      "location": "Kénitra, Maroc"
     },
     {
-      "degree": "Diplome de technicien specialise en developpement des SI",
-      "institution": "BTS Ibn Sina, Kenitra",
+      "degree": "Diplôme de Technicien Supérieur en Développement des Systèmes d'Information",
+      "institution": "BTS Ibn Sina, Kénitra",
+      "institutionLogo": "/images/logos/btsibnsina.png",
       "period": "2021-2023",
-      "grade": "16.01/20"
+      "grade": "16,01/20",
+      "location": "Kénitra, Maroc"
     }
   ],
   "experience": [
     {
-      "position": "Stagiaire developpement logiciel",
-      "company": "LaboControl, Fes",
+      "position": "Stagiaire en Développement Logiciel",
+      "company": "LaboControl",
+      "companyLogo": "/images/logos/labocontrol.png",
+      "website": "https://labocontrol.com",
+      "location": "Fès, Maroc",
       "period": "01/04/2024 - 24/06/2024",
       "duration": "3 mois",
-      "description": "Creation d'une application web pour la gestion integree des services et produits, optimisant les processus metier et l'experience utilisateur.",
+      "description": "Création d'une application web pour le marketing intégré des services et produits, améliorant les processus métiers et l'expérience utilisateur.",
       "technologies": ["Spring Boot", "Angular", "TypeScript", "HTML/CSS", "MySQL"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "achievements": ["Amélioration de l'expérience utilisateur de 20%", "Réduction du temps de traitement de 15%"],
+      "roleType": "Stage"
     },
     {
-      "position": "Stagiaire ingenieur full stack",
-      "company": "Valhko, Remote",
-      "period": "07/07/2025 - Present",
-      "description": "Unification de l'authentification sur les microservices via l'API Gateway et coordination des revues de code pour accelerer les livraisons.",
-      "technologies": ["Java", "Spring Boot", "microservices architecture", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "position": "Stagiaire Full Stack Engineer",
+      "company": "Valhko",
+      "companyLogo": "/images/logos/valhko.png",
+      "website": "https://valhko.com",
+      "location": "À distance",
+      "period": "07/07/2025 - Présent",
+      "description": "Unification de l'authentification à travers les microservices via l'API Gateway et coordination des revues de code pour accélérer le déploiement.",
+      "technologies": ["Java", "Spring Boot", "architecture microservices", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "roleType": "Stage"
     },
     {
-      "position": "Stagiaire developpeur VB.NET",
-      "company": "Copref, Kenitra",
+      "position": "Stagiaire Développeur VB.NET",
+      "company": "Copref",
+      "companyLogo": "/images/logos/copref.png",
+      "location": "Kénitra, Maroc",
       "period": "15/05/2023 - 15/06/2023",
       "duration": "1 mois",
-      "description": "Analyse et correction d'anomalies sur une application de bureau VB.NET existante afin d'ameliorer la stabilite et les performances.",
+      "description": "Analyse et correction de bugs dans une application desktop existante développée en VB.NET, améliorant ainsi la stabilité et les performances.",
       "technologies": ["VB.NET", "SQL Server"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "roleType": "Stage"
     },
     {
       "position": "Stagiaire Développeur Web",
-      "company": "Université Ibn Tofail - Kénitra",
+      "company": "Université Ibn Tofail",
+      "companyLogo": "/images/logos/ibntofail.png",
+      "location": "Kénitra, Maroc",
       "period": "2022",
       "duration": "1 mois",
-      "description": "Développement d'une application web pour la gestion numérique du courrier entre le Centre des Études Doctorales (CED) et le Décanat.",
+      "description": "Développement d'une application web pour la gestion numérique de la correspondance entre le Centre d'Études Doctorales (CED) et le bureau du DECANAT.",
       "technologies": ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
-
+      "roleType": "Stage"
     }
   ],
-  
   "projects": [
     {
-      "title": "Outil d'analyse de code Java",
+      "title": "Java Code Analysis Tool",
       "period": "06/12/2024 - 23/12/2024",
       "duration": "1 mois",
-      "description": "Conception d'un outil d'analyse de code Java pour extraire la structure d'un projet et generer des diagrammes UML, facilitant la documentation et la comprehension du design.",
+      "description": "Développement d'un outil d'analyse de code Java pour extraire la structure du projet et générer des diagrammes UML, améliorant la documentation et la compréhension du design.",
       "technologies": ["Java", "Reflection", "Swing", "XML", "XMI"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "githubLink": "https://github.com/khalidelbouari/java-code-analysis"
     },
     {
-      "title": "Plateforme de gestion des etablissements BTS",
+      "title": "BTS Institutions Management Platform",
       "period": "20/12/2022 - 15/06/2023",
       "duration": "6 mois",
-      "description": "Realisation d'une plateforme web pour gerer les etablissements BTS et les cahiers de texte afin de reduire le suivi manuel et d'ameliorer la fiabilite des donnees.",
+      "description": "Conception et mise en œuvre d'une plateforme web pour gérer les institutions BTS et les cahiers de suivi, réduisant la saisie manuelle et améliorant la précision des données.",
       "technologies": ["Java", "JSP/Servlets (JEE)", "HTML/CSS", "JavaScript", "MySQL", "Visual Paradigm"],
       "images": ["/images/project1-1.png", "/images/project1-2.png"]
     },
     {
-      "title": "Plateforme Web SmartFind",
+      "title": "SmartFind Web Platform",
       "period": "03/2025 - 06/2025",
       "duration": "4 mois",
-      "description": "Dans le cadre du projet SmartFind (programme Injaz Al Maghrib), développement du site web de promotion de la solution mobile. Création d’une interface moderne, responsive et ergonomique, présentant les fonctionnalités clés : recherche intelligente (image, mots-clés, filtres dynamiques), balade virtuelle immersive, accompagnement des commerçants locaux. Contribution à la mise en forme et à l’intégration des sections (présentation, vision, équipe dirigeante, formulaire de contact).",
+      "description": "Dans le cadre du projet SmartFind (programme Injaz Al Maghrib), développement du site promotionnel de la solution mobile avec une interface moderne et responsive. Intégration de recherche intelligente, visite virtuelle immersive et formulaire de contact.",
       "technologies": ["Node.js", "HTML", "CSS", "JavaScript"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "projectLink": "https://smartfind.example.com",
+      "githubLink": "https://github.com/khalidelbouari/smartfind"
     },
-      {
-        "title": "Application de Gestion de CVs",
-        "period": "2025",
-        "duration": "1 mois",
-        "description": "Conception et développement d'une application web permettant de créer, modifier et gérer des CV, avec une interface intuitive et responsive.",
-        "technologies": ["HTML", "CSS", "JavaScript"],
-        "images": ["/images/project1-1.png", "/images/project1-2.png"]
-
-      },
-      {
-        "title": "Extension Google Chrome",
-        "period": "2025",
-        "duration": "1 mois",
-        "description": "Développement d'une extension Chrome intégrant un modèle d’IA embarqué (sans dépendance aux solutions cloud comme Gemini Nano), pour assister les utilisateurs dans le remplissage de longs formulaires complexes.",
-        "technologies": ["HTML", "CSS", "JavaScript"],
-        "images": ["/images/project1-1.png", "/images/project1-2.png"]
-
-      }
-
+    {
+      "title": "CV Management Application",
+      "period": "2025",
+      "duration": "1 mois",
+      "description": "Conception et développement d'une application web pour créer, modifier et gérer les CV avec une interface intuitive.",
+      "technologies": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "title": "Google Chrome Extension",
+      "period": "2025",
+      "duration": "1 mois",
+      "description": "Développement d'une extension Chrome intégrant un modèle AI embarqué pour aider les utilisateurs à remplir des formulaires longs et complexes.",
+      "technologies": ["HTML", "CSS", "JavaScript"]
+    }
   ],
   "certifications": [
-   {
-    "name": "Java SE 17 Developer",
-    "issuer": "Oracle University",
-    "year": "2025",
-    "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
-    "image": "/images/certificates/java-se-17.png"
-  },
-  {
-    "name": "AI Foundations Associate",
-    "issuer": "Oracle University",
-    "year": "2025",
-    "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
-    "image": "/images/certificates/ai-foundations.png"
-  }
+    {
+      "name": "Java SE 17 Developer",
+      "issuer": "Oracle University",
+      "year": "2025",
+      "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
+      "image": "/images/certificates/java-se-17.png",
+      "category": "Programmation",
+      "skillsAcquired": ["Java 17", "Concepts POO", "Internals JVM"]
+    },
+    {
+      "name": "AI Foundations Associate",
+      "issuer": "Oracle University",
+      "year": "2025",
+      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
+      "image": "/images/certificates/ai-foundations.png",
+      "category": "IA & Données",
+      "skillsAcquired": ["Bases de l'IA", "Fondamentaux du Machine Learning"]
+    }
   ],
-  "skills": {
+"skills": {
     "backend": ["Java", "Spring Boot", "JPA", "Hibernate", "Microservices"],
     "frontend": ["HTML/CSS", "JavaScript", "TypeScript", "Angular", "React"],
-    "devops": ["Maven", "Git", "GitHub", "GitLab", "Docker", "Docker Compose"],
+    "devops": ["Maven", "Git", "GitHub", "GitLab", "Docker","k8s"],
     "databases": ["MySQL", "SQL Server", "Oracle DB"],
-    "other": ["XML", "XSLT", "XPath", "JUnit", "Trello"]
+    "xml": ["XML", "XSLT", "XPath","XMI"],
+    "testing": ["JUnit", "Mockito"],
+    "tools": ["Trello", "Jira"]
   },
   "languages": [
     { "name": "Arabe", "level": "Langue maternelle" },
-    { "name": "Francais", "level": "Maitrise professionnelle" },
-    { "name": "Anglais", "level": "Maitrise professionnelle" }
+    { "name": "Français", "level": "Compétence professionnelle" },
+    { "name": "Anglais", "level": "Compétence professionnelle" }
   ],
   "softSkills": [
-  "Esprit d'équipe",
-  "Autonomie",
-  "Adaptabilité"
-]
-
+    "Travail en équipe",
+    "Autonomie",
+    "Adaptabilité"
+  ]
 }

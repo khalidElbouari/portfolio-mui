@@ -152,32 +152,14 @@
       "image": "/images/certificates/ai-foundations.png",
       "category": "AI & Data",
       "skillsAcquired": ["AI Basics", "Machine Learning Fundamentals"]
-    } ,  {
-      "name": "AI Foundations Associate",
-      "issuer": "Oracle University",
-      "year": "2025",
-      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
-      "image": "/images/certificates/ai-foundations.png",
-      "category": "AI & Data",
-      "skillsAcquired": ["AI Basics", "Machine Learning Fundamentals"]
-    } ,{
-      "name": "AI Foundations Associate",
-      "issuer": "Oracle University",
-      "year": "2025",
-      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
-      "image": "/images/certificates/ai-foundations.png",
-      "category": "AI & Data",
-      "skillsAcquired": ["AI Basics", "Machine Learning Fundamentals"]
     }
   ],
-"skills": {
+  "skills": {
     "backend": ["Java", "Spring Boot", "JPA", "Hibernate", "Microservices"],
     "frontend": ["HTML/CSS", "JavaScript", "TypeScript", "Angular", "React"],
-    "devops": ["Maven", "Git", "GitHub", "GitLab", "Docker","k8s"],
+    "devops": ["Maven", "Git", "GitHub", "GitLab", "Docker", "Docker Compose"],
     "databases": ["MySQL", "SQL Server", "Oracle DB"],
-    "xml": ["XML", "XSLT", "XPath","XMI"],
-    "testing": ["JUnit", "Mockito"],
-    "tools": ["Trello", "Jira"]
+    "other": ["XML", "XSLT", "XPath", "JUnit", "Trello"]
   },
   "languages": [
     { "name": "Arabic", "level": "Native" },

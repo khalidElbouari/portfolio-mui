@@ -1,146 +1,192 @@
 {
   "personal": {
     "name": "البواري خالد",
-    "title": "طالب ماجستير في جودة البرمجيات",
+    "title": "طالب ماستر في جودة البرمجيات",
     "phone": "+212 624 44 78 61",
     "email": "khalid.fati7i.hb@gmail.com",
-    "address": "شارع سبتة، حي الكفاح، سلا",
-    "portfolio": "https://khalidelbouari.github.io/portoflio/"
+    "address": "شارع سبته، حي الكفاح، سلا، المغرب",
+    "portfolio": "https://khalidelbouari.github.io/portoflio/",
+    "linkedin": "https://www.linkedin.com/in/khalidelbouari",
+    "github": "https://github.com/khalidelbouari",
+    "profilePicture": "/images/profile/khalid.png"
   },
-  "summary": "طالب ماجستير في جودة البرمجيات لديه خبرة عملية في Java وSpring Boot وMicroservices. يركز على بناء أنظمة قابلة للتوسع وسهلة الصيانة مع الاهتمام بالأداء وجودة الكود.",
-    "education": [
+  "summary": "طالب ماستر في جودة البرمجيات مع خبرة عملية في Java و Spring Boot و Microservices. يركز على بناء أنظمة قابلة للتوسع وسهلة الصيانة مع الاهتمام بالأداء وجودة الكود.",
+  "education": [
     {
-      "degree": "ماجستير في جودة البرمجيات (MQL)",
+      "degree": "ماستر جودة البرمجيات (MQL)",
       "institution": "FSDM - جامعة سيدي محمد بن عبد الله، فاس",
+      "institutionLogo": "/images/logos/fsdm.png",
+      "website": "https://fsdm.usmba.ac.ma",
       "period": "2024-2026",
-      "status": "قيد الدراسة"
+      "status": "قيد الدراسة",
+      "location": "فاس، المغرب",
+      "projects": ["Java Code Analysis Tool", "SmartFind Web Platform"]
     },
     {
-      "degree": "بكالوريوس في هندسة الحاسوب والحكامة الرقمية",
-      "institution": "المعهد العالي للتكنولوجيا (EST)، القنيطرة",
+      "degree": "الإجازة في هندسة الحاسوب والحكومة الرقمية",
+      "institution": "المدرسة العليا للتكنولوجيا (EST)، القنيطرة",
+      "institutionLogo": "/images/logos/est.png",
       "period": "2023-2024",
-      "grade": "15.37/20"
+      "grade": "15.37/20",
+      "location": "القنيطرة، المغرب"
     },
     {
       "degree": "دبلوم التقني العالي في تطوير نظم المعلومات",
       "institution": "BTS ابن سينا، القنيطرة",
+      "institutionLogo": "/images/logos/btsibnsina.png",
       "period": "2021-2023",
-      "grade": "16.01/20"
+      "grade": "16.01/20",
+      "location": "القنيطرة، المغرب"
     }
   ],
   "experience": [
     {
-      "position": "متدرب تطوير البرمجيات",
-      "company": "LaboControl، فاس",
+      "position": "متدرب في تطوير البرمجيات",
+      "company": "LaboControl",
+      "companyLogo": "/images/logos/labocontrol.png",
+      "website": "https://labocontrol.com",
+      "location": "فاس، المغرب",
       "period": "01/04/2024 - 24/06/2024",
       "duration": "3 أشهر",
-      "description": "قمت بتطوير تطبيق ويب لتسويق الخدمات والمنتجات بشكل متكامل، مما أدى إلى تحسين عمليات العمل وتعزيز تجربة المستخدم.",
+      "description": "بناء تطبيق ويب للتسويق المتكامل للخدمات والمنتجات، مما حسن العمليات التجارية وتجربة المستخدم.",
       "technologies": ["Spring Boot", "Angular", "TypeScript", "HTML/CSS", "MySQL"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "achievements": ["تحسين تجربة المستخدم بنسبة 20%", "تقليل وقت المعالجة بنسبة 15%"],
+      "roleType": "تدريب"
     },
     {
-      "position": "متدرب مهندس Full Stack",
-      "company": "Valhko، عن بُعد",
+      "position": "متدرب Full Stack Engineer",
+      "company": "Valhko",
+      "companyLogo": "/images/logos/valhko.png",
+      "website": "https://valhko.com",
+      "location": "عن بعد",
       "period": "07/07/2025 - حتى الآن",
-      "description": "قمت بتوحيد عملية المصادقة عبر Microservices باستخدام API Gateway ونسقت مراجعات الكود لتسريع عملية النشر.",
-      "technologies": ["Java", "Spring Boot", "microservices architecture", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "description": "توحيد المصادقة عبر الميكروسيرفيسز باستخدام API Gateway وتنسيق مراجعات الكود لتسريع النشر.",
+      "technologies": ["Java", "Spring Boot", "معمارية الميكروسيرفيسز", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "roleType": "تدريب"
     },
     {
       "position": "متدرب مطور VB.NET",
-      "company": "Copref، القنيطرة",
+      "company": "Copref",
+      "companyLogo": "/images/logos/copref.png",
+      "location": "القنيطرة، المغرب",
       "period": "15/05/2023 - 15/06/2023",
       "duration": "شهر واحد",
-      "description": "حللت وأصلحت الأخطاء في تطبيق سطح المكتب القائم المطور بـVB.NET، مما أدى إلى تحسين الاستقرار والأداء.",
+      "description": "تحليل وإصلاح الأخطاء في تطبيق سطح المكتب المطور بـ VB.NET، مما حسن الاستقرار والأداء.",
       "technologies": ["VB.NET", "SQL Server"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "roleType": "تدريب"
     },
-      {
-        "position": "متدرب مطور ويب",
-        "company": "جامعة ابن طفيل - القنيطرة",
-        "period": "2022",
-        "duration": "شهر واحد",
-        "description": "تطوير تطبيق ويب لإدارة المراسلات الرقمية بين مركز الدراسات الدكتوراه والعمادة.",
-        "technologies": ["PHP", "MySQL", "HTML/CSS", "JavaScript"]
-      }
+    {
+      "position": "متدرب مطور ويب",
+      "company": "جامعة ابن طفيل",
+      "companyLogo": "/images/logos/ibntofail.png",
+      "location": "القنيطرة، المغرب",
+      "period": "2022",
+      "duration": "شهر واحد",
+      "description": "تطوير تطبيق ويب لإدارة المراسلات الرقمية بين مركز الدراسات العليا (CED) ومكتب العمادة.",
+      "technologies": ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
+      "roleType": "تدريب"
+    }
   ],
-
   "projects": [
     {
-      "title": "أداة تحليل كود Java",
+      "title": "أداة تحليل الكود Java",
       "period": "06/12/2024 - 23/12/2024",
       "duration": "شهر واحد",
-      "description": "قمت بتطوير أداة لتحليل كود Java لاستخراج هيكل المشروع وإنشاء مخططات UML، مما ساهم في تحسين توثيق المشروع وفهم التصميم.",
+      "description": "تطوير أداة تحليل كود Java لاستخراج هيكل المشروع وإنشاء مخططات UML، مما يحسن التوثيق وفهم التصميم.",
       "technologies": ["Java", "Reflection", "Swing", "XML", "XMI"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "githubLink": "https://github.com/khalidelbouari/java-code-analysis"
     },
     {
       "title": "منصة إدارة مؤسسات BTS",
       "period": "20/12/2022 - 15/06/2023",
       "duration": "6 أشهر",
-      "description": "صممت ونفذت منصة ويب لإدارة مؤسسات BTS وسجلاتها، مما قلل من التتبع اليدوي وحسن دقة البيانات.",
+      "description": "تصميم وتنفيذ منصة ويب لإدارة مؤسسات BTS وسجلاتها، مما يقلل من العمل اليدوي ويحسن دقة البيانات.",
       "technologies": ["Java", "JSP/Servlets (JEE)", "HTML/CSS", "JavaScript", "MySQL", "Visual Paradigm"],
       "images": ["/images/project1-1.png", "/images/project1-2.png"]
     },
     {
-      "title": "منصة الويب SmartFind",
+      "title": "منصة SmartFind على الويب",
       "period": "03/2025 - 06/2025",
       "duration": "4 أشهر",
-      "description": "في إطار مشروع SmartFind (برنامج إنجاز المغرب)، تم تطوير الموقع الإلكتروني للترويج للحل المحمول. إنشاء واجهة حديثة، متجاوبة وسهلة الاستخدام، تعرض الميزات الرئيسية: البحث الذكي (بالصور، الكلمات المفتاحية، الفلاتر الديناميكية)، جولة افتراضية غامرة، ودعم التجار المحليين. المساهمة في تصميم ودمج الأقسام (العرض، الرؤية، الفريق الإداري، نموذج الاتصال).",
+      "description": "كجزء من مشروع SmartFind (برنامج Injaz Al Maghrib)، تطوير موقع ترويجي للحل المحمول بواجهة حديثة ومتجاوبة. بناء بحث ذكي، جولة افتراضية غامرة ونموذج اتصال مدمج.",
       "technologies": ["Node.js", "HTML", "CSS", "JavaScript"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "projectLink": "https://smartfind.example.com",
+      "githubLink": "https://github.com/khalidelbouari/smartfind"
     },
     {
-      "title": "تطبيق إدارة السير الذاتية",
+      "title": "تطبيق إدارة السيرة الذاتية",
       "period": "2025",
       "duration": "شهر واحد",
-      "description": "تصميم وتطوير تطبيق ويب لإنشاء وتعديل وإدارة السير الذاتية مع واجهة بديهية ومتجاوبة.",
+      "description": "تصميم وتطوير تطبيق ويب لإنشاء وتحرير وإدارة السير الذاتية بواجهة سهلة الاستخدام.",
       "technologies": ["HTML", "CSS", "JavaScript"]
     },
     {
-      "title": "إضافة لمتصفح Google Chrome",
+      "title": "إضافة Google Chrome",
       "period": "2025",
       "duration": "شهر واحد",
-      "description": "تطوير إضافة لمتصفح Chrome تدمج نموذج ذكاء اصطناعي مدمج (بدون الاعتماد على حلول سحابية مثل Gemini Nano) لمساعدة المستخدمين على ملء النماذج الطويلة والمعقدة.",
+      "description": "تطوير إضافة Chrome تتضمن نموذج AI مدمج لمساعدة المستخدمين في ملء النماذج الطويلة والمعقدة.",
       "technologies": ["HTML", "CSS", "JavaScript"]
     }
-
-
   ],
   "certifications": [
     {
-      "name": "مطور Java SE 17",
-      "issuer": "جامعة أوراكل",
+      "name": "Java SE 17 Developer",
+      "issuer": "Oracle University",
       "year": "2025",
       "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
-      "image": "/images/certificates/java-se-17.png"
-
+      "image": "/images/certificates/java-se-17.png",
+      "category": "البرمجة",
+      "skillsAcquired": ["Java 17", "مفاهيم البرمجة الكائنية", "داخلية JVM"]
     },
     {
-      "name": "مؤسسيات الذكاء الاصطناعي Associate",
-      "issuer": "جامعة أوراكل",
+      "name": "AI Foundations Associate",
+      "issuer": "Oracle University",
       "year": "2025",
       "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
-      "image": "/images/certificates/ai-foundations.png"
-
+      "image": "/images/certificates/ai-foundations.png",
+      "category": "الذكاء الاصطناعي والبيانات",
+      "skillsAcquired": ["أساسيات الذكاء الاصطناعي", "مبادئ تعلم الآلة"]
+    },{
+      "name": "Java SE 17 Developer",
+      "issuer": "Oracle University",
+      "year": "2025",
+      "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
+      "image": "/images/certificates/java-se-17.png",
+      "category": "البرمجة",
+      "skillsAcquired": ["Java 17", "مفاهيم البرمجة الكائنية", "داخلية JVM"]
+    },
+    {
+      "name": "AI Foundations Associate",
+      "issuer": "Oracle University",
+      "year": "2025",
+      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
+      "image": "/images/certificates/ai-foundations.png",
+      "category": "الذكاء الاصطناعي والبيانات",
+      "skillsAcquired": ["أساسيات الذكاء الاصطناعي", "مبادئ تعلم الآلة"]
     }
   ],
-  "skills": {
+"skills": {
     "backend": ["Java", "Spring Boot", "JPA", "Hibernate", "Microservices"],
     "frontend": ["HTML/CSS", "JavaScript", "TypeScript", "Angular", "React"],
-    "devops": ["Maven", "Git", "GitHub", "GitLab", "Docker", "Docker Compose"],
+    "devops": ["Maven", "Git", "GitHub", "GitLab", "Docker","k8s"],
     "databases": ["MySQL", "SQL Server", "Oracle DB"],
-    "other": ["XML", "XSLT", "XPath", "JUnit", "Trello"]
+    "xml": ["XML", "XSLT", "XPath","XMI"],
+    "testing": ["JUnit", "Mockito"],
+    "tools": ["Trello", "Jira"]
   },
   "languages": [
-    { "name": "العربية", "level": "اللغة الأم" },
-    { "name": "الفرنسية", "level": "إجادة مهنية" },
-    { "name": "الإنجليزية", "level": "إجادة مهنية" }
+    { "name": "العربية", "level": "لغة أم" },
+    { "name": "الفرنسية", "level": "مهارة مهنية" },
+    { "name": "الإنجليزية", "level": "مهارة مهنية" }
   ],
   "softSkills": [
-  "روح الفريق",
-  "الاستقلالية",
-  "القدرة على التكيف"
-]
-
+    "العمل الجماعي",
+    "الاستقلالية",
+    "القدرة على التكيف"
+  ]
 }
