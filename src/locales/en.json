@@ -4,7 +4,7 @@
     "label": "EN"
   },
   "hero": {
-    "emoji": "\ud83d\udc4b",
+    "emoji": "👋",
     "greeting": "HEY THERE, I'M KHALID ELBOUARI",
     "title": {
       "line1": "Crafting",
@@ -54,12 +54,12 @@
     }
   },
   "chat": {
-    "cta": "Let’s Talk",
+    "cta": "Let's Talk",
     "subtitle": "Typically replies in minutes",
     "placeholder": "Type a message…",
-    "greeting": "Hi, I’m Khalid. How can I help?",
+    "greeting": "Hi, I'm Khalid. How can I help?",
     "error": "❌ Something went wrong. Please try again later.",
-    "fallback": "Thanks! I’ll get back to you shortly.",
+    "fallback": "Thanks! I'll get back to you shortly.",
     "quick": {
       "skills": "Tell me about your skills",
       "projects": "Show me your projects",
@@ -85,6 +85,7 @@
     "resume": {
       "title": "Background & Skills",
       "subtitle": "Education, certifications, skills, and languages",
+      "skillsSubtitle": "Curated skills and verified certifications",
       "education": "Education",
       "certifications": "Certifications",
       "skills": "Skills",
@@ -96,7 +97,20 @@
         "devops": "DevOps",
         "databases": "Databases",
         "other": "Other"
-      }
+      },
+      "skillsMinimal": {
+        "title": "Tech stack, streamlined",
+        "subtitle": "Curated groups with my go-to tools. Tap a category to explore.",
+        "focusLabel": "Currently refining",
+        "focusFallback": "Dialing this skill in to push upcoming projects further."
+      },
+      "certificationVerify": "Verify",
+      "certificationMore": "Details",
+      "certificationIssued": "Issued by",
+      "certificationYear": "Year"
     }
+  },
+  "common": {
+    "close": "Close"
   }
 }

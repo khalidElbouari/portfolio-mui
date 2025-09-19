@@ -53,6 +53,24 @@
       "skills": "المهارات"
     }
   },
+  "chat": {
+    "cta": "لنتحدث",
+    "subtitle": "عادة ما يرد في دقائق",
+    "placeholder": "اكتب رسالة…",
+    "greeting": "مرحبا، أنا خالد. كيف يمكنني مساعدتك؟",
+    "error": "❌ حدث خطأ ما. يرجى المحاولة مرة أخرى لاحقاً.",
+    "fallback": "شكراً! سأرد عليك قريباً.",
+    "quick": {
+      "skills": "أخبرني عن مهاراتك",
+      "projects": "أرني مشاريعك",
+      "experience": "لخص خبرتك",
+      "contact": "كيف يمكنني التواصل معك؟",
+      "skillsLabel": "المهارات",
+      "projectsLabel": "المشاريع",
+      "experienceLabel": "الخبرة",
+      "contactLabel": "التواصل"
+    }
+  },
   "portfolio": {
     "projects": {
       "title": "المشاريع المميزة",
@@ -63,6 +81,36 @@
       "title": "الخبرات المهنية",
       "subtitle": "بناء حلول قابلة للتوسع باستخدام تقنيات حديثة",
       "toggle": "الخبرات"
+    },
+    "resume": {
+      "title": "الخلفية والمهارات",
+      "subtitle": "التعليم والشهادات والمهارات واللغات",
+      "skillsSubtitle": "مهارات منظمة وشهادات موثقة",
+      "education": "التعليم",
+      "certifications": "الشهادات",
+      "skills": "المهارات",
+      "languages": "اللغات",
+      "grade": "الدرجة",
+      "categories": {
+        "backend": "الخلفية",
+        "frontend": "الواجهة الأمامية",
+        "devops": "عمليات التطوير",
+        "databases": "قواعد البيانات",
+        "other": "أخرى"
+      },
+      "skillsMinimal": {
+        "title": "المجموعة التقنية، مبسطة",
+        "subtitle": "مجموعات منظمة مع أدواتي المفضلة. اضغط على فئة للاستكشاف.",
+        "focusLabel": "قيد التطوير حالياً",
+        "focusFallback": "أعمل على تطوير هذه المهارة لدفع المشاريع المستقبلية إلى الأمام."
+      },
+      "certificationVerify": "تحقق",
+      "certificationMore": "التفاصيل",
+      "certificationIssued": "صادر عن",
+      "certificationYear": "السنة"
     }
+  },
+  "common": {
+    "close": "إغلاق"
   }
 }

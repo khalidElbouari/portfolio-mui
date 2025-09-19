@@ -1,0 +1,84 @@
+{
+  "locale": {
+    "code": "fr",
+    "label": "FR"
+  },
+  "hero": {
+    "emoji": "👋",
+    "greeting": "SALUT, JE SUIS KHALID ELBOUARI",
+    "title": {
+      "line1": "Construire",
+      "line2": "Excellence numerique"
+    },
+    "subtitle": {
+      "before": "Etudiant en master specialise en ",
+      "highlight": "Qualite logicielle",
+      "after": " avec une experience concrete en developpement full-stack, en architectures microservices et dans la creation de solutions evolutives a fort impact."
+    },
+    "focusLabel": "ACTUELLEMENT FOCALISE SUR :",
+    "ctaPrimary": "Voir mes projets",
+    "ctaSecondary": "Discutons-en",
+    "connectLabel": "ENTRER EN CONTACT :",
+    "badgeTitle": "MQL",
+    "badgeSubtitle": "Master en qualite logicielle",
+    "skills": {
+      "fullStack": {
+        "title": "Developpement full-stack",
+        "description": "Concevoir des applications web bout en bout"
+      },
+      "microservices": {
+        "title": "Spring Boot et microservices",
+        "description": "Des architectures backend evolutives"
+      },
+      "quality": {
+        "title": "Qualite logicielle et tests",
+        "description": "Assurance qualite et optimisation continue"
+      },
+      "performance": {
+        "title": "Optimisation des performances",
+        "description": "Des applications efficaces et rapides"
+      }
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "header": {
+    "menu": {
+      "about": "À propos",
+      "projects": "Projets",
+      "experience": "Expérience",
+      "skills": "Competences"
+    }
+  },
+  "portfolio": {
+    "projects": {
+      "title": "Projets phares",
+      "subtitle": "Des solutions innovantes avec des technologies modernes",
+      "toggle": "Projets"
+    },
+    "experience": {
+      "title": "Experiences professionnelles",
+      "subtitle": "Construire des solutions evolutives avec des technologies modernes",
+      "toggle": "Experiences"
+    },
+    "resume": {
+      "title": "Parcours et competences",
+      "subtitle": "Formation, certifications, competences et langues",
+      "education": "Formation",
+      "certifications": "Certifications",
+      "skills": "Competences",
+      "languages": "Langues",
+      "grade": "Note",
+      "categories": {
+        "backend": "Backend",
+        "frontend": "Frontend",
+        "devops": "DevOps",
+        "databases": "Bases de donnees",
+        "other": "Autres"
+      }
+    }
+  }
+}

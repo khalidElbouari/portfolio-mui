@@ -8,31 +8,31 @@
     "greeting": "SALUT, JE SUIS KHALID ELBOUARI",
     "title": {
       "line1": "Construire",
-      "line2": "Excellence numerique"
+      "line2": "Excellence numérique"
     },
     "subtitle": {
-      "before": "Etudiant en master specialise en ",
-      "highlight": "Qualite logicielle",
-      "after": " avec une experience concrete en developpement full-stack, en architectures microservices et dans la creation de solutions evolutives a fort impact."
+      "before": "Étudiant en master spécialisé en ",
+      "highlight": "Qualité logicielle",
+      "after": " avec une expérience concrète en développement full-stack, en architectures microservices et dans la création de solutions évolutives à fort impact."
     },
-    "focusLabel": "ACTUELLEMENT FOCALISE SUR :",
+    "focusLabel": "ACTUELLEMENT FOCALISÉ SUR :",
     "ctaPrimary": "Voir mes projets",
     "ctaSecondary": "Discutons-en",
     "connectLabel": "ENTRER EN CONTACT :",
     "badgeTitle": "MQL",
-    "badgeSubtitle": "Master en qualite logicielle",
+    "badgeSubtitle": "Master en qualité logicielle",
     "skills": {
       "fullStack": {
-        "title": "Developpement full-stack",
+        "title": "Développement full-stack",
         "description": "Concevoir des applications web bout en bout"
       },
       "microservices": {
         "title": "Spring Boot et microservices",
-        "description": "Des architectures backend evolutives"
+        "description": "Des architectures backend évolutives"
       },
       "quality": {
-        "title": "Qualite logicielle et tests",
-        "description": "Assurance qualite et optimisation continue"
+        "title": "Qualité logicielle et tests",
+        "description": "Assurance qualité et optimisation continue"
       },
       "performance": {
         "title": "Optimisation des performances",
@@ -50,7 +50,25 @@
       "about": "À propos",
       "projects": "Projets",
       "experience": "Expérience",
-      "skills": "Competences"
+      "skills": "Compétences"
+    }
+  },
+  "chat": {
+    "cta": "Parlons-en",
+    "subtitle": "Répond généralement en quelques minutes",
+    "placeholder": "Tapez votre message…",
+    "greeting": "Salut, je suis Khalid. Comment puis-je vous aider ?",
+    "error": "❌ Une erreur s'est produite. Veuillez réessayer plus tard.",
+    "fallback": "Merci ! Je vous répondrai sous peu.",
+    "quick": {
+      "skills": "Parlez-moi de vos compétences",
+      "projects": "Montrez-moi vos projets",
+      "experience": "Résumez votre expérience",
+      "contact": "Comment puis-je vous contacter ?",
+      "skillsLabel": "Compétences",
+      "projectsLabel": "Projets",
+      "experienceLabel": "Expérience",
+      "contactLabel": "Contact"
     }
   },
   "portfolio": {
@@ -60,25 +78,39 @@
       "toggle": "Projets"
     },
     "experience": {
-      "title": "Experiences professionnelles",
-      "subtitle": "Construire des solutions evolutives avec des technologies modernes",
-      "toggle": "Experiences"
+      "title": "Expériences professionnelles",
+      "subtitle": "Construire des solutions évolutives avec des technologies modernes",
+      "toggle": "Expériences"
     },
     "resume": {
-      "title": "Parcours et competences",
-      "subtitle": "Formation, certifications, competences et langues",
+      "title": "Parcours et compétences",
+      "subtitle": "Formation, certifications, compétences et langues",
+      "skillsSubtitle": "Compétences organisées et certifications vérifiées",
       "education": "Formation",
       "certifications": "Certifications",
-      "skills": "Competences",
+      "skills": "Compétences",
       "languages": "Langues",
       "grade": "Note",
       "categories": {
         "backend": "Backend",
         "frontend": "Frontend",
         "devops": "DevOps",
-        "databases": "Bases de donnees",
+        "databases": "Bases de données",
         "other": "Autres"
-      }
+      },
+      "skillsMinimal": {
+        "title": "Stack technique, épuré",
+        "subtitle": "Groupes organisés avec mes outils de référence. Touchez une catégorie pour explorer.",
+        "focusLabel": "En cours de perfectionnement",
+        "focusFallback": "Je peaufine cette compétence pour pousser les projets futurs plus loin."
+      },
+      "certificationVerify": "Vérifier",
+      "certificationMore": "Détails",
+      "certificationIssued": "Délivré par",
+      "certificationYear": "Année"
     }
+  },
+  "common": {
+    "close": "Fermer"
   }
 }
