@@ -47,6 +47,8 @@ export default function Header() {
   const { darkMode, toggleDarkMode } = useThemeContext();
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const { t } = useTranslation();
+  
+  const MotionDiv = motion.create("div");
 
   const handleNavClick = (item: NavItem) => () => {
     if (typeof window === "undefined") {
@@ -74,7 +76,7 @@ export default function Header() {
 
   return (
     <>
-      <motion.div
+      <MotionDiv
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -114,7 +116,7 @@ export default function Header() {
           >
           <Toolbar sx={{ justifyContent: "space-between", px: 3, py: 1 }}>
             {/* Enhanced Logo */}
-            <motion.div
+            <MotionDiv
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -134,12 +136,12 @@ export default function Header() {
               >
                 Khalid.dev
               </Typography>
-            </motion.div>
+            </MotionDiv>
 
             {/* Enhanced Desktop Navigation */}
             <Box sx={{ display: { xs: "none", md: "flex" }, gap: 0.5 }}>
               {navItems.map((item, index) => (
-                <motion.div
+                <MotionDiv
                   key={item.translationKey}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -184,7 +186,7 @@ export default function Header() {
                   >
                     {t(item.translationKey)}
                   </Button>
-                </motion.div>
+                </MotionDiv>
               ))}
             </Box>
 
@@ -194,7 +196,7 @@ export default function Header() {
               {/* Hide social icons on md to avoid duplication with info panel; show on lg+ */}
               <Box sx={{ display: { xs: "none", lg: "flex" }, gap: 0.5, mr: 1 }}>
                 {socialLinks.map((social) => (
-                  <motion.div
+                  <MotionDiv
                     key={social.label}
                     whileHover={{ scale: 1.1, y: -1 }}
                     whileTap={{ scale: 0.9 }}
@@ -219,12 +221,12 @@ export default function Header() {
                     >
                       {social.icon}
                     </IconButton>
-                  </motion.div>
+                  </MotionDiv>
                 ))}
               </Box>
 
               {/* Enhanced Theme Toggle */}
-              <motion.div 
+              <MotionDiv 
                 whileHover={{ scale: 1.05 }} 
                 whileTap={{ scale: 0.95 }}
               >
@@ -249,19 +251,19 @@ export default function Header() {
                     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
                   }}
                 >
-                  <motion.div
+                  <MotionDiv
                     initial={false}
                     animate={{ rotate: darkMode ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
                     {darkMode ? <Brightness7 /> : <Brightness4 />}
-                  </motion.div>
+                  </MotionDiv>
                 </IconButton>
-              </motion.div>
+              </MotionDiv>
 
               {/* Enhanced Mobile Menu */}
               <Box sx={{ display: { xs: "block", md: "none" }, ml: 1 }}>
-                <motion.div
+                <MotionDiv
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -281,13 +283,13 @@ export default function Header() {
                       }
                     }}
                   >
-                    <motion.div
+                    <MotionDiv
                       animate={{ rotate: mobileMenuOpen ? 90 : 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                    </motion.div>
+                    </MotionDiv>
                   </IconButton>
-                </motion.div>
+                </MotionDiv>
               </Box>
             </Box>
           </Toolbar>
@@ -295,7 +297,7 @@ export default function Header() {
           {/* Enhanced Mobile Menu Dropdown */}
           <AnimatePresence>
             {mobileMenuOpen && (
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, height: 0, y: -20 }}
                 animate={{ opacity: 1, height: "auto", y: 0 }}
                 exit={{ opacity: 0, height: 0, y: -20 }}
@@ -314,7 +316,7 @@ export default function Header() {
                 >
                   {/* Mobile Navigation Items */}
                   {navItems.map((item, index) => (
-                    <motion.div
+                    <MotionDiv
                       key={item.translationKey}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -344,13 +346,13 @@ export default function Header() {
                       >
                         {t(item.translationKey)}
                       </Button>
-                    </motion.div>
+                    </MotionDiv>
                   ))}
                   
                   {/* Mobile Social Links */}
                   <Box sx={{ display: "flex", gap: 1, mt: 2, justifyContent: "center" }}>
                     {socialLinks.map((social, index) => (
-                      <motion.div
+                      <MotionDiv
                         key={social.label}
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -374,16 +376,16 @@ export default function Header() {
                         >
                           {social.icon}
                         </IconButton>
-                      </motion.div>
+                      </MotionDiv>
                     ))}
                   </Box>
                 </Box>
-              </motion.div>
+              </MotionDiv>
             )}
           </AnimatePresence>
           </AppBar>
         </Box>
-      </motion.div>
+      </MotionDiv>
     </>
   );
 }

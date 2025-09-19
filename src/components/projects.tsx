@@ -22,7 +22,7 @@ import { containerVariants, sectionVariants } from "../utils/animations";
 
 type ViewType = "projects" | "experience";
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box); 
 const NAVIGATION_EVENT = "portfolio:navigate";
 
 export default function Projects() {
@@ -154,6 +154,28 @@ export default function Projects() {
         icon: "work" as const
       };
 
+  // Derive project affiliation (institution/logo/website) from education entries
+  const findProjectAffiliation = (
+    title: string
+  ): { orgName?: string; orgLogo?: string; orgWebsite?: string } => {
+    try {
+      const eduList = Array.isArray(cvData.education) ? cvData.education : [];
+      for (const edu of eduList as any[]) {
+        const names = Array.isArray(edu.projects) ? edu.projects : [];
+        if (names.includes(title)) {
+          return {
+            orgName: edu.institution,
+            orgLogo: edu.institutionLogo,
+            orgWebsite: edu.website
+          };
+        }
+      }
+    } catch {
+      // ignore
+    }
+    return {};
+  };
+
   const renderCard = (item: any, index: number) => {
     const key = `${activeView}-${index}`;
     const totalImages = Array.isArray(item.images) ? item.images.length : 0;
@@ -162,6 +184,7 @@ export default function Projects() {
     const onNextImage = () => updateImageIndex(key, 1, totalImages);
 
     if (activeView === "projects") {
+      const { orgName, orgLogo, orgWebsite } = findProjectAffiliation(item.title);
       return (
         <ProjectCard
           key={key}
@@ -170,6 +193,9 @@ export default function Projects() {
           imageIndex={imageIndex}
           onPrevImage={onPrevImage}
           onNextImage={onNextImage}
+          orgName={orgName}
+          orgLogo={orgLogo}
+          orgWebsite={orgWebsite}
         />
       );
     }

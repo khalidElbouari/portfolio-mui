@@ -24,6 +24,9 @@ interface ProjectCardProps {
   imageIndex: number;
   onPrevImage: () => void;
   onNextImage: () => void;
+  orgName?: string;
+  orgLogo?: string;
+  orgWebsite?: string;
 }
 
 export const ProjectCard = ({
@@ -31,7 +34,10 @@ export const ProjectCard = ({
   darkMode,
   imageIndex,
   onPrevImage,
-  onNextImage
+  onNextImage,
+  orgName,
+  orgLogo,
+  orgWebsite
 }: ProjectCardProps) => {
   const images: string[] = Array.isArray(project.images) ? project.images : [];
   const hasImages = images.length > 0;
@@ -144,6 +150,41 @@ export const ProjectCard = ({
               >
                 {project.title}
               </Typography>
+
+              {(orgLogo || orgName) && (
+                <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+                  {orgLogo && (
+                    <Box
+                      component="img"
+                      src={orgLogo}
+                      alt={orgName ? `${orgName} logo` : "Organization logo"}
+                      sx={{
+                        width: 28,
+                        height: 28,
+                        borderRadius: 1,
+                        border: "1px solid",
+                        borderColor: "divider",
+                        objectFit: "contain",
+                        bgcolor: "background.paper"
+                      }}
+                    />
+                  )}
+                  {orgName && (
+                    <Typography
+                      variant="body2"
+                      color="text.primary"
+                      sx={{ fontWeight: 600 }}
+                      component={orgWebsite ? "a" : "span"}
+                      href={orgWebsite}
+                      target={orgWebsite ? "_blank" : undefined}
+                      rel={orgWebsite ? "noopener noreferrer" : undefined}
+                    >
+                      {orgName}
+                    </Typography>
+                  )}
+                </Stack>
+              )}
+
               <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap">
                 <CalendarMonth fontSize="small" color="action" />
                 <Typography variant="body2" color="text.secondary">
@@ -233,30 +274,62 @@ export const ProjectCard = ({
                 borderColor: "divider"
               }}
             >
-              <IconButton
-                size="small"
-                sx={{
-                  bgcolor: darkMode ? "rgba(255,255,255,0.05)" : "rgba(15,23,42,0.05)",
-                  '&:hover': {
-                    bgcolor: "primary.main",
-                    color: "primary.contrastText"
-                  }
-                }}
-              >
-                <GitHub fontSize="small" />
-              </IconButton>
-              <IconButton
-                size="small"
-                sx={{
-                  bgcolor: darkMode ? "rgba(255,255,255,0.05)" : "rgba(15,23,42,0.05)",
-                  '&:hover': {
-                    bgcolor: "primary.main",
-                    color: "primary.contrastText"
-                  }
-                }}
-              >
-                <Launch fontSize="small" />
-              </IconButton>
+              {project.githubLink ? (
+                <IconButton
+                  size="small"
+                  component="a"
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    bgcolor: darkMode ? "rgba(255,255,255,0.05)" : "rgba(15,23,42,0.05)",
+                    '&:hover': {
+                      bgcolor: "primary.main",
+                      color: "primary.contrastText"
+                    }
+                  }}
+                >
+                  <GitHub fontSize="small" />
+                </IconButton>
+              ) : (
+                <IconButton
+                  size="small"
+                  disabled
+                  sx={{
+                    bgcolor: darkMode ? "rgba(255,255,255,0.05)" : "rgba(15,23,42,0.05)"
+                  }}
+                >
+                  <GitHub fontSize="small" />
+                </IconButton>
+              )}
+              {project.projectLink ? (
+                <IconButton
+                  size="small"
+                  component="a"
+                  href={project.projectLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    bgcolor: darkMode ? "rgba(255,255,255,0.05)" : "rgba(15,23,42,0.05)",
+                    '&:hover': {
+                      bgcolor: "primary.main",
+                      color: "primary.contrastText"
+                    }
+                  }}
+                >
+                  <Launch fontSize="small" />
+                </IconButton>
+              ) : (
+                <IconButton
+                  size="small"
+                  disabled
+                  sx={{
+                    bgcolor: darkMode ? "rgba(255,255,255,0.05)" : "rgba(15,23,42,0.05)"
+                  }}
+                >
+                  <Launch fontSize="small" />
+                </IconButton>
+              )}
             </Stack>
           </Box>
         </Box>
