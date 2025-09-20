@@ -91,6 +91,11 @@
       "duration": "شهر واحد",
       "description": "تطوير تطبيق ويب لإدارة المراسلات الرقمية بين مركز الدراسات العليا (CED) ومكتب العمادة.",
       "technologies": ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
+      "images": [
+        "/images/labocontrol/labocontrol-Aceuil.png",
+        "/images/labocontrol/labocontrol-services.png",
+        "/images/labocontrol/labocontrol-materiel.png"
+      ],
       "roleType": "تدريب"
     }
   ],
@@ -110,7 +115,8 @@
         "/images/uml-diagrame-generator/xmi-file.png",
         "/images/uml-diagrame-generator/xml project.png"
       ],
-      "githubLink": "https://github.com/khalidelbouari/java-code-analysis"
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://github.com/khalidElbouari/UML-Diagrams-Generator"
     },
     {
       "title": "منصة إدارة مؤسسات BTS",
@@ -125,7 +131,9 @@
         "/images/pfe-BTS/img_3.png",
         "/images/pfe-BTS/img_4.png",
         "/images/pfe-BTS/img_5.png"
-      ]
+      ],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
     },
     {
       "title": "منصة SmartFind على الويب",
@@ -138,7 +146,7 @@
         "/images/smartfind/image-2.png",
         "/images/smartfind/image-3.png"
       ],
-      "projectLink": "https://smartfind.example.com",
+      "projectLink": "https://smartfind-vitrine.vercel.app/",
       "githubLink": "https://github.com/khalidelbouari/smartfind"
     },
     {
@@ -146,14 +154,34 @@
       "period": "2025",
       "duration": "شهر واحد",
       "description": "تصميم وتطوير تطبيق ويب لإنشاء وتحرير وإدارة السير الذاتية بواجهة سهلة الاستخدام.",
-      "technologies": ["HTML", "CSS", "JavaScript"]
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
     },
     {
       "title": "إضافة Google Chrome",
       "period": "2025",
       "duration": "شهر واحد",
       "description": "تطوير إضافة Chrome تتضمن نموذج AI مدمج لمساعدة المستخدمين في ملء النماذج الطويلة والمعقدة.",
-      "technologies": ["HTML", "CSS", "JavaScript"]
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
+    },
+    {
+      "title": "منصة إدارة Toutune عبر الإنترنت",
+      "period": "15/01/2024 - 15/04/2024",
+      "duration": "3 أشهر",
+      "description": "هذه المنصة عبر الإنترنت تسهل التعاون من خلال دمج الخدمات البنكية لإدارة فعالة للمعاملات. تتيح للمستخدمين التعاون عبر الإنترنت مع إدارة آمنة ومبسطة للجوانب المالية.",
+      "technologies": ["Thymeleaf", "MySQL", "Spring Boot"],
+      "images": [
+        "/images/dart/img.png",
+        "/images/dart/img_1.png",
+        "/images/dart/img_2.png"
+      ],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
     }
   ],
   "certifications": [
@@ -174,26 +202,9 @@
       "image": "/images/certificates/ai-foundations.png",
       "category": "الذكاء الاصطناعي والبيانات",
       "skillsAcquired": ["أساسيات الذكاء الاصطناعي", "مبادئ تعلم الآلة"]
-    },{
-      "name": "Java SE 17 Developer",
-      "issuer": "Oracle University",
-      "year": "2025",
-      "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
-      "image": "/images/certificates/java-se-17.png",
-      "category": "البرمجة",
-      "skillsAcquired": ["Java 17", "مفاهيم البرمجة الكائنية", "داخلية JVM"]
-    },
-    {
-      "name": "AI Foundations Associate",
-      "issuer": "Oracle University",
-      "year": "2025",
-      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
-      "image": "/images/certificates/ai-foundations.png",
-      "category": "الذكاء الاصطناعي والبيانات",
-      "skillsAcquired": ["أساسيات الذكاء الاصطناعي", "مبادئ تعلم الآلة"]
     }
   ],
-"skills": {
+  "skills": {
     "backend": ["Java", "Spring Boot", "JPA", "Hibernate", "Microservices"],
     "frontend": ["HTML/CSS", "JavaScript", "TypeScript", "Angular", "React"],
     "devops": ["Maven", "Git", "GitHub", "GitLab", "Docker","k8s"],

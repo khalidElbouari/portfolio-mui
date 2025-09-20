@@ -28,11 +28,13 @@ export function LanguageSwitcher({ size = "small", color = "primary", dense = fa
       onChange={handleChange}
       size={size}
       color={color}
+      dir="ltr"
       sx={{
         borderRadius: 3,
         gap: dense ? 0 : 0.5,
         p: dense ? 0 : 0.5,
-        bgcolor: "transparent"
+        bgcolor: "transparent",
+        direction: "ltr"
       }}
     >
       {availableLocales.map(({ code, label }) => (

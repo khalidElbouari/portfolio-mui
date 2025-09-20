@@ -1,22 +1,21 @@
-import { 
-  Box, 
-  Typography, 
-  Button, 
+import {
+  Box,
+  Typography,
+  Button,
   IconButton,
   Container,
-  useTheme
+  useTheme,
+  useMediaQuery
 } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import { useThemeContext } from "../context/ThemeContext";
 import { useTranslation } from "../context/LocaleContext";
-import { 
-  ArrowDownward, 
-  Code, 
+import {
+  ArrowDownward,
+  Code,
   Terminal,
-  PlayArrow,
-  GitHub,
-  LinkedIn,
-  Email,
+  SmartToy,
+  Download,
   Psychology,
   Speed
 } from "@mui/icons-material";
@@ -74,6 +73,7 @@ export default function Hero() {
   const { darkMode } = useThemeContext();
   const theme = useTheme();
   const { t, locale } = useTranslation();
+  const isCompact = useMediaQuery(theme.breakpoints.down("sm"));
   const isRtl = locale === "ar";
   const { openChat } = useChat();
   // Keep legacy floatingElements referenced to avoid TS unused var error
@@ -108,7 +108,12 @@ export default function Hero() {
   const focusLabel = t("hero.focusLabel");
   const primaryCta = t("hero.ctaPrimary");
   const secondaryCta = t("hero.ctaSecondary");
-  const connectLabel = t("hero.connectLabel");
+  const chatLabel = isCompact
+    ? ({ en: "AI Chat", fr: "Assistant IA", ar: "دردشة AI" } as const)[locale] ?? secondaryCta
+    : secondaryCta;
+  const resumeLabel = isCompact
+    ? ({ en: "Download CV", fr: "Téléch. CV", ar: "تحميل السيرة" } as const)[locale] ?? primaryCta
+    : primaryCta;
   const badgeSubtitle = t("hero.badgeSubtitle");
   const textAlign = isRtl ? 'right' : 'left';
   const headingLetterSpacing = isRtl ? '0' : '-0.02em';
@@ -116,9 +121,8 @@ export default function Hero() {
   const labelLetterSpacing = isRtl ? '0' : '0.05em';
   const bodyLetterSpacing = isRtl ? '0' : '0.05em';
   const contentFlexDirection = isRtl ? { xs: 'column', lg: 'row-reverse' } : { xs: 'column', lg: 'row' };
-  const languageSwitcherJustify = { xs: 'center', lg: isRtl ? 'flex-start' : 'flex-end' };
-  const ctaJustify = isRtl ? 'flex-end' : 'flex-start';
-  const socialDirection = isRtl ? 'row-reverse' : 'row';
+  // Keep language switcher position fixed regardless of RTL/LTR
+  const languageSwitcherJustify = { xs: 'center', lg: 'flex-end' };
 
 
   useEffect(() => {
@@ -165,6 +169,32 @@ const itemVariants = {
   }
 };
 
+// Locale-aware resume download
+const resumePaths = {
+  en: "/resume/Elbouari%20Khalid%20cv-english%20copy.pdf",
+  fr: "/resume/Elbouari%20Khalid%20cv-french.pdf",
+  ar: "/resume/Elbouari%20Khalid%20cv-arabic.pdf"
+} as const;
+
+const resumeFileNames = {
+  en: "Khalid-Elbouari-CV-EN.pdf",
+  fr: "Khalid-Elbouari-CV-FR.pdf",
+  ar: "Khalid-Elbouari-CV-AR.pdf"
+} as const;
+
+const downloadResume = () => {
+  const loc = (locale as "en" | "fr" | "ar") ?? "en";
+  const href = resumePaths[loc] ?? resumePaths.en;
+  const filename = resumeFileNames[loc] ?? resumeFileNames.en;
+
+  const a = document.createElement("a");
+  a.href = href;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+};
+
 
   return (
     <Box
@@ -189,7 +219,8 @@ const itemVariants = {
           sx={{
             display: "flex",
             justifyContent: languageSwitcherJustify,
-            mb: { xs: 3, lg: 1 }
+            mb: { xs: 3, lg: 1 },
+            direction: "ltr"
           }}
         >
           <LanguageSwitcher dense />
@@ -231,7 +262,7 @@ const itemVariants = {
                     color: "primary.main",
                     fontWeight: 700,
                     letterSpacing: greetingLetterSpacing,
-                    fontSize: { xs: "0.85rem", md: "1rem" },
+                    fontSize: { xs: "0.8rem", md: "0.95rem" },
                     textAlign: textAlign,
                   }}
                 >
@@ -244,7 +275,7 @@ const itemVariants = {
               <Typography
                 variant="h1"
                 sx={{
-                  fontSize: { xs: "2.2rem", sm: "3.1rem", md: "3.5rem", lg: "3.8rem" },
+                  fontSize: { xs: "2rem", sm: "2.8rem", md: "3.2rem", lg: "3.5rem" },
                   fontWeight: 900,
                   lineHeight: { xs: 1.1, md: 1.05 },
                   mb: 3,
@@ -284,7 +315,7 @@ const itemVariants = {
                   mb: 4,
                   lineHeight: 1.7,
                   maxWidth: 600,
-                  fontSize: { xs: "1rem", md: "1.15rem" },
+                  fontSize: { xs: "0.95rem", md: "1.05rem" },
                   fontWeight: 400,
                   letterSpacing: bodyLetterSpacing,
                   textAlign: textAlign,
@@ -297,13 +328,132 @@ const itemVariants = {
                 {subtitleAfter}
               </Typography>
             </motion.div>
-            {/* Dynamic Skills Showcase */}
+            {/* Enhanced Action Buttons (moved above skills) */}
+            <motion.div variants={itemVariants}>
+              <Box sx={{ display: "flex", gap: 1.5, flexWrap: "wrap", mb: 4 }}>
+                {/* AI Assistant Chat (contained) */}
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button
+                    variant="contained"
+                    size="large"
+                    startIcon={<SmartToy />}
+                    sx={{
+                      py: 1.3,
+                      px: 2.5,
+                      borderRadius: 4,
+                      fontSize: "0.95rem",
+                      fontWeight: 700,
+                      textTransform: "none",
+                      whiteSpace: "nowrap",
+                      position: "relative",
+                      overflow: "hidden",
+                      background: darkMode
+                        ? "linear-gradient(135deg, #00d4ff, #0099cc)"
+                        : "linear-gradient(135deg, #1976d2, #1565c0)",
+                      boxShadow: darkMode
+                        ? "0 8px 25px rgba(0, 212, 255, 0.3)"
+                        : "0 8px 25px rgba(25, 118, 210, 0.3)",
+                      "&:hover": {
+                        boxShadow: darkMode
+                          ? "0 12px 35px rgba(0, 212, 255, 0.4)"
+                          : "0 12px 35px rgba(25, 118, 210, 0.4)"
+                      },
+                      "& .MuiButton-startIcon": {
+                        transition: "transform 0.3s ease",
+                        mr: 0.5
+                      },
+                      "&:hover .MuiButton-startIcon": {
+                        transform: "translateY(-2px) scale(1.1)"
+                      },
+                      "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        top: 0,
+                        left: "-150%",
+                        height: "100%",
+                        width: "50%",
+                        background:
+                          "linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent)",
+                        transform: "skewX(-20deg)",
+                        animation: "buttonShine 2.2s ease-in-out infinite"
+                      },
+                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+                    }}
+                    onClick={openChat}
+                  >
+                    {chatLabel}
+                  </Button>
+                </motion.div>
+
+                {/* Download My Resume (outlined, enhanced) */}
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button
+                    variant="outlined"
+                    size="large"
+                    startIcon={<Download />}
+                    sx={{
+                      py: 1.3,
+                      px: 2.5,
+                      borderRadius: 4,
+                      fontSize: "0.95rem",
+                      fontWeight: 700,
+                      textTransform: "none",
+                      whiteSpace: "nowrap",
+                      position: "relative",
+                      overflow: "hidden",
+                      borderWidth: 2,
+                      borderColor: "primary.main",
+                      color: "primary.main",
+                      "& .MuiButton-startIcon": {
+                        transition: "transform 0.3s ease",
+                        mr: 0.5
+                      },
+                      "&:hover .MuiButton-startIcon": {
+                        transform: "translateY(-2px) scale(1.1)"
+                      },
+                      "&:hover": {
+                        borderWidth: 2,
+                        bgcolor: "primary.main",
+                        color: "primary.contrastText",
+                        boxShadow: darkMode
+                          ? "0 8px 25px rgba(0, 212, 255, 0.3)"
+                          : "0 8px 25px rgba(25, 118, 210, 0.3)"
+                      },
+                      "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        top: 0,
+                        left: "-150%",
+                        height: "100%",
+                        width: "50%",
+                        background:
+                          "linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent)",
+                        transform: "skewX(-20deg)",
+                        animation: "buttonShine 2.6s ease-in-out infinite"
+                      },
+                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+                    }}
+                    onClick={downloadResume}
+                  >
+                    {resumeLabel}
+                  </Button>
+                </motion.div>
+              </Box>
+            </motion.div>
+
+            {/* Dynamic Skills Showcase (moved below buttons) */}
             <motion.div variants={itemVariants}>
               <Box sx={{ mb: 4 }}>
-                <Typography 
-                  variant="body2" 
-                  sx={{ 
-                    color: "text.secondary", 
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "text.secondary",
                     mb: 2,
                     fontWeight: 500,
                     letterSpacing: labelLetterSpacing,
@@ -330,9 +480,9 @@ const itemVariants = {
                       }}
                     >
                       <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                        <Box 
-                          sx={{ 
-                            color: activeSkill.color, 
+                        <Box
+                          sx={{
+                            color: activeSkill.color,
                             mr: 2,
                             display: "flex",
                             alignItems: "center"
@@ -340,9 +490,9 @@ const itemVariants = {
                         >
                           {activeSkill.icon}
                         </Box>
-                        <Typography 
-                          variant="h6" 
-                          sx={{ 
+                        <Typography
+                          variant="h6"
+                          sx={{
                             fontWeight: 700,
                             color: activeSkill.color
                           }}
@@ -350,9 +500,9 @@ const itemVariants = {
                           {activeSkill.name}
                         </Typography>
                       </Box>
-                      <Typography 
-                        variant="body2" 
-                        sx={{ 
+                      <Typography
+                        variant="body2"
+                        sx={{
                           color: "text.secondary",
                           ml: 4
                         }}
@@ -365,145 +515,6 @@ const itemVariants = {
               </Box>
             </motion.div>
 
-            {/* Enhanced Action Buttons */}
-            <motion.div variants={itemVariants}>
-              <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap", mb: 5 }}>
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    variant="contained"
-                    size="large"
-                    startIcon={<PlayArrow />}
-                    sx={{
-                      py: 2,
-                      px: 4,
-                      borderRadius: 4,
-                      fontSize: "1.1rem",
-                      fontWeight: 700,
-                      textTransform: "none",
-                      background: darkMode
-                        ? "linear-gradient(135deg, #00d4ff, #0099cc)"
-                        : "linear-gradient(135deg, #1976d2, #1565c0)",
-                      boxShadow: darkMode 
-                        ? "0 8px 25px rgba(0, 212, 255, 0.3)"
-                        : "0 8px 25px rgba(25, 118, 210, 0.3)",
-                      "&:hover": {
-                        boxShadow: darkMode 
-                          ? "0 12px 35px rgba(0, 212, 255, 0.4)"
-                          : "0 12px 35px rgba(25, 118, 210, 0.4)"
-                      },
-                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-                    }}
-                  >
-                    {primaryCta}
-                  </Button>
-                </motion.div>
-                
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    variant="outlined"
-                    size="large"
-                    sx={{
-                      py: 2,
-                      px: 4,
-                      borderRadius: 4,
-                      fontSize: "1.1rem",
-                      fontWeight: 700,
-                      textTransform: "none",
-                      borderWidth: 2,
-                      borderColor: "primary.main",
-                      color: "primary.main",
-                      "&:hover": {
-                        borderWidth: 2,
-                        bgcolor: "primary.main",
-                        color: "primary.contrastText",
-                        boxShadow: darkMode 
-                          ? "0 8px 25px rgba(0, 212, 255, 0.3)"
-                          : "0 8px 25px rgba(25, 118, 210, 0.3)"
-                      },
-                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-                    }}
-                    onClick={openChat}
-                  >
-                    {secondaryCta}
-                  </Button>
-                </motion.div>
-              </Box>
-            </motion.div>
-
-            {/* Enhanced Social Links */}
-            <motion.div variants={itemVariants}>
-              <Box sx={{ mb: 2 }}>
-                <Typography 
-                  variant="body2" 
-                  sx={{ 
-                    color: "text.secondary", 
-                    mb: 2,
-                    fontWeight: 500,
-                    letterSpacing: labelLetterSpacing,
-                    textAlign: textAlign,
-                  }}
-                >
-                  {connectLabel}
-                </Typography>
-                <Box sx={{ display: "flex", gap: 2, flexDirection: socialDirection, justifyContent: ctaJustify }}>
-                  {[
-                    { 
-                      icon: <GitHub />, 
-                      href: "#", 
-                      label: t("hero.social.github"),
-                      color: darkMode ? "#ffffff" : "#000000"
-                    },
-                    { 
-                      icon: <LinkedIn />, 
-                      href: "#", 
-                      label: t("hero.social.linkedin"),
-                      color: "#0077b5"
-                    },
-                    { 
-                      icon: <Email />, 
-                      href: "mailto:khalid.fati7i.hb@gmail.com", 
-                      label: t("hero.social.email"),
-                      color: darkMode ? "#00d4ff" : "#1976d2"
-                    }
-                  ].map((social, index) => (
-                    <motion.div
-                      key={social.label}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 1.5 + index * 0.1, duration: 0.3 }}
-                      whileHover={{ scale: 1.1, y: -3 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <IconButton
-                        href={social.href}
-                        sx={{
-                          width: 56,
-                          height: 56,
-                          bgcolor: darkMode ? "rgba(255, 255, 255, 0.05)" : "rgba(0, 0, 0, 0.04)",
-                          border: `2px solid ${darkMode ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.08)"}`,
-                          color: "text.primary",
-                          "&:hover": {
-                            bgcolor: social.color + "15",
-                            borderColor: social.color,
-                            color: social.color,
-                            boxShadow: `0 8px 25px ${social.color}30`
-                          },
-                          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-                        }}
-                      >
-                        {social.icon}
-                      </IconButton>
-                    </motion.div>
-                  ))}
-                </Box>
-              </Box>
-            </motion.div>
           </Box>
 
           {/* Enhanced Right Side - Interactive 3D Element */}
@@ -516,7 +527,7 @@ const itemVariants = {
               order: { xs: 1, lg: 0 },
               mt: { xs: 0, lg: 0 },
               position: "relative",
-              transform: { lg: "translateY(-24px)" }
+              transform: { lg: "translateY(-50px)" }
             }}
           >
             <motion.div
@@ -595,7 +606,7 @@ const itemVariants = {
                   >
                     <Box
                       component="img"
-                      src="/images/khalid-profile-1.JPG"
+                      src="/images/khalid-profile-2.JPG"
                       alt="Portrait of Khalid"
                       sx={{
                         width: { xs: 320, sm: 320 },
@@ -618,7 +629,7 @@ const itemVariants = {
                         color: "text.secondary",
                         fontWeight: 600,
                         letterSpacing: greetingLetterSpacing,
-                        fontSize: "0.9rem"
+                        fontSize: "0.85rem"
                       }}
                     >
                       {badgeSubtitle}
@@ -758,6 +769,12 @@ const itemVariants = {
           @keyframes pulse {
             0% { opacity: 0.4; transform: scale(1); }
             100% { opacity: 0.8; transform: scale(1.02); }
+          }
+
+          @keyframes buttonShine {
+            0% { transform: translateX(-150%) skewX(-20deg); opacity: 0; }
+            50% { opacity: 0.55; }
+            100% { transform: translateX(150%) skewX(-20deg); opacity: 0; }
           }
         `}
       </style>

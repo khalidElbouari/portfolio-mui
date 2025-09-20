@@ -6,12 +6,12 @@ interface SectionHeaderProps {
   title: string;
   subtitle: string;
   darkMode: boolean;
-  icon: 'work' | 'code';
+  icon?: 'work' | 'code' | 'none';
   sx?: object;
 }
 
 export const SectionHeader = ({ title, subtitle, darkMode, icon, sx }: SectionHeaderProps) => {
-  const Icon = icon === 'work' ? Work : Code;
+  const IconComp = icon === 'work' ? Work : icon === 'code' ? Code : null;
   const theme = useTheme();
   // respect reduced motion in animations elsewhere; header has no motion
 
@@ -40,11 +40,13 @@ export const SectionHeader = ({ title, subtitle, darkMode, icon, sx }: SectionHe
           }
         }}
       >
-        <Icon sx={{
-          fontSize: { xs: 32, sm: 36, md: 40 },
-          color: theme.palette.text.secondary,
-          filter: darkMode ? 'drop-shadow(0 0 8px rgba(255,255,255,0.2))' : 'drop-shadow(0 0 8px rgba(0,0,0,0.1))'
-        }} />
+        {IconComp && (
+          <IconComp sx={{
+            fontSize: { xs: 32, sm: 36, md: 40 },
+            color: theme.palette.text.secondary,
+            filter: darkMode ? 'drop-shadow(0 0 8px rgba(255,255,255,0.2))' : 'drop-shadow(0 0 8px rgba(0,0,0,0.1))'
+          }} />
+        )}
         <Typography
           variant="h2"
           sx={{

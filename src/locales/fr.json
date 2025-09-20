@@ -16,8 +16,8 @@
       "after": " avec une expérience concrète en développement full-stack, en architectures microservices et dans la création de solutions évolutives à fort impact."
     },
     "focusLabel": "ACTUELLEMENT FOCALISÉ SUR :",
-    "ctaPrimary": "Voir mes projets",
-    "ctaSecondary": "Discutons-en",
+    "ctaPrimary": "Mon CV (PDF)",
+    "ctaSecondary": "Assistant IA",
     "connectLabel": "ENTRER EN CONTACT :",
     "badgeTitle": "MQL",
     "badgeSubtitle": "Master en qualité logicielle",
@@ -99,7 +99,7 @@
         "other": "Autres"
       },
       "skillsMinimal": {
-        "title": "Stack technique, épuré",
+        "title": "Stack technique",
         "subtitle": "Groupes organisés avec mes outils de référence. Touchez une catégorie pour explorer.",
         "focusLabel": "En cours de perfectionnement",
         "focusFallback": "Je peaufine cette compétence pour pousser les projets futurs plus loin."

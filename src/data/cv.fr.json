@@ -91,6 +91,11 @@
       "duration": "1 mois",
       "description": "Développement d'une application web pour la gestion numérique de la correspondance entre le Centre d'Études Doctorales (CED) et le bureau du DECANAT.",
       "technologies": ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
+      "images": [
+        "/images/labocontrol/labocontrol-Aceuil.png",
+        "/images/labocontrol/labocontrol-services.png",
+        "/images/labocontrol/labocontrol-materiel.png"
+      ],
       "roleType": "Stage"
     }
   ],
@@ -110,7 +115,8 @@
         "/images/uml-diagrame-generator/xmi-file.png",
         "/images/uml-diagrame-generator/xml project.png"
       ],
-      "githubLink": "https://github.com/khalidelbouari/java-code-analysis"
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://github.com/khalidElbouari/UML-Diagrams-Generator"
     },
     {
       "title": "BTS Institutions Management Platform",
@@ -125,7 +131,9 @@
         "/images/pfe-BTS/img_3.png",
         "/images/pfe-BTS/img_4.png",
         "/images/pfe-BTS/img_5.png"
-      ]
+      ],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
     },
     {
       "title": "SmartFind Web Platform",
@@ -138,7 +146,7 @@
         "/images/smartfind/image-2.png",
         "/images/smartfind/image-3.png"
       ],
-      "projectLink": "https://smartfind.example.com",
+      "projectLink": "https://smartfind-vitrine.vercel.app/",
       "githubLink": "https://github.com/khalidelbouari/smartfind"
     },
     {
@@ -146,14 +154,37 @@
       "period": "2025",
       "duration": "1 mois",
       "description": "Conception et développement d'une application web pour créer, modifier et gérer les CV avec une interface intuitive.",
-      "technologies": ["HTML", "CSS", "JavaScript"]
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
     },
     {
       "title": "Google Chrome Extension",
       "period": "2025",
       "duration": "1 mois",
       "description": "Développement d'une extension Chrome intégrant un modèle AI embarqué pour aider les utilisateurs à remplir des formulaires longs et complexes.",
-      "technologies": ["HTML", "CSS", "JavaScript"]
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
+    },
+    {
+      "title": "Gestion de Toutune Enligne",
+      "period": "15/01/2024 - 15/04/2024",
+      "duration": "3 mois",
+      "description": "Cette plateforme en ligne facilite la collaboration en intégrant les services bancaires pour une gestion efficace des transactions. Elle permet aux utilisateurs de collaborer en ligne tout en bénéficiant d'une gestion sécurisée et simplifiée des aspects financiers.",
+      "technologies": ["Thymeleaf", "MySQL", "Spring Boot"],
+      "images": [
+        "/images/dart/img.png",
+        "/images/dart/img_1.png",
+        "/images/dart/img_2.png",
+        "/images/dart/img_3.png",
+        "/images/dart/img_4.png",
+        "/images/dart/img_5.png"
+      ],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
     }
   ],
   "certifications": [
@@ -176,7 +207,7 @@
       "skillsAcquired": ["Bases de l'IA", "Fondamentaux du Machine Learning"]
     }
   ],
-"skills": {
+  "skills": {
     "backend": ["Java", "Spring Boot", "JPA", "Hibernate", "Microservices"],
     "frontend": ["HTML/CSS", "JavaScript", "TypeScript", "Angular", "React"],
     "devops": ["Maven", "Git", "GitHub", "GitLab", "Docker","k8s"],

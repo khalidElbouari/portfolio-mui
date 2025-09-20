@@ -70,7 +70,7 @@ export const ProjectCard = ({
             sx={{
               display: "flex",
               flexDirection: { xs: "column", md: "row" },
-              minHeight: { xs: "auto", md: 480 }
+              minHeight: { xs: "auto", md: 480, lg: 380 }
             }}
           >
             {/* Compact Image Section */}
@@ -78,16 +78,22 @@ export const ProjectCard = ({
               <Box
                 sx={{
                   position: "relative",
-                  flexBasis: { md: "35%" }, // Reduced from 60%
-                  minHeight: { xs: 200, sm: 240, md: 480 }, // Smaller heights
+                  flexBasis: { md: "35%", lg: "28%" }, // md width; lg even more compact
+                  minHeight: { xs: 200, sm: 240, md: 480 },
+                  height: { lg: 300 }, // cap height on large screens
+                  alignSelf: { lg: "flex-start" }, // prevent stretching with taller content
+                  p: { lg: 1 }, // breathing room when objectFit is contain
                   bgcolor: "rgba(15,23,42,0.04)",
                   overflow: "hidden",
                   cursor: "pointer",
                   transition: "all 0.3s ease",
+                  borderRight: { md: "1px solid" },
+                  borderColor: "divider",
                   "&:hover": {
                     "& .image": {
-                      transform: "scale(1.02)"
-                    }}
+                      transform: "scale(1.01)"
+                    }
+                  }
                 }}
                 onClick={openModal}
               >
@@ -104,8 +110,25 @@ export const ProjectCard = ({
                   sx={{
                     width: "100%",
                     height: "100%",
-                    objectFit: "cover",
+                    objectFit: { xs: "cover", lg: "contain" },
+                    objectPosition: "center",
                     transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+                  }}
+                />
+                {/* Right-edge gradient to visually integrate image with content (md+) */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    width: { md: 12, lg: 16 },
+                    pointerEvents: "none",
+                    zIndex: 1,
+                    background: darkMode
+                      ? "linear-gradient(to right, rgba(12,21,36,0), rgba(12,21,36,0.12))"
+                      : "linear-gradient(to right, rgba(255,255,255,0), rgba(15,23,42,0.08))",
+                    display: { xs: "none", md: "block" }
                   }}
                 />
 
@@ -189,13 +212,13 @@ export const ProjectCard = ({
             )}
 
             {/* Content Section - Now takes more space */}
-            <Box 
-              sx={{ 
-                flexGrow: 1, 
-                display: "flex", 
-                flexDirection: "column", 
-                p: { xs: 3, sm: 4 },
-                gap: 2.5
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: "flex",
+                flexDirection: "column",
+                p: { xs: 3, sm: 4, lg: 3 },
+                gap: { xs: 2.5, lg: 2 }
               }}
             >
               {/* Header */}
@@ -206,7 +229,7 @@ export const ProjectCard = ({
                     fontWeight: 700,
                     mb: 1.5,
                     letterSpacing: "-0.02em",
-                    fontSize: { xs: "1.3rem", sm: "1.4rem" }
+                    fontSize: { xs: "1.3rem", sm: "1.4rem", lg: "1.25rem" }
                   }}
                 >
                   {project.title}
@@ -273,7 +296,7 @@ export const ProjectCard = ({
                 color="text.secondary"
                 sx={{
                   lineHeight: 1.6,
-                  fontSize: "0.95rem",
+                  fontSize: { xs: "0.95rem", lg: "0.9rem" },
                   display: "-webkit-box",
                   WebkitBoxOrient: "vertical",
                   WebkitLineClamp: 3,
@@ -308,11 +331,11 @@ export const ProjectCard = ({
                             bgcolor: `${getTechColor(tech)}18`,
                             color: getTechColor(tech),
                             border: `1px solid ${getTechColor(tech)}35`,
-                            height: 28,
-                            fontSize: "0.75rem",
+                            height: { xs: 28, lg: 26 },
+                            fontSize: { xs: "0.75rem", lg: "0.72rem" },
                             fontWeight: 500,
                             '& .MuiChip-icon': {
-                              fontSize: "0.9rem"
+                              fontSize: { xs: "0.9rem", lg: "0.85rem" }
                             },
                             transition: "all 0.2s ease",
                             "&:hover": {
@@ -329,8 +352,8 @@ export const ProjectCard = ({
                         size="small"
                         variant="outlined"
                         sx={{
-                          height: 28,
-                          fontSize: "0.75rem",
+                          height: { xs: 28, lg: 26 },
+                          fontSize: { xs: "0.75rem", lg: "0.72rem" },
                           fontWeight: 500
                         }}
                       />

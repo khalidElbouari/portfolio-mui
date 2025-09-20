@@ -16,8 +16,8 @@
       "after": " with hands-on experience in full-stack development, microservices architecture, and building scalable applications that make a difference."
     },
     "focusLabel": "CURRENTLY FOCUSED ON:",
-    "ctaPrimary": "View My Work",
-    "ctaSecondary": "Let's talk",
+    "ctaPrimary": "My Resume (PDF)",
+    "ctaSecondary": "AI assistant",
     "connectLabel": "CONNECT WITH ME:",
     "badgeTitle": "MQL",
     "badgeSubtitle": "Master's in Software Quality",
@@ -99,7 +99,7 @@
         "other": "Other"
       },
       "skillsMinimal": {
-        "title": "Tech stack, streamlined",
+        "title": "Tech stack",
         "subtitle": "Curated groups with my go-to tools. Tap a category to explore.",
         "focusLabel": "Currently refining",
         "focusFallback": "Dialing this skill in to push upcoming projects further."

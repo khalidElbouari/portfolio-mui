@@ -175,10 +175,10 @@ export default function SkillsAndCerts() {
       >
         <Box component={motion.section} variants={sectionVariants}>
           <SectionHeader
-            title={`${t("portfolio.resume.skills", "Skills")} & ${t("portfolio.resume.certifications", "Certifications")}`}
+            title={`${t("portfolio.resume.skills", "Skills")} | ${t("portfolio.resume.certifications", "Certifications")}`}
             subtitle={t("portfolio.resume.skillsSubtitle", "Curated skills and verified certifications")}
             darkMode={darkMode}
-            icon="code"
+            icon="none"
             sx={{
               mb: 5,
               '& .MuiTypography-h2': {
@@ -207,7 +207,7 @@ export default function SkillsAndCerts() {
                     {t("portfolio.resume.certifications", "Certifications")} ({certifications.length})
                   </Typography>
                   {showCertNav && (
-                    <Stack direction="row" spacing={1}>
+                    <Stack direction="row" spacing={1} sx={{ direction: 'ltr' }}>
                       <IconButton
                         size="small"
                         onClick={handlePrevCerts}
@@ -278,6 +278,7 @@ export default function SkillsAndCerts() {
                               mb: 1.5,
                               aspectRatio: '4 / 3',
                               maxHeight: { xs: 120, sm: 140, md: 160 },
+                              width: "100%",
                               bgcolor: alpha(theme.palette.text.primary, 0.05),
                               display: 'flex',
                               alignItems: 'center',
@@ -295,6 +296,7 @@ export default function SkillsAndCerts() {
                                 height: "auto",
                                 objectFit: "contain",
                                 display: "block",
+                                mx: "auto",
                                 transition: 'transform 0.3s ease',
                                 '&:hover': {
                                   transform: 'scale(1.05)'

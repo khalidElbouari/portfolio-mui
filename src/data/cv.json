@@ -28,7 +28,9 @@
       "institutionLogo": "/images/logos/est.png",
       "period": "2023-2024",
       "grade": "15.37/20",
-      "location": "Kenitra, Morocco"
+      "location": "Kenitra, Morocco",
+      "projects": ["Gestion de Toutune Enligne"]
+
     },
     {
       "degree": "Higher Technician's Diploma in Information Systems Development",
@@ -36,7 +38,9 @@
       "institutionLogo": "/images/logos/btsibnsina.png",
       "period": "2021-2023",
       "grade": "16.01/20",
-      "location": "Kenitra, Morocco"
+      "location": "Kenitra, Morocco",
+      "projects": ["BTS Institutions Management Platform"]
+
     }
   ],
   "experience": [
@@ -91,6 +95,11 @@
       "duration": "1 month",
       "description": "Developed a web application for the digital management of correspondence between the Doctoral Studies Center (CED) and the DECANAT's office.",
       "technologies": ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
+        "images": [
+        "/images/labocontrol/labocontrol-Aceuil.png",
+        "/images/labocontrol/labocontrol-services.png",
+        "/images/labocontrol/labocontrol-materiel.png"
+      ],
       "roleType": "Internship"
     }
   ],
@@ -168,39 +177,39 @@
       "githubLink": "https://placeholder.com/"
     },
     {
-  "title": "Gestion de Toutune Enligne",
-  "period": "15/01/2024 - 15/04/2024",
-  "duration": "3 months",
-  "description": "Cette plateforme en ligne facilite la collaboration en intégrant les services bancaires pour une gestion efficace des transactions. Elle permet aux utilisateurs de collaborer en ligne tout en bénéficiant d'une gestion sécurisée et simplifiée des aspects financiers.",
-  "technologies": ["Thymeleaf", "MySQL", "Spring Boot"],
-  "images": [
-    "/images/dart/img.png",
-    "/images/dart/img_1.png",
-    "/images/dart/img_2.png",
-    "/images/dart/img_3.png",
-    "/images/dart/img_4.png",
-    "/images/dart/img_5.png",
-    "/images/dart/img_6.png",
-    "/images/dart/img_7.png",
-    "/images/dart/img_8.png",
-    "/images/dart/img_9.png",
-    "/images/dart/img_10.png",
-    "/images/dart/img_11.png",
-    "/images/dart/img_12.png",
-    "/images/dart/img_13.png",
-    "/images/dart/img_14.png",
-    "/images/dart/img_15.png",
-    "/images/dart/img_16.png",
-    "/images/dart/img_17.png",
-    "/images/dart/img_18.png",
-    "/images/dart/img_19.png",
-    "/images/dart/img_20.png",
-    "/images/dart/img_21.png",
-    "/images/dart/img_22.png"
-  ],
-  "projectLink": "https://placeholder.com/",
-  "githubLink": "https://placeholder.com/"
-}
+        "title": "Gestion de Toutune Enligne",
+        "period": "15/01/2024 - 15/04/2024",
+        "duration": "3 months",
+        "description": "Cette plateforme en ligne facilite la collaboration en intégrant les services bancaires pour une gestion efficace des transactions. Elle permet aux utilisateurs de collaborer en ligne tout en bénéficiant d'une gestion sécurisée et simplifiée des aspects financiers.",
+        "technologies": ["Thymeleaf", "MySQL", "Spring Boot"],
+        "images": [
+          "/images/dart/img.png",
+          "/images/dart/img_1.png",
+          "/images/dart/img_2.png",
+          "/images/dart/img_3.png",
+          "/images/dart/img_4.png",
+          "/images/dart/img_5.png",
+          "/images/dart/img_6.png",
+          "/images/dart/img_7.png",
+          "/images/dart/img_8.png",
+          "/images/dart/img_9.png",
+          "/images/dart/img_10.png",
+          "/images/dart/img_11.png",
+          "/images/dart/img_12.png",
+          "/images/dart/img_13.png",
+          "/images/dart/img_14.png",
+          "/images/dart/img_15.png",
+          "/images/dart/img_16.png",
+          "/images/dart/img_17.png",
+          "/images/dart/img_18.png",
+          "/images/dart/img_19.png",
+          "/images/dart/img_20.png",
+          "/images/dart/img_21.png",
+          "/images/dart/img_22.png"
+        ],
+        "projectLink": "https://placeholder.com/",
+        "githubLink": "https://placeholder.com/"
+      }
 
 
   ],

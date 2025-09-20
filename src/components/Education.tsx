@@ -99,7 +99,7 @@ export default function Education() {
             title={t("portfolio.resume.education", "Education")}
             subtitle={t("portfolio.resume.educationSubtitle", "Academic journey and achievements")}
             darkMode={darkMode}
-            icon="education"
+            icon="none"
           />
 
           {/* Timeline Container */}

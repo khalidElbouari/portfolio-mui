@@ -88,7 +88,7 @@ export default function Header() {
         <Toolbar disableGutters sx={{ justifyContent: "center", px: 0, py: 1 }}>
           <Box
             sx={{
-              width: { xs: "calc(100% - 32px)", md: "900px" },
+              width: { xs: "calc(100% - 32px)", md: "850px" },
               maxWidth: "calc(100vw - 32px)",
               borderRadius: 4,
               bgcolor: trigger

@@ -14,7 +14,6 @@ import { useEffect, useRef, useState } from "react";
 import type { MouseEvent as ReactMouseEvent } from "react";
 import { useThemeContext } from "../context/ThemeContext";
 import { useTranslation } from "../context/LocaleContext";
-import { CallToAction } from "./CallToAction";
 import { ExperienceCard } from "./ExperienceCard";
 import { ProjectCard } from "./ProjectCard";
 import { SectionHeader } from "./SectionHeader";
@@ -41,6 +40,8 @@ export default function Projects() {
     subtitle: t("portfolio.experience.subtitle"),
     toggle: t("portfolio.experience.toggle")
   };
+  const projectsCount = cvData.projects.length;
+  const experienceCount = cvData.experience.length;
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const cardContainerRef = useRef<HTMLDivElement | null>(null);
@@ -175,12 +176,12 @@ export default function Projects() {
 
   const viewConfig = activeView === "projects"
     ? {
-        title: projectLabels.title,
+        title: `${projectLabels.title} (${projectsCount})`,
         subtitle: projectLabels.subtitle,
-        icon: "code" as const
+        icon: "none" as const
       }
     : {
-        title: experienceLabels.title,
+        title: `${experienceLabels.title} (${experienceCount})`,
         subtitle: experienceLabels.subtitle,
         icon: "work" as const
       };
@@ -279,10 +280,10 @@ export default function Projects() {
               }}
             >
               <ToggleButton value="projects" sx={{ gap: 1, px: 2 }}>
-                <Code fontSize="small" /> {projectLabels.toggle}
+                <Code fontSize="small" /> {projectLabels.toggle} ({projectsCount})
               </ToggleButton>
               <ToggleButton value="experience" sx={{ gap: 1, px: 2 }}>
-                <WorkOutline fontSize="small" /> {experienceLabels.toggle}
+                <WorkOutline fontSize="small" /> {experienceLabels.toggle} ({experienceCount})
               </ToggleButton>
             </ToggleButtonGroup>
           </Stack>
@@ -303,7 +304,7 @@ export default function Projects() {
                 width: "100%",
                 maxWidth: 1200,
                 mx: "auto",
-                minHeight: { xs: 520, sm: 580, md: 640 },
+                minHeight: { xs: 520, sm: 580, md: 640, lg: 540 },
                 mb: 3,
                 overflow: "visible"
               }}
@@ -339,7 +340,8 @@ export default function Projects() {
                   justifyContent: "center",
                   alignItems: "center",
                   mt: isSmallScreen ? 2 : 0,
-                  mb: isSmallScreen ? 0 : 4
+                  mb: isSmallScreen ? 0 : 4,
+                  direction: "ltr"
                 }}
               >
                 <Box
@@ -369,8 +371,8 @@ export default function Projects() {
                       variant="outlined"
                       onClick={handlePrevItem}
                       disabled={isTransitioning}
-                      startIcon={isRtl ? undefined : <ArrowBackIosNew fontSize="small" />}
-                      endIcon={isRtl ? <ArrowForwardIos fontSize="small" /> : undefined}
+                      dir="ltr"
+                      startIcon={<ArrowBackIosNew fontSize="small" />}
                       fullWidth={isMobile}
                       sx={{
                         py: { xs: 1.5, sm: 1.2, md: 1 },
@@ -401,8 +403,8 @@ export default function Projects() {
                       variant="contained"
                       onClick={handleNextItem}
                       disabled={isTransitioning}
-                      startIcon={isRtl ? <ArrowBackIosNew fontSize="small" /> : undefined}
-                      endIcon={isRtl ? undefined : <ArrowForwardIos fontSize="small" />}
+                      dir="ltr"
+                      endIcon={<ArrowForwardIos fontSize="small" />}
                       fullWidth={isMobile}
                       sx={{
                         py: { xs: 1.5, sm: 1.2, md: 1 },
@@ -476,7 +478,6 @@ export default function Projects() {
           </Box>
         </Box>
 
-        <CallToAction darkMode={darkMode} />
       </motion.div>
     </Container>
   );
