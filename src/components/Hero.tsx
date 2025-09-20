@@ -606,7 +606,7 @@ const downloadResume = () => {
                   >
                     <Box
                       component="img"
-                      src="/images/khalid-profile-1.png"
+                      src="/khalid-profile-1.png"
                       alt="Portrait of Khalid"
                       sx={{
                         width: { xs: 320, sm: 320 },
