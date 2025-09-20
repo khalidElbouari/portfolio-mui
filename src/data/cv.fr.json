@@ -67,7 +67,8 @@
       "period": "07/07/2025 - Présent",
       "description": "Unification de l'authentification à travers les microservices via l'API Gateway et coordination des revues de code pour accélérer le déploiement.",
       "technologies": ["Java", "Spring Boot", "architecture microservices", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": ["/images/Valhko/image-1.png", "/images/Valhko/image-2.png","/images/Valhko/image-3.png",
+      "/images/Valhko/image-4.png","/images/Valhko/image-5.png"],      
       "roleType": "Stage"
     },
     {
@@ -79,7 +80,7 @@
       "duration": "1 mois",
       "description": "Analyse et correction de bugs dans une application desktop existante développée en VB.NET, améliorant ainsi la stabilité et les performances.",
       "technologies": ["VB.NET", "SQL Server"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": ["placeHolder.jpg"],
       "roleType": "Stage"
     },
     {
@@ -91,11 +92,7 @@
       "duration": "1 mois",
       "description": "Développement d'une application web pour la gestion numérique de la correspondance entre le Centre d'Études Doctorales (CED) et le bureau du DECANAT.",
       "technologies": ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
-      "images": [
-        "/images/labocontrol/labocontrol-Aceuil.png",
-        "/images/labocontrol/labocontrol-services.png",
-        "/images/labocontrol/labocontrol-materiel.png"
-      ],
+      "images": ["placeHolder.jpg"],
       "roleType": "Stage"
     }
   ],
@@ -155,7 +152,7 @@
       "duration": "1 mois",
       "description": "Conception et développement d'une application web pour créer, modifier et gérer les CV avec une interface intuitive.",
       "technologies": ["HTML", "CSS", "JavaScript"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": ["placeHolder.jpg"],
       "projectLink": "https://placeholder.com/",
       "githubLink": "https://placeholder.com/"
     },
@@ -165,7 +162,7 @@
       "duration": "1 mois",
       "description": "Développement d'une extension Chrome intégrant un modèle AI embarqué pour aider les utilisateurs à remplir des formulaires longs et complexes.",
       "technologies": ["HTML", "CSS", "JavaScript"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": ["placeHolder.jpg"],
       "projectLink": "https://placeholder.com/",
       "githubLink": "https://placeholder.com/"
     },
@@ -192,19 +189,19 @@
       "name": "Java SE 17 Developer",
       "issuer": "Oracle University",
       "year": "2025",
-      "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
+      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
       "image": "/images/certificates/java-se-17.png",
-      "category": "Programmation",
-      "skillsAcquired": ["Java 17", "Concepts POO", "Internals JVM"]
+      "category": "Programming",
+      "skillsAcquired": ["Java 17", "OOP Concepts", "JVM Internals"]
     },
     {
       "name": "AI Foundations Associate",
       "issuer": "Oracle University",
       "year": "2025",
-      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
+      "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
       "image": "/images/certificates/ai-foundations.png",
-      "category": "IA & Données",
-      "skillsAcquired": ["Bases de l'IA", "Fondamentaux du Machine Learning"]
+      "category": "AI & Data",
+      "skillsAcquired": ["AI Basics", "Machine Learning Fundamentals"]
     }
   ],
   "skills": {

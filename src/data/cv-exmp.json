@@ -28,7 +28,9 @@
       "institutionLogo": "/images/logos/est.png",
       "period": "2023-2024",
       "grade": "15.37/20",
-      "location": "Kenitra, Morocco"
+      "location": "Kenitra, Morocco",
+      "projects": ["Gestion de Toutune Enligne"]
+
     },
     {
       "degree": "Higher Technician's Diploma in Information Systems Development",
@@ -36,7 +38,9 @@
       "institutionLogo": "/images/logos/btsibnsina.png",
       "period": "2021-2023",
       "grade": "16.01/20",
-      "location": "Kenitra, Morocco"
+      "location": "Kenitra, Morocco",
+      "projects": ["BTS Institutions Management Platform"]
+
     }
   ],
   "experience": [
@@ -50,7 +54,11 @@
       "duration": "3 months",
       "description": "Built a web application for integrated service and product marketing, improving business processes and enhancing user experience.",
       "technologies": ["Spring Boot", "Angular", "TypeScript", "HTML/CSS", "MySQL"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": [
+        "/images/labocontrol/labocontrol-Aceuil.png",
+        "/images/labocontrol/labocontrol-services.png",
+        "/images/labocontrol/labocontrol-materiel.png"
+      ],
       "achievements": ["Improved UX by 20%", "Reduced processing time by 15%"],
       "roleType": "Internship"
     },
@@ -63,7 +71,8 @@
       "period": "07/07/2025 - Present",
       "description": "Unified authentication across microservices via the API Gateway and coordinated code reviews to accelerate deployment.",
       "technologies": ["Java", "Spring Boot", "microservices architecture", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": ["/images/Valhko/image-1.png", "/images/Valhko/image-2.png","/images/Valhko/image-3.png",
+      "/images/Valhko/image-4.png","/images/Valhko/image-5.png"],
       "roleType": "Internship"
     },
     {
@@ -87,6 +96,11 @@
       "duration": "1 month",
       "description": "Developed a web application for the digital management of correspondence between the Doctoral Studies Center (CED) and the DECANAT's office.",
       "technologies": ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
+        "images": [
+        "/images/labocontrol/labocontrol-Aceuil.png",
+        "/images/labocontrol/labocontrol-services.png",
+        "/images/labocontrol/labocontrol-materiel.png"
+      ],
       "roleType": "Internship"
     }
   ],
@@ -98,8 +112,18 @@
       "duration": "1 month",
       "description": "Developed a Java code analysis tool to extract project structure and generate UML diagrams, improving project documentation and design understanding.",
       "technologies": ["Java", "Reflection", "Swing", "XML", "XMI"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": [
+        "/images/uml-diagrame-generator/image-1.png",
+        "/images/uml-diagrame-generator/image-2.png",
+        "/images/uml-diagrame-generator/image-3.png",
+        "/images/uml-diagrame-generator/image-4.png",
+        "/images/uml-diagrame-generator/project structure.png",
+        "/images/uml-diagrame-generator/xmi-file.png",
+        "/images/uml-diagrame-generator/xml project.png"
+      ],
+      "projectLink": "https://placeholder.com/",
       "githubLink": "https://github.com/khalidElbouari/UML-Diagrams-Generator"
+        
     },
     {
       "title": "BTS Institutions Management Platform",
@@ -107,7 +131,16 @@
       "duration": "6 months",
       "description": "Designed and implemented a web platform to manage BTS institutions and logbooks, reducing manual tracking and improving data accuracy.",
       "technologies": ["Java", "JSP/Servlets (JEE)", "HTML/CSS", "JavaScript", "MySQL", "Visual Paradigm"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "images": [
+        "/images/pfe-BTS/img.png",
+        "/images/pfe-BTS/img_1.png",
+        "/images/pfe-BTS/img_2.png",
+        "/images/pfe-BTS/img_3.png",
+        "/images/pfe-BTS/img_4.png",
+        "/images/pfe-BTS/img_5.png"
+      ],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
     },
     {
       "title": "SmartFind Web Platform",
@@ -115,7 +148,11 @@
       "duration": "4 months",
       "description": "As part of the SmartFind project (Injaz Al Maghrib program), developed the promotional website for the mobile solution with modern, responsive UI. Built intelligent search, immersive virtual tour, and integrated contact form.",
       "technologies": ["Node.js", "HTML", "CSS", "JavaScript"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": [
+        "/images/smartfind/image-1.png",
+        "/images/smartfind/image-2.png",
+        "/images/smartfind/image-3.png"
+      ],
       "projectLink": "https://smartfind-vitrine.vercel.app/",
       "githubLink": "https://github.com/khalidelbouari/smartfind"
     },
@@ -124,22 +161,65 @@
       "period": "2025",
       "duration": "1 month",
       "description": "Designed and developed a web application for creating, editing, and managing CVs with an intuitive interface.",
-      "technologies": ["HTML", "CSS", "JavaScript"]
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
+
     },
     {
       "title": "Google Chrome Extension",
       "period": "2025",
       "duration": "1 month",
       "description": "Developed a Chrome extension integrating an embedded AI model to assist users in filling out long and complex forms.",
-      "technologies": ["HTML", "CSS", "JavaScript"]
-    }
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
+    },
+    {
+        "title": "Gestion de Toutune Enligne",
+        "period": "15/01/2024 - 15/04/2024",
+        "duration": "3 months",
+        "description": "Cette plateforme en ligne facilite la collaboration en intégrant les services bancaires pour une gestion efficace des transactions. Elle permet aux utilisateurs de collaborer en ligne tout en bénéficiant d'une gestion sécurisée et simplifiée des aspects financiers.",
+        "technologies": ["Thymeleaf", "MySQL", "Spring Boot"],
+        "images": [
+          "/images/dart/img.png",
+          "/images/dart/img_1.png",
+          "/images/dart/img_2.png",
+          "/images/dart/img_3.png",
+          "/images/dart/img_4.png",
+          "/images/dart/img_5.png",
+          "/images/dart/img_6.png",
+          "/images/dart/img_7.png",
+          "/images/dart/img_8.png",
+          "/images/dart/img_9.png",
+          "/images/dart/img_10.png",
+          "/images/dart/img_11.png",
+          "/images/dart/img_12.png",
+          "/images/dart/img_13.png",
+          "/images/dart/img_14.png",
+          "/images/dart/img_15.png",
+          "/images/dart/img_16.png",
+          "/images/dart/img_17.png",
+          "/images/dart/img_18.png",
+          "/images/dart/img_19.png",
+          "/images/dart/img_20.png",
+          "/images/dart/img_21.png",
+          "/images/dart/img_22.png"
+        ],
+        "projectLink": "https://placeholder.com/",
+        "githubLink": "https://placeholder.com/"
+      }
+
+
   ],
   "certifications": [
     {
       "name": "Java SE 17 Developer",
       "issuer": "Oracle University",
       "year": "2025",
-      "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
+      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
       "image": "/images/certificates/java-se-17.png",
       "category": "Programming",
       "skillsAcquired": ["Java 17", "OOP Concepts", "JVM Internals"]
@@ -148,18 +228,20 @@
       "name": "AI Foundations Associate",
       "issuer": "Oracle University",
       "year": "2025",
-      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
+      "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
       "image": "/images/certificates/ai-foundations.png",
       "category": "AI & Data",
       "skillsAcquired": ["AI Basics", "Machine Learning Fundamentals"]
     }
   ],
-  "skills": {
+"skills": {
     "backend": ["Java", "Spring Boot", "JPA", "Hibernate", "Microservices"],
     "frontend": ["HTML/CSS", "JavaScript", "TypeScript", "Angular", "React"],
-    "devops": ["Maven", "Git", "GitHub", "GitLab", "Docker", "Docker Compose"],
+    "devops": ["Maven", "Git", "GitHub", "GitLab", "Docker","k8s"],
     "databases": ["MySQL", "SQL Server", "Oracle DB"],
-    "other": ["XML", "XSLT", "XPath", "JUnit", "Trello"]
+    "xml": ["XML", "XSLT", "XPath","XMI"],
+    "testing": ["JUnit", "Mockito"],
+    "tools": ["Trello", "Jira"]
   },
   "languages": [
     { "name": "Arabic", "level": "Native" },

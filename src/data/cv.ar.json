@@ -67,8 +67,9 @@
       "period": "07/07/2025 - حتى الآن",
       "description": "توحيد المصادقة عبر الميكروسيرفيسز باستخدام API Gateway وتنسيق مراجعات الكود لتسريع النشر.",
       "technologies": ["Java", "Spring Boot", "معمارية الميكروسيرفيسز", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
-      "roleType": "تدريب"
+      "images": ["/images/Valhko/image-1.png", "/images/Valhko/image-2.png","/images/Valhko/image-3.png",
+      "/images/Valhko/image-4.png","/images/Valhko/image-5.png"],
+            "roleType": "تدريب"
     },
     {
       "position": "متدرب مطور VB.NET",
@@ -79,7 +80,7 @@
       "duration": "شهر واحد",
       "description": "تحليل وإصلاح الأخطاء في تطبيق سطح المكتب المطور بـ VB.NET، مما حسن الاستقرار والأداء.",
       "technologies": ["VB.NET", "SQL Server"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": ["placeHolder.jpg"],
       "roleType": "تدريب"
     },
     {
@@ -91,11 +92,7 @@
       "duration": "شهر واحد",
       "description": "تطوير تطبيق ويب لإدارة المراسلات الرقمية بين مركز الدراسات العليا (CED) ومكتب العمادة.",
       "technologies": ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
-      "images": [
-        "/images/labocontrol/labocontrol-Aceuil.png",
-        "/images/labocontrol/labocontrol-services.png",
-        "/images/labocontrol/labocontrol-materiel.png"
-      ],
+      "images": ["placeHolder.jpg"],
       "roleType": "تدريب"
     }
   ],
@@ -155,7 +152,7 @@
       "duration": "شهر واحد",
       "description": "تصميم وتطوير تطبيق ويب لإنشاء وتحرير وإدارة السير الذاتية بواجهة سهلة الاستخدام.",
       "technologies": ["HTML", "CSS", "JavaScript"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": ["placeHolder.jpg"],
       "projectLink": "https://placeholder.com/",
       "githubLink": "https://placeholder.com/"
     },
@@ -165,7 +162,7 @@
       "duration": "شهر واحد",
       "description": "تطوير إضافة Chrome تتضمن نموذج AI مدمج لمساعدة المستخدمين في ملء النماذج الطويلة والمعقدة.",
       "technologies": ["HTML", "CSS", "JavaScript"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": ["placeHolder.jpg"],
       "projectLink": "https://placeholder.com/",
       "githubLink": "https://placeholder.com/"
     },
@@ -189,19 +186,19 @@
       "name": "Java SE 17 Developer",
       "issuer": "Oracle University",
       "year": "2025",
-      "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
+      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
       "image": "/images/certificates/java-se-17.png",
-      "category": "البرمجة",
-      "skillsAcquired": ["Java 17", "مفاهيم البرمجة الكائنية", "داخلية JVM"]
+      "category": "Programming",
+      "skillsAcquired": ["Java 17", "OOP Concepts", "JVM Internals"]
     },
     {
       "name": "AI Foundations Associate",
       "issuer": "Oracle University",
       "year": "2025",
-      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
+      "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
       "image": "/images/certificates/ai-foundations.png",
-      "category": "الذكاء الاصطناعي والبيانات",
-      "skillsAcquired": ["أساسيات الذكاء الاصطناعي", "مبادئ تعلم الآلة"]
+      "category": "AI & Data",
+      "skillsAcquired": ["AI Basics", "Machine Learning Fundamentals"]
     }
   ],
   "skills": {

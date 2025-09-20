@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Container,
+  Typography,
   Stack,
   ToggleButton,
   ToggleButtonGroup,
@@ -431,6 +432,23 @@ export default function Projects() {
                       {t("portfolio.projects.next", "Next")} {activeView === "projects" ? projectLabels.toggle : experienceLabels.toggle}
                     </Button>
                   </Stack>
+
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontWeight: 700,
+                      ml: isMobile ? 0 : 1.5,
+                      textAlign: isMobile ? "center" : "left",
+                      alignSelf: "center",
+                      px: 1.5,
+                      py: 0.5,
+                      borderRadius: 2,
+                      bgcolor: isSmallScreen ? "transparent" : (darkMode ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.06)"),
+                      border: isSmallScreen ? "none" : `1px solid ${darkMode ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.1)"}`
+                    }}
+                  >
+                    {(activeView === "projects" ? projectLabels.toggle : experienceLabels.toggle)} {activeIndex + 1} {t("portfolio.of", "of")} {items.length}
+                  </Typography>
 
                   {/* Progress Indicator - Enhanced */}
                   {!isMobile && (

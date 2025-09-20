@@ -71,7 +71,8 @@
       "period": "07/07/2025 - Present",
       "description": "Unified authentication across microservices via the API Gateway and coordinated code reviews to accelerate deployment.",
       "technologies": ["Java", "Spring Boot", "microservices architecture", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": ["/images/Valhko/image-1.png", "/images/Valhko/image-2.png","/images/Valhko/image-3.png",
+      "/images/Valhko/image-4.png","/images/Valhko/image-5.png"],
       "roleType": "Internship"
     },
     {
@@ -83,7 +84,7 @@
       "duration": "1 month",
       "description": "Analyzed and fixed bugs in an existing desktop application developed in VB.NET, resulting in improved stability and performance.",
       "technologies": ["VB.NET", "SQL Server"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": ["placeHolder.jpg"],
       "roleType": "Internship"
     },
     {
@@ -95,11 +96,8 @@
       "duration": "1 month",
       "description": "Developed a web application for the digital management of correspondence between the Doctoral Studies Center (CED) and the DECANAT's office.",
       "technologies": ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
-        "images": [
-        "/images/labocontrol/labocontrol-Aceuil.png",
-        "/images/labocontrol/labocontrol-services.png",
-        "/images/labocontrol/labocontrol-materiel.png"
-      ],
+      "images": ["placeHolder.jpg"],
+
       "roleType": "Internship"
     }
   ],
@@ -161,7 +159,7 @@
       "duration": "1 month",
       "description": "Designed and developed a web application for creating, editing, and managing CVs with an intuitive interface.",
       "technologies": ["HTML", "CSS", "JavaScript"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": ["placeHolder.jpg"],
       "projectLink": "https://placeholder.com/",
       "githubLink": "https://placeholder.com/"
 
@@ -172,7 +170,7 @@
       "duration": "1 month",
       "description": "Developed a Chrome extension integrating an embedded AI model to assist users in filling out long and complex forms.",
       "technologies": ["HTML", "CSS", "JavaScript"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": ["placeHolder.jpg"],
       "projectLink": "https://placeholder.com/",
       "githubLink": "https://placeholder.com/"
     },
@@ -218,7 +216,7 @@
       "name": "Java SE 17 Developer",
       "issuer": "Oracle University",
       "year": "2025",
-      "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
+      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
       "image": "/images/certificates/java-se-17.png",
       "category": "Programming",
       "skillsAcquired": ["Java 17", "OOP Concepts", "JVM Internals"]
@@ -227,23 +225,7 @@
       "name": "AI Foundations Associate",
       "issuer": "Oracle University",
       "year": "2025",
-      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
-      "image": "/images/certificates/ai-foundations.png",
-      "category": "AI & Data",
-      "skillsAcquired": ["AI Basics", "Machine Learning Fundamentals"]
-    } ,  {
-      "name": "AI Foundations Associate",
-      "issuer": "Oracle University",
-      "year": "2025",
-      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
-      "image": "/images/certificates/ai-foundations.png",
-      "category": "AI & Data",
-      "skillsAcquired": ["AI Basics", "Machine Learning Fundamentals"]
-    } ,{
-      "name": "AI Foundations Associate",
-      "issuer": "Oracle University",
-      "year": "2025",
-      "link": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=71CBAD9DAD36B0A1E004A4D14C35525B60A3A639D0902193757D5E82A190CD63",
+      "link": "http://catalog-education.oracle.com/ords/certview/sharebadge?id=B5F9956161F977604C9EB1DB6C84CA99B35E2D3F6B469CE9844359C2965ACAFB",
       "image": "/images/certificates/ai-foundations.png",
       "category": "AI & Data",
       "skillsAcquired": ["AI Basics", "Machine Learning Fundamentals"]

@@ -75,20 +75,19 @@ export const ExperienceCard = ({
               <Box
                 sx={{
                   position: "relative",
-                  flexBasis: { md: "35%", lg: "28%" }, // Same as ProjectCard, more compact on lg
-                  minHeight: { xs: 200, sm: 240, md: 480 },
-                  height: { lg: 300 }, // cap height on large screens
-                  alignSelf: { lg: "flex-start" }, // prevent stretching with taller content
-                  p: { lg: 1 }, // breathing room when objectFit is contain
-                  bgcolor: "rgba(12,21,36,0.04)",
+                  flex: "0 0 auto",
+                  width: { xs: "100%", md: 420, lg: 420 },
+                  maxWidth: { xs: "100%", md: 420 },
+                  aspectRatio: "16 / 9",
+                  borderRight: { md: "1px solid" },
+                  borderColor: "divider",
+                  bgcolor: darkMode ? "rgba(255,255,255,0.04)" : "rgba(15,23,42,0.04)",
                   overflow: "hidden",
                   cursor: "pointer",
                   transition: "all 0.3s ease",
-                  borderRight: { md: "1px solid" },
-                  borderColor: "divider",
                   "&:hover": {
                     "& .image": {
-                      transform: "scale(1.01)"
+                      transform: "scale(1.03)"
                     }
                   }
                 }}
@@ -107,7 +106,7 @@ export const ExperienceCard = ({
                   sx={{
                     width: "100%",
                     height: "100%",
-                    objectFit: { xs: "cover", lg: "contain" },
+                    objectFit: "cover",
                     objectPosition: "center",
                     transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
                   }}

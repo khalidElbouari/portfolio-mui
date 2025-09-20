@@ -171,7 +171,7 @@ const itemVariants = {
 
 // Locale-aware resume download
 const resumePaths = {
-  en: "/resume/Elbouari%20Khalid%20cv-english%20copy.pdf",
+  en: "/resume/Elbouari%20Khalid%20cv-english.pdf",
   fr: "/resume/Elbouari%20Khalid%20cv-french.pdf",
   ar: "/resume/Elbouari%20Khalid%20cv-arabic.pdf"
 } as const;
@@ -606,7 +606,7 @@ const downloadResume = () => {
                   >
                     <Box
                       component="img"
-                      src="/images/khalid-profile-2.JPG"
+                      src="/images/khalid-profile-1.png"
                       alt="Portrait of Khalid"
                       sx={{
                         width: { xs: 320, sm: 320 },
