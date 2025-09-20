@@ -345,25 +345,30 @@ export default function SkillsAndCerts() {
                           </Stack>
  
                           <Stack direction="row" spacing={1} alignItems="center">
-                            <Button
-                              variant="text"
-                              size="small"
-                              endIcon={<Launch fontSize="small" />}
-                              href={cert.link}
+                            <Box
+                              component="a"
+                              href={cert.link ?? "#"}
                               target="_blank"
                               rel="noopener noreferrer"
-                              sx={{
-                                textTransform: "none",
-                                fontWeight: 700,
-                                fontSize: '0.85rem',
-                                color: theme.palette.primary.main,
-                                '&:hover': {
-                                  backgroundColor: alpha(theme.palette.primary.main, 0.1)
-                                }
-                              }}
+                              sx={{ textDecoration: "none" }}
                             >
-                              {t("portfolio.resume.certificationVerify", "Verify")}
-                            </Button>
+                              <Button
+                                variant="text"
+                                size="small"
+                                endIcon={<Launch fontSize="small" />}
+                                sx={{
+                                  textTransform: "none",
+                                  fontWeight: 700,
+                                  fontSize: '0.85rem',
+                                  color: theme.palette.primary.main,
+                                  '&:hover': {
+                                    backgroundColor: alpha(theme.palette.primary.main, 0.1)
+                                  }
+                                }}
+                              >
+                                {t("portfolio.resume.certificationVerify", "Verify")}
+                              </Button>
+                            </Box>
                             <Button
                               variant="outlined"
                               size="small"
@@ -612,15 +617,20 @@ export default function SkillsAndCerts() {
             <Button onClick={() => setActiveCertIndex(null)}>
               {t("common.close", "Close")}
             </Button>
-            <Button
-              variant="contained"
-              endIcon={<Launch fontSize="small" />}
-              href={activeCert.link}
+            <Box
+              component="a"
+              href={activeCert?.link ?? "#"}
               target="_blank"
               rel="noopener noreferrer"
+              sx={{ textDecoration: "none" }}
             >
-              {t("portfolio.resume.certificationVerify", "View verification")}
-            </Button>
+              <Button
+                variant="contained"
+                endIcon={<Launch fontSize="small" />}
+              >
+                {t("portfolio.resume.certificationVerify", "View verification")}
+              </Button>
+            </Box>
           </DialogActions>
         </Dialog>
       )}

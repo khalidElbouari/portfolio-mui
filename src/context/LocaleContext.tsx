@@ -10,12 +10,116 @@ import {
 import en from "../locales/en.json";
 import fr from "../locales/fr.json";
 import ar from "../locales/ar.json";
-import cvEn from "../data/cv.json";
-import cvFr from "../data/cv.fr.json";
-import cvAr from "../data/cv.ar.json";
+import cvEnRaw from "../data/cv.json";
+import cvFrRaw from "../data/cv.fr.json";
+import cvArRaw from "../data/cv.ar.json";
 
 type LocaleResources = typeof en;
-type CvData = typeof cvEn;
+
+type CvEducation = {
+  degree: string;
+  institution: string;
+  institutionLogo: string;
+  period: string;
+  location?: string;
+  website?: string;
+  status?: string;
+  grade?: string;
+  projects?: string[];
+};
+
+type CvCertification = {
+  name: string;
+  issuer: string;
+  year?: string;
+  link?: string;
+  image: string;
+  category?: string;
+  skillsAcquired?: string[];
+};
+
+type CvProject = {
+  title: string;
+  period: string;
+  duration?: string;
+  description: string;
+  technologies?: string[];
+  images?: string[];
+  projectLink?: string;
+  githubLink?: string;
+};
+
+type CvExperience = {
+  position: string;
+  company: string;
+  companyLogo?: string;
+  website?: string;
+  location?: string;
+  period: string;
+  duration?: string;
+  description?: string;
+  technologies?: string[];
+  images?: string[];
+  achievements?: string[];
+  roleType?: string;
+};
+
+type CvData = {
+  personal: {
+    name: string;
+    title: string;
+    phone: string;
+    email: string;
+    address: string;
+    portfolio: string;
+    linkedin: string;
+    github: string;
+    profilePicture: string;
+  };
+  summary: string;
+  education: CvEducation[];
+  experience: CvExperience[];
+  projects: CvProject[];
+  certifications: CvCertification[];
+  skills: Record<string, string[]>;
+  languages: Array<{ name: string; level: string }>;
+  softSkills?: string[];
+};
+
+/**
+ * Prefix a path with the Vite base for subpath deployments (e.g. GitHub Pages).
+ * Leaves absolute URLs (http/https/data) untouched.
+ */
+const withBase = (p: string): string => {
+  if (!p) return p;
+  if (p.startsWith("http://") || p.startsWith("https://") || p.startsWith("data:")) return p;
+  const base = (import.meta as any).env?.BASE_URL ?? "/";
+  const clean = p.startsWith("/") ? p.slice(1) : p;
+  return `${base}${clean}`;
+};
+
+/**
+ * Deeply traverse an object/array and prefix any string starting with "/"
+ * with the current Vite base. This makes JSON-defined asset paths (e.g. "/images/...") work
+ * when the app is hosted under a subpath like "/repo-name/".
+ */
+function normalizeAssets<T>(obj: T): T {
+  if (obj == null) return obj;
+  if (typeof obj === "string") {
+    return (obj.startsWith("/") ? withBase(obj) : obj) as unknown as T;
+  }
+  if (Array.isArray(obj)) {
+    return obj.map((v) => normalizeAssets(v)) as unknown as T;
+  }
+  if (typeof obj === "object") {
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(obj as Record<string, unknown>)) {
+      out[k] = normalizeAssets(v as unknown);
+    }
+    return out as unknown as T;
+  }
+  return obj;
+}
 
 const resources = {
   en,
@@ -26,9 +130,9 @@ const resources = {
 export type Locale = keyof typeof resources;
 
 const cvResources: Partial<Record<Locale, CvData>> = {
-  en: cvEn,
-  fr: cvFr,
-  ar: cvAr
+  en: cvEnRaw as CvData,
+  fr: cvFrRaw as CvData,
+  ar: cvArRaw as CvData
 };
 
 interface LocaleContextValue {
@@ -130,7 +234,10 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     []
   );
 
-  const cvData = useMemo(() => cvResources[locale] ?? cvEn, [locale]);
+  const cvData = useMemo(
+    () => normalizeAssets((cvResources[locale] ?? (cvEnRaw as CvData)) as CvData),
+    [locale]
+  );
 
   const value = useMemo<LocaleContextValue>(
     () => ({

@@ -7,11 +7,10 @@ import {
   useTheme,
   useMediaQuery,
   Paper,
-  Avatar,
-  Fade,
-  Grow
+  Avatar
 } from "@mui/material";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import type { Transition, TargetAndTransition } from "framer-motion";
 import { SectionHeader } from "./SectionHeader";
 import { useThemeContext } from "../context/ThemeContext";
 import { useTranslation } from "../context/LocaleContext";
@@ -27,11 +26,19 @@ import {
 import { containerVariants, sectionVariants } from "../utils/animations";
 import { useState } from "react";
 
+// Framer Motion + MUI helper
+const MotionBox = motion(Box);
+
+// Types for function-based variants
+type TimelineItemVariants = {
+  hidden: TargetAndTransition;
+  visible: (index: number) => TargetAndTransition;
+};
+
 export default function Education() {
   const { darkMode } = useThemeContext();
   const { cv, t } = useTranslation();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const isTablet = useMediaQuery(theme.breakpoints.down('md'));
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -47,9 +54,9 @@ export default function Education() {
   const glowColor = darkMode ? "rgba(0,212,255,0.3)" : "rgba(59,130,246,0.2)";
 
   // Timeline item animation variants
-  const timelineItemVariants = {
-    hidden: { 
-      opacity: 0, 
+  const timelineItemVariants: TimelineItemVariants = {
+    hidden: {
+      opacity: 0,
       x: isTablet ? -20 : -50,
       scale: 0.95
     },
@@ -60,19 +67,20 @@ export default function Education() {
       transition: {
         delay: index * 0.2,
         duration: 0.6,
-        ease: [0.215, 0.610, 0.355, 1.000]
-      }
+        ease: [0.215, 0.610, 0.355, 1.000],
+      } satisfies Transition
     })
   };
 
   // Pulse animation for active items
-  const pulseAnimation = {
+  const pulseAnimation: TargetAndTransition = {
     scale: [1, 1.05, 1],
     transition: {
       duration: 2,
       repeat: Infinity,
-      ease: "easeInOut"
-    }
+      // easeInOut cubic-bezier
+      ease: [0.42, 0, 0.58, 1],
+    } satisfies Transition
   };
 
   const getStatusColor = (status?: string) => {
@@ -150,8 +158,7 @@ export default function Education() {
                       }}
                     >
                       {/* Timeline Node */}
-                      <Box
-                        component={motion.div}
+                      <MotionBox
                         animate={isActive ? pulseAnimation : {}}
                         sx={{
                           position: "absolute",
@@ -195,7 +202,7 @@ export default function Education() {
                             }} 
                           />
                         </Box>
-                      </Box>
+                      </MotionBox>
 
                       {/* Education Card */}
                       <Paper

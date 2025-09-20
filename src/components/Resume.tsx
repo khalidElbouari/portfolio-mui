@@ -11,6 +11,7 @@ import {
 } from "@mui/icons-material";
 import { containerVariants, sectionVariants, techChipVariants } from "../utils/animations";
 import { getTechColor } from "../utils/techConfig";
+const MotionBox = motion(Box);
 
 export default function Resume() {
   const { darkMode } = useThemeContext();
@@ -45,8 +46,7 @@ export default function Resume() {
         viewport={{ once: true, amount: 0.1 }}
         variants={containerVariants}
       >
-        <Box
-          component={motion.section}
+        <MotionBox
           variants={sectionVariants}
           sx={{
             p: { xs: 2, sm: 4, md: 6 },
@@ -217,7 +217,7 @@ export default function Resume() {
               </Paper>
             </Box>
           </Box>
-        </Box>
+        </MotionBox>
       </motion.div>
     </Container>
   );
