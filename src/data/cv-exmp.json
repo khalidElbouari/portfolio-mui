@@ -99,7 +99,7 @@
       "description": "Developed a Java code analysis tool to extract project structure and generate UML diagrams, improving project documentation and design understanding.",
       "technologies": ["Java", "Reflection", "Swing", "XML", "XMI"],
       "images": ["/images/project1-1.png", "/images/project1-2.png"],
-      "githubLink": "https://github.com/khalidelbouari/java-code-analysis"
+      "githubLink": "https://github.com/khalidElbouari/UML-Diagrams-Generator"
     },
     {
       "title": "BTS Institutions Management Platform",
@@ -116,7 +116,7 @@
       "description": "As part of the SmartFind project (Injaz Al Maghrib program), developed the promotional website for the mobile solution with modern, responsive UI. Built intelligent search, immersive virtual tour, and integrated contact form.",
       "technologies": ["Node.js", "HTML", "CSS", "JavaScript"],
       "images": ["/images/project1-1.png", "/images/project1-2.png"],
-      "projectLink": "https://smartfind.example.com",
+      "projectLink": "https://smartfind-vitrine.vercel.app/",
       "githubLink": "https://github.com/khalidelbouari/smartfind"
     },
     {

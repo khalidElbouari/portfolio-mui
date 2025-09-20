@@ -50,7 +50,11 @@
       "duration": "3 mois",
       "description": "Création d'une application web pour le marketing intégré des services et produits, améliorant les processus métiers et l'expérience utilisateur.",
       "technologies": ["Spring Boot", "Angular", "TypeScript", "HTML/CSS", "MySQL"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": [
+        "/images/labocontrol/labocontrol-Aceuil.png",
+        "/images/labocontrol/labocontrol-services.png",
+        "/images/labocontrol/labocontrol-materiel.png"
+      ],
       "achievements": ["Amélioration de l'expérience utilisateur de 20%", "Réduction du temps de traitement de 15%"],
       "roleType": "Stage"
     },
@@ -97,7 +101,15 @@
       "duration": "1 mois",
       "description": "Développement d'un outil d'analyse de code Java pour extraire la structure du projet et générer des diagrammes UML, améliorant la documentation et la compréhension du design.",
       "technologies": ["Java", "Reflection", "Swing", "XML", "XMI"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": [
+        "/images/uml-diagrame-generator/image-1.png",
+        "/images/uml-diagrame-generator/image-2.png",
+        "/images/uml-diagrame-generator/image-3.png",
+        "/images/uml-diagrame-generator/image-4.png",
+        "/images/uml-diagrame-generator/project structure.png",
+        "/images/uml-diagrame-generator/xmi-file.png",
+        "/images/uml-diagrame-generator/xml project.png"
+      ],
       "githubLink": "https://github.com/khalidelbouari/java-code-analysis"
     },
     {
@@ -106,7 +118,14 @@
       "duration": "6 mois",
       "description": "Conception et mise en œuvre d'une plateforme web pour gérer les institutions BTS et les cahiers de suivi, réduisant la saisie manuelle et améliorant la précision des données.",
       "technologies": ["Java", "JSP/Servlets (JEE)", "HTML/CSS", "JavaScript", "MySQL", "Visual Paradigm"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "images": [
+        "/images/pfe-BTS/img.png",
+        "/images/pfe-BTS/img_1.png",
+        "/images/pfe-BTS/img_2.png",
+        "/images/pfe-BTS/img_3.png",
+        "/images/pfe-BTS/img_4.png",
+        "/images/pfe-BTS/img_5.png"
+      ]
     },
     {
       "title": "SmartFind Web Platform",
@@ -114,7 +133,11 @@
       "duration": "4 mois",
       "description": "Dans le cadre du projet SmartFind (programme Injaz Al Maghrib), développement du site promotionnel de la solution mobile avec une interface moderne et responsive. Intégration de recherche intelligente, visite virtuelle immersive et formulaire de contact.",
       "technologies": ["Node.js", "HTML", "CSS", "JavaScript"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": [
+        "/images/smartfind/image-1.png",
+        "/images/smartfind/image-2.png",
+        "/images/smartfind/image-3.png"
+      ],
       "projectLink": "https://smartfind.example.com",
       "githubLink": "https://github.com/khalidelbouari/smartfind"
     },

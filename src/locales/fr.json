@@ -110,6 +110,12 @@
       "certificationYear": "Année"
     }
   },
+  "footer": {
+    "tagline": "Façonner l'excellence numérique.",
+    "builtWith": "Développé avec React, Vite et MUI.",
+    "copyrightPrefix": "©",
+    "rights": "Tous droits réservés."
+  },
   "common": {
     "close": "Fermer"
   }

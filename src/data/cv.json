@@ -50,7 +50,11 @@
       "duration": "3 months",
       "description": "Built a web application for integrated service and product marketing, improving business processes and enhancing user experience.",
       "technologies": ["Spring Boot", "Angular", "TypeScript", "HTML/CSS", "MySQL"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": [
+        "/images/labocontrol/labocontrol-Aceuil.png",
+        "/images/labocontrol/labocontrol-services.png",
+        "/images/labocontrol/labocontrol-materiel.png"
+      ],
       "achievements": ["Improved UX by 20%", "Reduced processing time by 15%"],
       "roleType": "Internship"
     },
@@ -98,8 +102,18 @@
       "duration": "1 month",
       "description": "Developed a Java code analysis tool to extract project structure and generate UML diagrams, improving project documentation and design understanding.",
       "technologies": ["Java", "Reflection", "Swing", "XML", "XMI"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
-      "githubLink": "https://github.com/khalidelbouari/java-code-analysis"
+      "images": [
+        "/images/uml-diagrame-generator/image-1.png",
+        "/images/uml-diagrame-generator/image-2.png",
+        "/images/uml-diagrame-generator/image-3.png",
+        "/images/uml-diagrame-generator/image-4.png",
+        "/images/uml-diagrame-generator/project structure.png",
+        "/images/uml-diagrame-generator/xmi-file.png",
+        "/images/uml-diagrame-generator/xml project.png"
+      ],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://github.com/khalidElbouari/UML-Diagrams-Generator"
+        
     },
     {
       "title": "BTS Institutions Management Platform",
@@ -107,7 +121,16 @@
       "duration": "6 months",
       "description": "Designed and implemented a web platform to manage BTS institutions and logbooks, reducing manual tracking and improving data accuracy.",
       "technologies": ["Java", "JSP/Servlets (JEE)", "HTML/CSS", "JavaScript", "MySQL", "Visual Paradigm"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "images": [
+        "/images/pfe-BTS/img.png",
+        "/images/pfe-BTS/img_1.png",
+        "/images/pfe-BTS/img_2.png",
+        "/images/pfe-BTS/img_3.png",
+        "/images/pfe-BTS/img_4.png",
+        "/images/pfe-BTS/img_5.png"
+      ],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
     },
     {
       "title": "SmartFind Web Platform",
@@ -115,8 +138,12 @@
       "duration": "4 months",
       "description": "As part of the SmartFind project (Injaz Al Maghrib program), developed the promotional website for the mobile solution with modern, responsive UI. Built intelligent search, immersive virtual tour, and integrated contact form.",
       "technologies": ["Node.js", "HTML", "CSS", "JavaScript"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
-      "projectLink": "https://smartfind.example.com",
+      "images": [
+        "/images/smartfind/image-1.png",
+        "/images/smartfind/image-2.png",
+        "/images/smartfind/image-3.png"
+      ],
+      "projectLink": "https://smartfind-vitrine.vercel.app/",
       "githubLink": "https://github.com/khalidelbouari/smartfind"
     },
     {
@@ -124,15 +151,58 @@
       "period": "2025",
       "duration": "1 month",
       "description": "Designed and developed a web application for creating, editing, and managing CVs with an intuitive interface.",
-      "technologies": ["HTML", "CSS", "JavaScript"]
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
+
     },
     {
       "title": "Google Chrome Extension",
       "period": "2025",
       "duration": "1 month",
       "description": "Developed a Chrome extension integrating an embedded AI model to assist users in filling out long and complex forms.",
-      "technologies": ["HTML", "CSS", "JavaScript"]
-    }
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "projectLink": "https://placeholder.com/",
+      "githubLink": "https://placeholder.com/"
+    },
+    {
+  "title": "Gestion de Toutune Enligne",
+  "period": "15/01/2024 - 15/04/2024",
+  "duration": "3 months",
+  "description": "Cette plateforme en ligne facilite la collaboration en intégrant les services bancaires pour une gestion efficace des transactions. Elle permet aux utilisateurs de collaborer en ligne tout en bénéficiant d'une gestion sécurisée et simplifiée des aspects financiers.",
+  "technologies": ["Thymeleaf", "MySQL", "Spring Boot"],
+  "images": [
+    "/images/dart/img.png",
+    "/images/dart/img_1.png",
+    "/images/dart/img_2.png",
+    "/images/dart/img_3.png",
+    "/images/dart/img_4.png",
+    "/images/dart/img_5.png",
+    "/images/dart/img_6.png",
+    "/images/dart/img_7.png",
+    "/images/dart/img_8.png",
+    "/images/dart/img_9.png",
+    "/images/dart/img_10.png",
+    "/images/dart/img_11.png",
+    "/images/dart/img_12.png",
+    "/images/dart/img_13.png",
+    "/images/dart/img_14.png",
+    "/images/dart/img_15.png",
+    "/images/dart/img_16.png",
+    "/images/dart/img_17.png",
+    "/images/dart/img_18.png",
+    "/images/dart/img_19.png",
+    "/images/dart/img_20.png",
+    "/images/dart/img_21.png",
+    "/images/dart/img_22.png"
+  ],
+  "projectLink": "https://placeholder.com/",
+  "githubLink": "https://placeholder.com/"
+}
+
+
   ],
   "certifications": [
     {

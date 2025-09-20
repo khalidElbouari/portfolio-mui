@@ -13,10 +13,13 @@ import {
   Launch,
   CalendarMonth,
   ArrowBackIosNew,
-  ArrowForwardIos
+  ArrowForwardIos,
+  Visibility
 } from "@mui/icons-material";
 import { getTechIcon, getTechColor } from "../utils/techConfig";
 import { techChipVariants } from "../utils/animations";
+import { useState } from "react";
+import { ImageModal } from "./ImageModal";
 
 interface ProjectCardProps {
   project: any;
@@ -42,298 +45,425 @@ export const ProjectCard = ({
   const images: string[] = Array.isArray(project.images) ? project.images : [];
   const hasImages = images.length > 0;
   const activeImage = hasImages ? images[imageIndex % images.length] : undefined;
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
 
   return (
-    <Box component={motion.div} layout transition={{ type: "spring", stiffness: 260, damping: 25 }}>
-      <Paper
-        elevation={0}
-        sx={{
-          p: { xs: 2, sm: 3 },
-          borderRadius: 3,
-          background: darkMode
-            ? "linear-gradient(180deg, rgba(15,23,42,0.88) 0%, rgba(15,23,42,0.65) 100%)"
-            : "linear-gradient(180deg, rgba(248,250,252,0.95) 0%, rgba(255,255,255,0.98) 100%)",
-          border: "1px solid",
-          borderColor: darkMode ? "rgba(255,255,255,0.08)" : "rgba(15,23,42,0.08)",
-          backdropFilter: "blur(10px)"
-        }}
-      >
-        <Box
+    <>
+      <Box component={motion.div} layout transition={{ type: "spring", stiffness: 260, damping: 25 }}>
+        <Paper
+          elevation={0}
           sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            gap: { xs: 2.5, md: 3.5 }
+            borderRadius: 4,
+            background: darkMode
+              ? "linear-gradient(180deg, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.75) 100%)"
+              : "linear-gradient(180deg, rgba(248,250,252,0.98) 0%, rgba(255,255,255,0.99) 100%)",
+            border: "1px solid",
+            borderColor: darkMode ? "rgba(255,255,255,0.08)" : "rgba(15,23,42,0.08)",
+            backdropFilter: "blur(12px)",
+            overflow: "hidden"
           }}
         >
-          {hasImages && (
-            <Box
-              sx={{
-                position: "relative",
-                flexBasis: { md: "45%" },
-                borderRadius: 2.5,
-                overflow: "hidden",
-                height: { xs: 220, md: 320 },
-                bgcolor: "rgba(15,23,42,0.08)"
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              minHeight: { xs: "auto", md: 480 }
+            }}
+          >
+            {/* Compact Image Section */}
+            {hasImages && (
+              <Box
+                sx={{
+                  position: "relative",
+                  flexBasis: { md: "35%" }, // Reduced from 60%
+                  minHeight: { xs: 200, sm: 240, md: 480 }, // Smaller heights
+                  bgcolor: "rgba(15,23,42,0.04)",
+                  overflow: "hidden",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    "& .image": {
+                      transform: "scale(1.02)"
+                    }}
+                }}
+                onClick={openModal}
+              >
+                {/* Main Image */}
+                <Box
+                  component={motion.img}
+                  key={activeImage}
+                  src={activeImage}
+                  alt={`${project.title} preview ${imageIndex + 1}`}
+                  className="image"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+                  }}
+                />
+
+
+                {/* Image Navigation - Compact */}
+                {images.length > 1 && (
+                  <>
+                    <IconButton
+                      size="small"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onPrevImage();
+                      }}
+                      sx={{
+                        position: "absolute",
+                        top: 12,
+                        left: 12,
+                        width: 32,
+                        height: 32,
+                        bgcolor: "rgba(0,0,0,0.6)",
+                        color: "#fff",
+                        backdropFilter: "blur(8px)",
+                        zIndex: 2,
+                        transition: "all 0.3s ease",
+                        "&:hover": { 
+                          bgcolor: "rgba(0,0,0,0.8)",
+                          transform: "scale(1.1)"
+                        }
+                      }}
+                    >
+                      <ArrowBackIosNew fontSize="small" />
+                    </IconButton>
+                    <IconButton
+                      size="small"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onNextImage();
+                      }}
+                      sx={{
+                        position: "absolute",
+                        top: 12,
+                        right: 12,
+                        width: 32,
+                        height: 32,
+                        bgcolor: "rgba(0,0,0,0.6)",
+                        color: "#fff",
+                        backdropFilter: "blur(8px)",
+                        zIndex: 2,
+                        transition: "all 0.3s ease",
+                        "&:hover": { 
+                          bgcolor: "rgba(0,0,0,0.8)",
+                          transform: "scale(1.1)"
+                        }
+                      }}
+                    >
+                      <ArrowForwardIos fontSize="small" />
+                    </IconButton>
+                    
+                    {/* Compact Image Counter */}
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        bottom: 12,
+                        right: 12,
+                        px: 1.5,
+                        py: 0.5,
+                        borderRadius: 2,
+                        bgcolor: "rgba(0,0,0,0.7)",
+                        color: "#fff",
+                        fontSize: "0.75rem",
+                        fontWeight: 600,
+                        backdropFilter: "blur(8px)",
+                        zIndex: 2
+                      }}
+                    >
+                      {imageIndex + 1}/{images.length}
+                    </Box>
+                  </>
+                )}
+              </Box>
+            )}
+
+            {/* Content Section - Now takes more space */}
+            <Box 
+              sx={{ 
+                flexGrow: 1, 
+                display: "flex", 
+                flexDirection: "column", 
+                p: { xs: 3, sm: 4 },
+                gap: 2.5
               }}
             >
-              <Box
-                component="img"
-                src={activeImage}
-                alt={`${project.title} preview ${imageIndex + 1}`}
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover"
-                }}
-              />
-              {images.length > 1 && (
-                <>
-                  <IconButton
-                    size="small"
-                    onClick={onPrevImage}
-                    sx={{
-                      position: "absolute",
-                      top: "50%",
-                      left: 8,
-                      transform: "translateY(-50%)",
-                      bgcolor: "rgba(15,15,20,0.55)",
-                      color: "#fff",
-                      '&:hover': { bgcolor: "rgba(15,15,20,0.8)" }
-                    }}
-                  >
-                    <ArrowBackIosNew fontSize="small" />
-                  </IconButton>
-                  <IconButton
-                    size="small"
-                    onClick={onNextImage}
-                    sx={{
-                      position: "absolute",
-                      top: "50%",
-                      right: 8,
-                      transform: "translateY(-50%)",
-                      bgcolor: "rgba(15,15,20,0.55)",
-                      color: "#fff",
-                      '&:hover': { bgcolor: "rgba(15,15,20,0.8)" }
-                    }}
-                  >
-                    <ArrowForwardIos fontSize="small" />
-                  </IconButton>
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      bottom: 8,
-                      right: 12,
-                      px: 1,
-                      py: 0.25,
-                      borderRadius: 999,
-                      bgcolor: "rgba(15,15,20,0.65)",
-                      color: "#fff",
-                      fontSize: "0.7rem"
-                    }}
-                  >
-                    {imageIndex + 1} / {images.length}
-                  </Box>
-                </>
-              )}
-            </Box>
-          )}
+              {/* Header */}
+              <Box>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 700,
+                    mb: 1.5,
+                    letterSpacing: "-0.02em",
+                    fontSize: { xs: "1.3rem", sm: "1.4rem" }
+                  }}
+                >
+                  {project.title}
+                </Typography>
 
-          <Box sx={{ flexGrow: 1, display: "flex", flexDirection: "column", gap: 2.5 }}>
-            <Box>
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: 700,
-                  mb: 1,
-                  letterSpacing: "-0.01em"
-                }}
-              >
-                {project.title}
-              </Typography>
+                {(orgLogo || orgName) && (
+                  <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 2 }}>
+                    {orgLogo && (
+                      <Box
+                        component="img"
+                        src={orgLogo}
+                        alt={orgName ? `${orgName} logo` : "Organization logo"}
+                        sx={{
+                          width: 28,
+                          height: 28,
+                          borderRadius: 1.5,
+                          border: "1px solid",
+                          borderColor: "divider",
+                          objectFit: "contain",
+                          bgcolor: "background.paper"
+                        }}
+                      />
+                    )}
+                    {orgName && (
+                      <Typography
+                        variant="body2"
+                        color="text.primary"
+                        sx={{ fontWeight: 600 }}
+                        component={orgWebsite ? "a" : "span"}
+                        href={orgWebsite}
+                        target={orgWebsite ? "_blank" : undefined}
+                        rel={orgWebsite ? "noopener noreferrer" : undefined}
+                      >
+                        {orgName}
+                      </Typography>
+                    )}
+                  </Stack>
+                )}
 
-              {(orgLogo || orgName) && (
-                <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
-                  {orgLogo && (
-                    <Box
-                      component="img"
-                      src={orgLogo}
-                      alt={orgName ? `${orgName} logo` : "Organization logo"}
+                <Stack direction="row" spacing={1.5} alignItems="center" flexWrap="wrap" sx={{ mb: 2 }}>
+                  <CalendarMonth fontSize="small" color="action" />
+                  <Typography variant="body2" color="text.secondary" fontWeight={500}>
+                    {project.period}
+                  </Typography>
+                  {project.duration && (
+                    <Chip
+                      label={project.duration}
+                      size="small"
                       sx={{
-                        width: 28,
-                        height: 28,
-                        borderRadius: 1,
-                        border: "1px solid",
-                        borderColor: "divider",
-                        objectFit: "contain",
-                        bgcolor: "background.paper"
+                        bgcolor: darkMode ? "rgba(255,107,157,0.15)" : "rgba(156,39,176,0.15)",
+                        color: darkMode ? "#ff6b9d" : "#9c27b0",
+                        height: 26,
+                        fontWeight: 600,
+                        fontSize: "0.75rem"
                       }}
                     />
                   )}
-                  {orgName && (
-                    <Typography
-                      variant="body2"
-                      color="text.primary"
-                      sx={{ fontWeight: 600 }}
-                      component={orgWebsite ? "a" : "span"}
-                      href={orgWebsite}
-                      target={orgWebsite ? "_blank" : undefined}
-                      rel={orgWebsite ? "noopener noreferrer" : undefined}
-                    >
-                      {orgName}
-                    </Typography>
-                  )}
                 </Stack>
-              )}
+              </Box>
 
-              <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap">
-                <CalendarMonth fontSize="small" color="action" />
-                <Typography variant="body2" color="text.secondary">
-                  {project.period}
-                </Typography>
-                {project.duration && (
-                  <Chip
-                    label={project.duration}
-                    size="small"
-                    sx={{
-                      bgcolor: darkMode ? "rgba(255,107,157,0.12)" : "rgba(156,39,176,0.12)",
-                      color: darkMode ? "#ff6b9d" : "#9c27b0",
-                      height: 24,
-                      fontWeight: 600
-                    }}
-                  />
-                )}
-              </Stack>
-            </Box>
-
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              sx={{
-                lineHeight: 1.6,
-                display: "-webkit-box",
-                WebkitBoxOrient: "vertical",
-                WebkitLineClamp: 6,
-                overflow: "hidden"
-              }}
-            >
-              {project.description}
-            </Typography>
-
-            <Box>
-              <Typography variant="caption" sx={{ fontWeight: 600, mb: 1, display: "block" }}>
-                Technologies
+              {/* Description */}
+              <Typography
+                variant="body1"
+                color="text.secondary"
+                sx={{
+                  lineHeight: 1.6,
+                  fontSize: "0.95rem",
+                  display: "-webkit-box",
+                  WebkitBoxOrient: "vertical",
+                  WebkitLineClamp: 3,
+                  overflow: "hidden"
+                }}
+              >
+                {project.description}
               </Typography>
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                <AnimatePresence>
-                  {project.technologies.map((tech: string, idx: number) => (
-                    <motion.div
-                      key={tech}
-                      variants={techChipVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="hidden"
-                      whileHover="hover"
-                      custom={idx}
-                    >
+
+              {/* Technologies */}
+              <Box>
+                <Typography variant="body2" sx={{ fontWeight: 700, mb: 1.5, color: "text.primary" }}>
+                  Technologies Used
+                </Typography>
+                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                  <AnimatePresence>
+                    {project.technologies.slice(0, 8).map((tech: string, idx: number) => (
+                      <motion.div
+                        key={tech}
+                        variants={techChipVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        whileHover="hover"
+                        custom={idx}
+                      >
+                        <Chip
+                          icon={getTechIcon(tech)}
+                          label={tech}
+                          size="small"
+                          sx={{
+                            bgcolor: `${getTechColor(tech)}18`,
+                            color: getTechColor(tech),
+                            border: `1px solid ${getTechColor(tech)}35`,
+                            height: 28,
+                            fontSize: "0.75rem",
+                            fontWeight: 500,
+                            '& .MuiChip-icon': {
+                              fontSize: "0.9rem"
+                            },
+                            transition: "all 0.2s ease",
+                            "&:hover": {
+                              transform: "translateY(-1px)",
+                              boxShadow: `0 4px 12px ${getTechColor(tech)}25`
+                            }
+                          }}
+                        />
+                      </motion.div>
+                    ))}
+                    {project.technologies.length > 8 && (
                       <Chip
-                        icon={getTechIcon(tech)}
-                        label={tech}
+                        label={`+${project.technologies.length - 8} more`}
                         size="small"
+                        variant="outlined"
                         sx={{
-                          bgcolor: `${getTechColor(tech)}15`,
-                          color: getTechColor(tech),
-                          border: `1px solid ${getTechColor(tech)}30`,
-                          height: 26,
+                          height: 28,
                           fontSize: "0.75rem",
-                          '& .MuiChip-icon': {
-                            fontSize: "1rem"
-                          }
+                          fontWeight: 500
                         }}
                       />
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
+                    )}
+                  </AnimatePresence>
+                </Box>
+              </Box>
+
+              {/* Action Buttons */}
+              <Box sx={{ mt: "auto" }}>
+                <Stack
+                  direction="row"
+                  spacing={1.5}
+                  sx={{
+                    pt: 2,
+                    borderTop: "1px solid",
+                    borderColor: "divider"
+                  }}
+                >
+                  {hasImages && (
+                    <IconButton
+                      size="medium"
+                      onClick={openModal}
+                      sx={{
+                        width: 40,
+                        height: 40,
+                        bgcolor: darkMode ? "rgba(0,212,255,0.12)" : "rgba(25,118,210,0.12)",
+                        color: darkMode ? "#00d4ff" : "#1976d2",
+                        border: `1px solid ${darkMode ? "rgba(0,212,255,0.3)" : "rgba(25,118,210,0.3)"}`,
+                        transition: "all 0.3s ease",
+                        "&:hover": {
+                          bgcolor: darkMode ? "rgba(0,212,255,0.2)" : "rgba(25,118,210,0.2)",
+                          transform: "translateY(-2px)",
+                          boxShadow: darkMode 
+                            ? "0 6px 20px rgba(0,212,255,0.4)" 
+                            : "0 6px 20px rgba(25,118,210,0.4)"
+                        }
+                      }}
+                    >
+                      <Visibility fontSize="small" />
+                    </IconButton>
+                  )}
+                  {project.githubLink ? (
+                    <IconButton
+                      size="medium"
+                      component="a"
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      sx={{
+                        width: 40,
+                        height: 40,
+                        bgcolor: darkMode ? "rgba(255,255,255,0.08)" : "rgba(15,23,42,0.08)",
+                        border: `1px solid ${darkMode ? "rgba(255,255,255,0.12)" : "rgba(15,23,42,0.12)"}`,
+                        transition: "all 0.3s ease",
+                        "&:hover": {
+                          bgcolor: "primary.main",
+                          color: "primary.contrastText",
+                          transform: "translateY(-2px)",
+                          boxShadow: darkMode 
+                            ? "0 6px 20px rgba(0,212,255,0.3)" 
+                            : "0 6px 20px rgba(25,118,210,0.3)"
+                        }
+                      }}
+                    >
+                      <GitHub fontSize="small" />
+                    </IconButton>
+                  ) : (
+                    <IconButton
+                      size="medium"
+                      disabled
+                      sx={{
+                        width: 40,
+                        height: 40,
+                        bgcolor: darkMode ? "rgba(255,255,255,0.05)" : "rgba(15,23,42,0.05)"
+                      }}
+                    >
+                      <GitHub fontSize="small" />
+                    </IconButton>
+                  )}
+                  {project.projectLink ? (
+                    <IconButton
+                      size="medium"
+                      component="a"
+                      href={project.projectLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      sx={{
+                        width: 40,
+                        height: 40,
+                        bgcolor: darkMode ? "rgba(255,255,255,0.08)" : "rgba(15,23,42,0.08)",
+                        border: `1px solid ${darkMode ? "rgba(255,255,255,0.12)" : "rgba(15,23,42,0.12)"}`,
+                        transition: "all 0.3s ease",
+                        "&:hover": {
+                          bgcolor: "primary.main",
+                          color: "primary.contrastText",
+                          transform: "translateY(-2px)",
+                          boxShadow: darkMode 
+                            ? "0 6px 20px rgba(0,212,255,0.3)" 
+                            : "0 6px 20px rgba(25,118,210,0.3)"
+                        }
+                      }}
+                    >
+                      <Launch fontSize="small" />
+                    </IconButton>
+                  ) : (
+                    <IconButton
+                      size="medium"
+                      disabled
+                      sx={{
+                        width: 40,
+                        height: 40,
+                        bgcolor: darkMode ? "rgba(255,255,255,0.05)" : "rgba(15,23,42,0.05)"
+                      }}
+                    >
+                      <Launch fontSize="small" />
+                    </IconButton>
+                  )}
+                </Stack>
               </Box>
             </Box>
-
-            <Box sx={{ mt: 1, display: "flex", flexDirection: "column", gap: 1.25 }}>
-              <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-                Project Highlights
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Designed for extensibility: add per-image notes, metrics, or links here without layout shifts.
-              </Typography>
-            </Box>
-
-            <Stack
-              direction="row"
-              spacing={1}
-              sx={{
-                pt: 1.5,
-                borderTop: "1px solid",
-                borderColor: "divider"
-              }}
-            >
-              {project.githubLink ? (
-                <IconButton
-                  size="small"
-                  component="a"
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    bgcolor: darkMode ? "rgba(255,255,255,0.05)" : "rgba(15,23,42,0.05)",
-                    '&:hover': {
-                      bgcolor: "primary.main",
-                      color: "primary.contrastText"
-                    }
-                  }}
-                >
-                  <GitHub fontSize="small" />
-                </IconButton>
-              ) : (
-                <IconButton
-                  size="small"
-                  disabled
-                  sx={{
-                    bgcolor: darkMode ? "rgba(255,255,255,0.05)" : "rgba(15,23,42,0.05)"
-                  }}
-                >
-                  <GitHub fontSize="small" />
-                </IconButton>
-              )}
-              {project.projectLink ? (
-                <IconButton
-                  size="small"
-                  component="a"
-                  href={project.projectLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    bgcolor: darkMode ? "rgba(255,255,255,0.05)" : "rgba(15,23,42,0.05)",
-                    '&:hover': {
-                      bgcolor: "primary.main",
-                      color: "primary.contrastText"
-                    }
-                  }}
-                >
-                  <Launch fontSize="small" />
-                </IconButton>
-              ) : (
-                <IconButton
-                  size="small"
-                  disabled
-                  sx={{
-                    bgcolor: darkMode ? "rgba(255,255,255,0.05)" : "rgba(15,23,42,0.05)"
-                  }}
-                >
-                  <Launch fontSize="small" />
-                </IconButton>
-              )}
-            </Stack>
           </Box>
-        </Box>
-      </Paper>
-    </Box>
+        </Paper>
+      </Box>
+
+      {/* Image Modal */}
+      <ImageModal
+        open={modalOpen}
+        onClose={closeModal}
+        images={images}
+        initialIndex={imageIndex}
+        title={project.title}
+      />
+    </>
   );
 };

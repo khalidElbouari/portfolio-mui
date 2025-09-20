@@ -110,6 +110,12 @@
       "certificationYear": "Year"
     }
   },
+  "footer": {
+    "tagline": "Crafting digital excellence.",
+    "builtWith": "Built with React, Vite, and MUI.",
+    "copyrightPrefix": "©",
+    "rights": "All rights reserved."
+  },
   "common": {
     "close": "Close"
   }

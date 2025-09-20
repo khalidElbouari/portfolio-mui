@@ -6,6 +6,7 @@ import Education from "./components/Education";
 import Projects from "./components/projects";
 import SkillsAndCerts from "./components/SkillsAndCerts";
 import ChatWidget from "./components/ChatWidget";
+import Footer from "./components/Footer";
 import { ChatProvider } from "./context/ChatContext";
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
       <Box
         sx={{
           minHeight: "100vh",
+          pt: { xs: 8, md: 10 },
           background: (theme) =>
             theme.palette.mode === 'dark'
               ? "linear-gradient(180deg, rgba(2,6,23,1) 0%, rgba(3,7,18,1) 100%)"
@@ -28,6 +30,8 @@ export default function App() {
         <Projects />
         {/* 3) Certifications & Skills (including Languages) */}
         <SkillsAndCerts />
+
+        <Footer />
 
         {/* Floating chat */}
         <ChatWidget />

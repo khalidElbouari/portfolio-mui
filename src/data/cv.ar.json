@@ -50,7 +50,11 @@
       "duration": "3 أشهر",
       "description": "بناء تطبيق ويب للتسويق المتكامل للخدمات والمنتجات، مما حسن العمليات التجارية وتجربة المستخدم.",
       "technologies": ["Spring Boot", "Angular", "TypeScript", "HTML/CSS", "MySQL"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": [
+        "/images/labocontrol/labocontrol-Aceuil.png",
+        "/images/labocontrol/labocontrol-services.png",
+        "/images/labocontrol/labocontrol-materiel.png"
+      ],
       "achievements": ["تحسين تجربة المستخدم بنسبة 20%", "تقليل وقت المعالجة بنسبة 15%"],
       "roleType": "تدريب"
     },
@@ -97,7 +101,15 @@
       "duration": "شهر واحد",
       "description": "تطوير أداة تحليل كود Java لاستخراج هيكل المشروع وإنشاء مخططات UML، مما يحسن التوثيق وفهم التصميم.",
       "technologies": ["Java", "Reflection", "Swing", "XML", "XMI"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": [
+        "/images/uml-diagrame-generator/image-1.png",
+        "/images/uml-diagrame-generator/image-2.png",
+        "/images/uml-diagrame-generator/image-3.png",
+        "/images/uml-diagrame-generator/image-4.png",
+        "/images/uml-diagrame-generator/project structure.png",
+        "/images/uml-diagrame-generator/xmi-file.png",
+        "/images/uml-diagrame-generator/xml project.png"
+      ],
       "githubLink": "https://github.com/khalidelbouari/java-code-analysis"
     },
     {
@@ -106,7 +118,14 @@
       "duration": "6 أشهر",
       "description": "تصميم وتنفيذ منصة ويب لإدارة مؤسسات BTS وسجلاتها، مما يقلل من العمل اليدوي ويحسن دقة البيانات.",
       "technologies": ["Java", "JSP/Servlets (JEE)", "HTML/CSS", "JavaScript", "MySQL", "Visual Paradigm"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"]
+      "images": [
+        "/images/pfe-BTS/img.png",
+        "/images/pfe-BTS/img_1.png",
+        "/images/pfe-BTS/img_2.png",
+        "/images/pfe-BTS/img_3.png",
+        "/images/pfe-BTS/img_4.png",
+        "/images/pfe-BTS/img_5.png"
+      ]
     },
     {
       "title": "منصة SmartFind على الويب",
@@ -114,7 +133,11 @@
       "duration": "4 أشهر",
       "description": "كجزء من مشروع SmartFind (برنامج Injaz Al Maghrib)، تطوير موقع ترويجي للحل المحمول بواجهة حديثة ومتجاوبة. بناء بحث ذكي، جولة افتراضية غامرة ونموذج اتصال مدمج.",
       "technologies": ["Node.js", "HTML", "CSS", "JavaScript"],
-      "images": ["/images/project1-1.png", "/images/project1-2.png"],
+      "images": [
+        "/images/smartfind/image-1.png",
+        "/images/smartfind/image-2.png",
+        "/images/smartfind/image-3.png"
+      ],
       "projectLink": "https://smartfind.example.com",
       "githubLink": "https://github.com/khalidelbouari/smartfind"
     },

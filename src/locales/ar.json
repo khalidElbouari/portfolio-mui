@@ -110,6 +110,12 @@
       "certificationYear": "السنة"
     }
   },
+  "footer": {
+    "tagline": "نصنع التميز الرقمي.",
+    "builtWith": "تم التطوير باستخدام React و Vite و MUI.",
+    "copyrightPrefix": "©",
+    "rights": "جميع الحقوق محفوظة."
+  },
   "common": {
     "close": "إغلاق"
   }
