@@ -28,7 +28,8 @@
       "institutionLogo": "/images/logos/est.png",
       "period": "2023-2024",
       "grade": "15,37/20",
-      "location": "Kénitra, Maroc"
+      "location": "Kénitra, Maroc",
+      "projects": ["Gestion de Toutune Enligne"]
     },
     {
       "degree": "Diplôme de Technicien Supérieur en Développement des Systèmes d'Information",
@@ -36,7 +37,8 @@
       "institutionLogo": "/images/logos/btsibnsina.png",
       "period": "2021-2023",
       "grade": "16,01/20",
-      "location": "Kénitra, Maroc"
+      "location": "Kénitra, Maroc",
+      "projects": ["BTS Institutions Management Platform"]
     }
   ],
   "experience": [
@@ -56,7 +58,9 @@
         "/images/labocontrol/labocontrol-materiel.png"
       ],
       "achievements": ["Amélioration de l'expérience utilisateur de 20%", "Réduction du temps de traitement de 15%"],
-      "roleType": "Stage"
+      "roleType": "Stage",
+      "projectLink": "https://guthib.com/",
+      "githubLink": "https://github.com/khalidElbouari/labocontrol"
     },
     {
       "position": "Stagiaire Full Stack Engineer",
@@ -67,8 +71,13 @@
       "period": "07/07/2025 - Présent",
       "description": "Unification de l'authentification à travers les microservices via l'API Gateway et coordination des revues de code pour accélérer le déploiement.",
       "technologies": ["Java", "Spring Boot", "architecture microservices", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
-      "images": ["/images/Valhko/image-1.png", "/images/Valhko/image-2.png","/images/Valhko/image-3.png",
-      "/images/Valhko/image-4.png","/images/Valhko/image-5.png"],      
+      "images": [
+        "/images/Valhko/image-1.png",
+        "/images/Valhko/image-2.png",
+        "/images/Valhko/image-3.png",
+        "/images/Valhko/image-4.png",
+        "/images/Valhko/image-5.png"
+      ],
       "roleType": "Stage"
     },
     {
@@ -112,7 +121,7 @@
         "/images/uml-diagrame-generator/xmi-file.png",
         "/images/uml-diagrame-generator/xml project.png"
       ],
-      "projectLink": "https://placeholder.com/",
+      "projectLink": "https://guthib.com/",
       "githubLink": "https://github.com/khalidElbouari/UML-Diagrams-Generator"
     },
     {
@@ -129,8 +138,8 @@
         "/images/pfe-BTS/img_4.png",
         "/images/pfe-BTS/img_5.png"
       ],
-      "projectLink": "https://placeholder.com/",
-      "githubLink": "https://placeholder.com/"
+      "projectLink": "https://guthib.com/",
+      "githubLink": "https://github.com/khalidElbouari/School-Management-System"
     },
     {
       "title": "SmartFind Web Platform",
@@ -144,7 +153,7 @@
         "/images/smartfind/image-3.png"
       ],
       "projectLink": "https://smartfind-vitrine.vercel.app/",
-      "githubLink": "https://github.com/khalidelbouari/smartfind"
+      "githubLink": "https://github.com/khalidElbouari/smartfind-vitrine"
     },
     {
       "title": "CV Management Application",
@@ -153,8 +162,8 @@
       "description": "Conception et développement d'une application web pour créer, modifier et gérer les CV avec une interface intuitive.",
       "technologies": ["HTML", "CSS", "JavaScript"],
       "images": ["placeHolder.jpg"],
-      "projectLink": "https://placeholder.com/",
-      "githubLink": "https://placeholder.com/"
+      "projectLink": "https://guthib.com/",
+      "githubLink": "https://github.com/khalidElbouari/CV-version-express"
     },
     {
       "title": "Google Chrome Extension",
@@ -163,7 +172,7 @@
       "description": "Développement d'une extension Chrome intégrant un modèle AI embarqué pour aider les utilisateurs à remplir des formulaires longs et complexes.",
       "technologies": ["HTML", "CSS", "JavaScript"],
       "images": ["placeHolder.jpg"],
-      "projectLink": "https://placeholder.com/",
+      "projectLink": "https://guthib.com/",
       "githubLink": "https://placeholder.com/"
     },
     {
@@ -180,8 +189,8 @@
         "/images/dart/img_4.png",
         "/images/dart/img_5.png"
       ],
-      "projectLink": "https://placeholder.com/",
-      "githubLink": "https://placeholder.com/"
+      "projectLink": "https://guthib.com/",
+      "githubLink": "https://github.com/khalidElbouari/dart"
     }
   ],
   "certifications": [

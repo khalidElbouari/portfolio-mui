@@ -60,7 +60,9 @@
         "/images/labocontrol/labocontrol-materiel.png"
       ],
       "achievements": ["Improved UX by 20%", "Reduced processing time by 15%"],
-      "roleType": "Internship"
+      "roleType": "Internship",
+      "projectLink": "https://guthib.com/",
+      "githubLink": "https://github.com/khalidElbouari/labocontrol"
     },
     {
       "position": "Full Stack Engineer Intern",
@@ -118,7 +120,7 @@
         "/images/uml-diagrame-generator/xmi-file.png",
         "/images/uml-diagrame-generator/xml project.png"
       ],
-      "projectLink": "https://placeholder.com/",
+      "projectLink": "https://guthib.com/",
       "githubLink": "https://github.com/khalidElbouari/UML-Diagrams-Generator"
         
     },
@@ -136,8 +138,8 @@
         "/images/pfe-BTS/img_4.png",
         "/images/pfe-BTS/img_5.png"
       ],
-      "projectLink": "https://placeholder.com/",
-      "githubLink": "https://placeholder.com/"
+      "projectLink": "https://guthib.com/",
+      "githubLink": "https://github.com/khalidElbouari/School-Management-System"
     },
     {
       "title": "SmartFind Web Platform",
@@ -151,7 +153,7 @@
         "/images/smartfind/image-3.png"
       ],
       "projectLink": "https://smartfind-vitrine.vercel.app/",
-      "githubLink": "https://github.com/khalidelbouari/smartfind"
+      "githubLink": "https://github.com/khalidElbouari/smartfind-vitrine"
     },
     {
       "title": "CV Management Application",
@@ -160,8 +162,8 @@
       "description": "Designed and developed a web application for creating, editing, and managing CVs with an intuitive interface.",
       "technologies": ["HTML", "CSS", "JavaScript"],
       "images": ["placeHolder.jpg"],
-      "projectLink": "https://placeholder.com/",
-      "githubLink": "https://placeholder.com/"
+      "projectLink": "https://guthib.com/",
+      "githubLink": "https://github.com/khalidElbouari/CV-version-express"
 
     },
     {
@@ -171,7 +173,7 @@
       "description": "Developed a Chrome extension integrating an embedded AI model to assist users in filling out long and complex forms.",
       "technologies": ["HTML", "CSS", "JavaScript"],
       "images": ["placeHolder.jpg"],
-      "projectLink": "https://placeholder.com/",
+      "projectLink": "https://guthib.com/",
       "githubLink": "https://placeholder.com/"
     },
     {
@@ -205,8 +207,8 @@
           "/images/dart/img_21.png",
           "/images/dart/img_22.png"
         ],
-        "projectLink": "https://placeholder.com/",
-        "githubLink": "https://placeholder.com/"
+        "projectLink": "https://guthib.com/",
+        "githubLink": "https://github.com/khalidElbouari/dart"
       }
 
 
