@@ -42,44 +42,67 @@
     }
   ],
   "experience": [
-    {
-      "position": "Stagiaire en Développement Logiciel",
-      "company": "LaboControl",
-      "companyLogo": "/images/logos/labocontrol.png",
-      "website": "https://labocontrol.com",
-      "location": "Fès, Maroc",
-      "period": "01/04/2024 - 24/06/2024",
-      "duration": "3 mois",
-      "description": "Création d'une application web pour le marketing intégré des services et produits, améliorant les processus métiers et l'expérience utilisateur.",
-      "technologies": ["Spring Boot", "Angular", "TypeScript", "HTML/CSS", "MySQL"],
-      "images": [
-        "/images/labocontrol/labocontrol-Aceuil.png",
-        "/images/labocontrol/labocontrol-services.png",
-        "/images/labocontrol/labocontrol-materiel.png"
-      ],
-      "achievements": ["Amélioration de l'expérience utilisateur de 20%", "Réduction du temps de traitement de 15%"],
-      "roleType": "Stage",
-      "projectLink": "https://guthib.com/",
-      "githubLink": "https://github.com/khalidElbouari/labocontrol"
-    },
-    {
-      "position": "Stagiaire Full Stack Engineer",
-      "company": "Valhko",
-      "companyLogo": "/images/logos/valhko.png",
-      "website": "https://valhko.com",
-      "location": "À distance",
-      "period": "07/07/2025 - Présent",
-      "description": "Unification de l'authentification à travers les microservices via l'API Gateway et coordination des revues de code pour accélérer le déploiement.",
-      "technologies": ["Java", "Spring Boot", "architecture microservices", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
-      "images": [
-        "/images/Valhko/image-1.png",
-        "/images/Valhko/image-2.png",
-        "/images/Valhko/image-3.png",
-        "/images/Valhko/image-4.png",
-        "/images/Valhko/image-5.png"
-      ],
-      "roleType": "Stage"
-    },
+  {
+  "position": "Stagiaire en Développement Logiciel",
+  "company": "LaboControl",
+  "companyLogo": "/images/logos/labocontrol.png",
+  "website": "https://labocontrol.com",
+  "location": "Fès, Maroc",
+  "period": "01/04/2024 - 24/06/2024",
+  "duration": "3 mois",
+  "description": "Développé une application web pour aider LaboControl à promouvoir ses services et étendre la portée de ses produits au-delà de l’écosystème BTP. Mise en place d'une boutique en ligne permettant la vente de produits inutilisés ou excédentaires, simplifiant le processus de vente et augmentant la visibilité sur le marché.",
+  "technologies": ["Spring Boot", "Angular", "TypeScript", "HTML/CSS", "MySQL"],
+  "images": [
+    "/images/labocontrol/labocontrol-Aceuil.png",
+    "/images/labocontrol/labocontrol-services.png",
+    "/images/labocontrol/labocontrol-materiel.png"
+  ],
+  "achievements": [
+    "Permis la promotion en ligne des services de l'entreprise, atteignant un public plus large",
+    "Mise en place d'une boutique digitale pour les produits excédentaires, créant de nouvelles opportunités de vente"
+  ],
+  "roleType": "Stage",
+  "projectLink": "https://guthib.com/",
+  "githubLink": "https://github.com/khalidElbouari/labocontrol"
+},
+{
+  "position": "Stagiaire Développeur Full Stack",
+  "company": "Valhko",
+  "companyLogo": "/images/logos/valhko.png",
+  "website": "https://valhko.com",
+  "location": "À distance",
+  "period": "07/07/2025 - Présent",
+  "description": "Contribué à la plateforme microservices de Valhko en unifiant l'authentification via l'API Gateway, en intégrant les services Post et Feed au nouveau front-end, et en mettant en place le téléchargement et l'affichage des médias via Azure Blob Storage. Conçu et développé le microservice AI Agent pour permettre des interactions sécurisées avec les agents, intégré le modèle d'assistant IA (Arya) dans le front-end en utilisant Django et le système drag, et connecté aux services back-end. Soutenu les tâches du sprint telles que les pages career-workspace, career-insights, le déploiement Arya v2, et contribué à la mise en œuvre d'un système de gestion des clés API pour un accès sécurisé aux APIs des agents.",
+  "technologies": [
+    "Java",
+    "Spring Boot",
+    "architecture microservices",
+    "Azure Service Bus",
+    "Azure Blob Storage",
+    "React",
+    "Spring Cloud",
+    "Django",
+    "PostgreSQL",
+    "Docker",
+    "Docker Compose",
+    "Grafana",
+    "Zipkin",
+    "Loki",
+    "Git"
+  ],
+  "images": [
+    "/images/Valhko/image-1.png",
+    "/images/Valhko/image-2.png",
+    "/images/Valhko/image-3.png",
+    "/images/Valhko/image-4.png",
+    "/images/Valhko/image-5.png"
+  ],
+  "achievements": [
+    "Développé et déployé un nouveau microservice AI Agent",
+    "Unifié l'authentification à travers les microservices via l'API Gateway"
+  ],
+  "roleType": "Stage"
+},
     {
       "position": "Stagiaire Développeur VB.NET",
       "company": "Copref",
@@ -173,7 +196,7 @@
       "technologies": ["HTML", "CSS", "JavaScript"],
       "images": ["placeHolder.jpg"],
       "projectLink": "https://guthib.com/",
-      "githubLink": "https://placeholder.com/"
+      "githubLink": "https://github.com/khalidElbouari/chrome-ai-extension"
     },
     {
       "title": "Gestion de Toutune Enligne",

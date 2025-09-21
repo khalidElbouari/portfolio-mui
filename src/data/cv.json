@@ -44,7 +44,7 @@
     }
   ],
   "experience": [
-    {
+   {
       "position": "Software Development Intern",
       "company": "LaboControl",
       "companyLogo": "/images/logos/labocontrol.png",
@@ -52,14 +52,17 @@
       "location": "Fes, Morocco",
       "period": "01/04/2024 - 24/06/2024",
       "duration": "3 months",
-      "description": "Built a web application for integrated service and product marketing, improving business processes and enhancing user experience.",
+      "description": "Developed a web application to help LaboControl promote its services and expand its product reach beyond the BTP ecosystem. Implemented a digital store enabling the sale of unused or surplus products, streamlining the sales process and increasing market visibility.",
       "technologies": ["Spring Boot", "Angular", "TypeScript", "HTML/CSS", "MySQL"],
       "images": [
         "/images/labocontrol/labocontrol-Aceuil.png",
         "/images/labocontrol/labocontrol-services.png",
         "/images/labocontrol/labocontrol-materiel.png"
       ],
-      "achievements": ["Improved UX by 20%", "Reduced processing time by 15%"],
+      "achievements": [
+        "Enabled online promotion of company services, reaching a wider audience",
+        "Set up a digital store for surplus products, creating new sales opportunities"
+      ],
       "roleType": "Internship",
       "projectLink": "https://guthib.com/",
       "githubLink": "https://github.com/khalidElbouari/labocontrol"
@@ -71,10 +74,35 @@
       "website": "https://valhko.com",
       "location": "Remote",
       "period": "07/07/2025 - Present",
-      "description": "Unified authentication across microservices via the API Gateway and coordinated code reviews to accelerate deployment.",
-      "technologies": ["Java", "Spring Boot", "microservices architecture", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
-      "images": ["/images/Valhko/image-1.png", "/images/Valhko/image-2.png","/images/Valhko/image-3.png",
-      "/images/Valhko/image-4.png","/images/Valhko/image-5.png"],
+      "description": "Contributed to Valhko’s microservices-based platform by unifying authentication across services via the API Gateway, integrating Post and Feed services into the new front-end, and implementing media upload and rendering through Azure Blob Storage. Designed and developed the AI Agent Service microservice to enable secure agent interactions, integrated the AI assistant model (Arya) into the front-end using Django and the drag system, and connected it to back-end services. Also supported sprint tasks such as career-workspace, career-insights, and Arya v2 deployment, as well as contributing to the implementation of an API Key Management system for secure agent APIs.",
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "microservices architecture",
+        "Azure Service Bus",
+        "Azure Blob Storage",
+        "React",
+        "Spring Cloud",
+        "Django",
+        "PostgreSQL",
+        "Docker",
+        "Docker Compose",
+        "Grafana",
+        "Zipkin",
+        "Loki",
+        "Git"
+      ],
+      "images": [
+        "/images/Valhko/image-1.png",
+        "/images/Valhko/image-2.png",
+        "/images/Valhko/image-3.png",
+        "/images/Valhko/image-4.png",
+        "/images/Valhko/image-5.png"
+      ],
+      "achievements": [
+        "Developed and deployed a new AI Agent Service microservice",
+        "Unified authentication across microservices via the API Gateway"
+      ],
       "roleType": "Internship"
     },
     {
@@ -174,13 +202,13 @@
       "technologies": ["HTML", "CSS", "JavaScript"],
       "images": ["placeHolder.jpg"],
       "projectLink": "https://guthib.com/",
-      "githubLink": "https://placeholder.com/"
+      "githubLink": "https://github.com/khalidElbouari/chrome-ai-extension"
     },
     {
         "title": "Gestion de Toutune Enligne",
         "period": "15/01/2024 - 15/04/2024",
         "duration": "3 months",
-        "description": "Cette plateforme en ligne facilite la collaboration en intégrant les services bancaires pour une gestion efficace des transactions. Elle permet aux utilisateurs de collaborer en ligne tout en bénéficiant d'une gestion sécurisée et simplifiée des aspects financiers.",
+        "description": "This online platform facilitates collaboration by integrating banking services for efficient transaction management. It enables users to collaborate online while benefiting from secure and simplified financial management.",
         "technologies": ["Thymeleaf", "MySQL", "Spring Boot"],
         "images": [
           "/images/dart/img.png",

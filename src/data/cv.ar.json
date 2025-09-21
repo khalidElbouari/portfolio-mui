@@ -42,44 +42,67 @@
     }
   ],
   "experience": [
-    {
-      "position": "متدرب في تطوير البرمجيات",
+      {
+      "position": "متدرب تطوير البرمجيات",
       "company": "LaboControl",
       "companyLogo": "/images/logos/labocontrol.png",
       "website": "https://labocontrol.com",
       "location": "فاس، المغرب",
       "period": "01/04/2024 - 24/06/2024",
       "duration": "3 أشهر",
-      "description": "بناء تطبيق ويب للتسويق المتكامل للخدمات والمنتجات، مما حسن العمليات التجارية وتجربة المستخدم.",
+      "description": "طورت تطبيق ويب لمساعدة شركة LaboControl على الترويج لخدماتها وتوسيع نطاق منتجاتها خارج نظام BTP. قمت بإنشاء متجر إلكتروني لبيع المنتجات غير المستخدمة أو الفائضة، مما سهل عملية البيع وزاد من وضوح الشركة في السوق.",
       "technologies": ["Spring Boot", "Angular", "TypeScript", "HTML/CSS", "MySQL"],
       "images": [
         "/images/labocontrol/labocontrol-Aceuil.png",
         "/images/labocontrol/labocontrol-services.png",
         "/images/labocontrol/labocontrol-materiel.png"
       ],
-      "achievements": ["تحسين تجربة المستخدم بنسبة 20%", "تقليل وقت المعالجة بنسبة 15%"],
+      "achievements": [
+        "تمكين الترويج عبر الإنترنت لخدمات الشركة، مما وصل إلى جمهور أوسع",
+        "إنشاء متجر رقمي للمنتجات الفائضة، مما أتاح فرص مبيعات جديدة"
+      ],
       "roleType": "تدريب",
       "projectLink": "https://guthib.com/",
       "githubLink": "https://github.com/khalidElbouari/labocontrol"
     },
-    {
-      "position": "متدرب Full Stack Engineer",
-      "company": "Valhko",
-      "companyLogo": "/images/logos/valhko.png",
-      "website": "https://valhko.com",
-      "location": "عن بعد",
-      "period": "07/07/2025 - حتى الآن",
-      "description": "توحيد المصادقة عبر الميكروسيرفيسز باستخدام API Gateway وتنسيق مراجعات الكود لتسريع النشر.",
-      "technologies": ["Java", "Spring Boot", "معمارية الميكروسيرفيسز", "Azure Service Bus", "React", "Spring Cloud", "Docker", "Docker Compose", "Grafana", "Zipkin", "Loki", "Git"],
-      "images": [
-        "/images/Valhko/image-1.png",
-        "/images/Valhko/image-2.png",
-        "/images/Valhko/image-3.png",
-        "/images/Valhko/image-4.png",
-        "/images/Valhko/image-5.png"
-      ],
-      "roleType": "تدريب"
-    },
+   {
+  "position": "متدرب مهندس Full Stack",
+  "company": "Valhko",
+  "companyLogo": "/images/logos/valhko.png",
+  "website": "https://valhko.com",
+  "location": "عن بُعد",
+  "period": "07/07/2025 - حتى الآن",
+  "description": "ساهمت في منصة Valhko المبنية على الميكروسيرفيسز من خلال توحيد المصادقة عبر API Gateway، ودمج خدمات Post و Feed مع الواجهة الأمامية الجديدة، وتنفيذ رفع وعرض الوسائط عبر Azure Blob Storage. صممت وطورت ميكروسيرفيس AI Agent لتمكين التفاعل الآمن مع الوكلاء، وقمت بدمج نموذج المساعد الذكي (Arya) في الواجهة الأمامية باستخدام Django ونظام drag، وربطه بالخدمات الخلفية. كما دعمت مهام السبرينت مثل صفحات career-workspace و career-insights ونشر Arya v2، وساهمت في تنفيذ نظام إدارة مفاتيح API للوصول الآمن إلى APIs الوكلاء.",
+  "technologies": [
+    "Java",
+    "Spring Boot",
+    "هندسة الميكروسيرفيسز",
+    "Azure Service Bus",
+    "Azure Blob Storage",
+    "React",
+    "Spring Cloud",
+    "Django",
+    "PostgreSQL",
+    "Docker",
+    "Docker Compose",
+    "Grafana",
+    "Zipkin",
+    "Loki",
+    "Git"
+  ],
+  "images": [
+    "/images/Valhko/image-1.png",
+    "/images/Valhko/image-2.png",
+    "/images/Valhko/image-3.png",
+    "/images/Valhko/image-4.png",
+    "/images/Valhko/image-5.png"
+  ],
+  "achievements": [
+    "تطوير ونشر ميكروسيرفيس AI Agent جديد",
+    "توحيد المصادقة عبر الميكروسيرفيسز باستخدام API Gateway"
+  ],
+  "roleType": "تدريب"
+},
     {
       "position": "متدرب مطور VB.NET",
       "company": "Copref",
@@ -173,7 +196,7 @@
       "technologies": ["HTML", "CSS", "JavaScript"],
       "images": ["placeHolder.jpg"],
       "projectLink": "https://guthib.com/",
-      "githubLink": "https://placeholder.com/"
+      "githubLink": "https://github.com/khalidElbouari/chrome-ai-extension"
     },
     {
       "title": "منصة إدارة Toutune عبر الإنترنت",

@@ -98,9 +98,9 @@ export const ImageModal = ({
           <Box
             sx={{
               position: "absolute",
-              top: { xs: 16, sm: 32 },
-              left: { xs: 16, sm: 32 },
-              right: { xs: 72, sm: 88 },
+              top: { xs: 12, sm: 24 },
+              left: { xs: 12, sm: 24 },
+              right: { xs: 60, sm: 88 },
               zIndex: 10
             }}
           >
@@ -123,20 +123,22 @@ export const ImageModal = ({
           {/* Close Button */}
           <IconButton
             onClick={onClose}
+            aria-label="Close gallery"
             sx={{
               position: "absolute",
-              top: { xs: 16, sm: 32 },
-              right: { xs: 16, sm: 32 },
+              top: { xs: 12, sm: 24 },
+              right: { xs: 12, sm: 24 },
               zIndex: 10,
-              bgcolor: "rgba(255, 255, 255, 0.1)",
+              bgcolor: "rgba(255, 255, 255, 0.12)",
               backdropFilter: "blur(10px)",
               color: "white",
-              width: 48,
-              height: 48,
-              transition: "all 0.3s ease",
+              width: { xs: 40, sm: 48 },
+              height: { xs: 40, sm: 48 },
+              boxShadow: "0 8px 20px rgba(0,0,0,0.35)",
+              transition: "all 0.25s ease",
               "&:hover": {
-                bgcolor: "rgba(255, 255, 255, 0.2)",
-                transform: "scale(1.1)"
+                bgcolor: "rgba(255, 255, 255, 0.22)",
+                transform: "scale(1.06)"
               }
             }}
           >
@@ -147,8 +149,8 @@ export const ImageModal = ({
           <Box
             sx={{
               position: "relative",
-              maxWidth: "90vw",
-              maxHeight: "80vh",
+              maxWidth: { xs: "88vw", sm: "82vw", md: "72vw" },
+              maxHeight: { xs: "66vh", sm: "76vh", md: "82vh" },
               display: "flex",
               alignItems: "center",
               justifyContent: "center"
@@ -158,12 +160,15 @@ export const ImageModal = ({
               component="img"
               src={images[currentIndex]}
               alt={`${title} - Image ${currentIndex + 1} of ${images.length}`}
+              draggable={false}
+              loading="lazy"
               sx={{
                 maxWidth: "100%",
                 maxHeight: "100%",
                 objectFit: "contain",
                 borderRadius: 2,
                 boxShadow: "0 25px 50px rgba(0, 0, 0, 0.6)",
+                userSelect: "none",
                 transition: "all 0.3s ease"
               }}
             />
@@ -173,41 +178,51 @@ export const ImageModal = ({
               <>
                 <IconButton
                   onClick={prevImage}
+                  aria-label="Previous image"
                   sx={{
                     position: "absolute",
-                    left: { xs: -50, sm: -70 },
+                    top: "50%",
+                    left: { xs: 8, sm: 12 },
+                    transform: "translateY(-50%)",
                     bgcolor: "rgba(255, 255, 255, 0.15)",
                     backdropFilter: "blur(10px)",
                     color: "white",
-                    width: { xs: 44, sm: 56 },
-                    height: { xs: 44, sm: 56 },
-                    transition: "all 0.3s ease",
+                    width: { xs: 40, sm: 52 },
+                    height: { xs: 40, sm: 52 },
+                    boxShadow: "0 8px 20px rgba(0,0,0,0.35)",
+                    zIndex: 5,
+                    transition: "all 0.25s ease",
                     "&:hover": {
                       bgcolor: "rgba(255, 255, 255, 0.25)",
-                      transform: "scale(1.1)"
+                      transform: "translateY(-50%) scale(1.06)"
                     }
                   }}
                 >
-                  <ArrowBackIosNew />
+                  <ArrowBackIosNew fontSize="small" />
                 </IconButton>
                 <IconButton
                   onClick={nextImage}
+                  aria-label="Next image"
                   sx={{
                     position: "absolute",
-                    right: { xs: -50, sm: -70 },
+                    top: "50%",
+                    right: { xs: 8, sm: 12 },
+                    transform: "translateY(-50%)",
                     bgcolor: "rgba(255, 255, 255, 0.15)",
                     backdropFilter: "blur(10px)",
                     color: "white",
-                    width: { xs: 44, sm: 56 },
-                    height: { xs: 44, sm: 56 },
-                    transition: "all 0.3s ease",
+                    width: { xs: 40, sm: 52 },
+                    height: { xs: 40, sm: 52 },
+                    boxShadow: "0 8px 20px rgba(0,0,0,0.35)",
+                    zIndex: 5,
+                    transition: "all 0.25s ease",
                     "&:hover": {
                       bgcolor: "rgba(255, 255, 255, 0.25)",
-                      transform: "scale(1.1)"
+                      transform: "translateY(-50%) scale(1.06)"
                     }
                   }}
                 >
-                  <ArrowForwardIos />
+                  <ArrowForwardIos fontSize="small" />
                 </IconButton>
               </>
             )}
@@ -218,12 +233,12 @@ export const ImageModal = ({
             <Box
               sx={{
                 position: "absolute",
-                bottom: { xs: 20, sm: 40 },
+                bottom: { xs: 14, sm: 28 },
                 left: "50%",
                 transform: "translateX(-50%)",
                 display: "flex",
                 alignItems: "center",
-                gap: 3
+                gap: { xs: 2, sm: 3 }
               }}
             >
               {/* Image Counter */}
@@ -250,17 +265,17 @@ export const ImageModal = ({
                     key={idx}
                     onClick={() => setCurrentIndex(idx)}
                     sx={{
-                      width: idx === currentIndex ? 24 : 10,
-                      height: 10,
+                      width: idx === currentIndex ? { xs: 18, sm: 24 } : { xs: 8, sm: 10 },
+                      height: { xs: 8, sm: 10 },
                       borderRadius: idx === currentIndex ? 2 : "50%",
-                      bgcolor: idx === currentIndex 
-                        ? "white" 
+                      bgcolor: idx === currentIndex
+                        ? "white"
                         : "rgba(255,255,255,0.4)",
                       transition: "all 0.3s ease",
                       cursor: "pointer",
                       "&:hover": {
-                        bgcolor: idx === currentIndex 
-                          ? "white" 
+                        bgcolor: idx === currentIndex
+                          ? "white"
                           : "rgba(255,255,255,0.7)"
                       }
                     }}
