@@ -171,9 +171,9 @@ const itemVariants = {
 
 // Locale-aware resume download
 const resumePaths = {
-  en: "/resume/Elbouari%20Khalid%20cv-english.pdf",
-  fr: "/resume/Elbouari%20Khalid%20cv-french.pdf",
-  ar: "/resume/Elbouari%20Khalid%20cv-arabic.pdf"
+  en: "resume/Elbouari%20Khalid%20cv-english.pdf",
+  fr: "resume/Elbouari%20Khalid%20cv-french.pdf",
+  ar: "resume/Elbouari%20Khalid%20cv-arabic.pdf"
 } as const;
 
 const resumeFileNames = {
